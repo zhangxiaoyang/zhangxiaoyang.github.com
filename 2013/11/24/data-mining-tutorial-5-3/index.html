@@ -1,0 +1,436 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>数据挖掘入门(5-3) | 张小洋的布劳阁</title>
+  <meta name="author" content="zhangxiaoyang">
+  
+  <meta name="description" content="张小洋的布劳阁">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="数据挖掘入门(5-3)"/>
+  <meta property="og:site_name" content="张小洋的布劳阁"/>
+
+  
+    <meta property="og:image" content="undefined"/>
+  
+
+  <link href="/favicon.ico" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="张小洋的布劳阁" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-46826647-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+  
+  <meta name="google-site-verification" content="Fjy6iUBWNJ0NBNFFzR8ZxFrkCxJ9rvHeBBYPyue-HBw" />
+  <meta name="baidu-site-verification" content="yMxHzOMMAE" />
+</head>
+
+<body>
+  <header id="header" class='normal_mode'>
+    <div class='profile'>
+  <h1><a href="/"><img class="logo" src="/css/img/logo.png"/></a></h1>
+  <h2>
+  	<a href="/">
+  	张小洋的布劳阁
+  	爱美工的程序员
+  	</a>
+  </h2>
+</div>
+<nav id="main-nav">
+  <ul class='inner'>
+    
+      <li><a href="/">Blog</a></li>
+    
+      <li><a href="/archives">Archives</a></li>
+    
+      <li><a href="/about">About</a></li>
+    
+  </ul>
+  <div class="clearfix"></div>
+</nav>
+<div class="clearfix"></div>
+  </header>
+  <div id="content" class="inner">
+    <div id="main-col" class="alignleft"><div id="wrapper"><article class="post">
+  
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
+  <div class="post-content">
+    <header>
+      
+  
+    <h1 class="title">数据挖掘入门(5-3)</h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <p>通过决策树和朴素贝叶斯分类器可以感觉到，分类的关键是有一个靠谱的分类器。朴素贝叶斯分类器以统计学为基础，而这一节要学习的神经网络以机器学习的相关理论为基础。数据挖掘真像是个“大杂烩”，每个领域都涉及一下。</p>
+<a id="more"></a>
+
+<h2 id="-795e-7ecf-7f51-7edc-662f-4f55-7269-">神经网络是何物</h2>
+<p>这里说的神经网络是指人工神经网络（ANN）。人工神经网络的思想来源于高中课本里讲到的神经网络。感觉好神奇，神经网络可以用于分类（当然，用处不仅仅是分类啦）。为什么以前上高中的时候没想过这些问题呢？学习的过程也是在扼杀自己的想象力和创造力啊，吐槽一下。</p>
+<p>先不想那么多，管它怎么分类呢。应该先了解一下人工神经网络，而了解的前提是温习一下高中的生物知识。</p>
+<p>回到五年前，正青春的时候，老师如是介绍：</p>
+<blockquote>
+<p>大约有$10^{11}$个相互连接的神经元帮助你进行阅读、呼吸、思考、完成各种动作等，部分神经网络的结构和功能是与生具有的，比如支配呼吸、哭、吮吸等本能动作的功能；而大多数的功能需要通过后天的学习才能获得。</p>
+</blockquote>
+<p>所以，神经网络是由神经元构成的，下图表示了两个连接的神经元。</p>
+<p><img src="神经元.jpg" alt=""></p>
+<p>一个神经元的感知（感受其它神经元传过来的信号）是通过树突完成的。感知使得细胞体内外有了电位差，当这个电位差达到一定的阈值以后，就会产生信号（脉冲）。这个信号经过轴突，到达各个神经末梢，作用于与其它神经元相连的突触。当然，一个神经元可能收到很多个信号，需要把这些信号累加起来作出反应（兴奋、抑制两种反应）。</p>
+<p>神经元通过这种方式构成了生物神经网络。尽管人们还不太清楚生物神经网络是如何运作的，但人们试图构造一些人工的神经元，进而构造人工神经网络。</p>
+<p>下图就是人工神经元模型，其中$p=[p_1,p_2,\dots,p_R]^T$表示神经元的输入，这是一个向量。根据生物神经元的工作原理可以知道，这个输入是其它神经元轴突的输出。$w=[w_1,w_2,\dots,w_R]$表示其它神经元与该神经元R个突触的连接强度，又叫做权值向量。权值向量的每个元素可以为正也可以为负，分别表示兴奋和抑制。</p>
+<p><img src="神经元模型.jpg" alt=""></p>
+<p>捋一捋，神经元的输入是一个向量，这个输入可能来自其它的神经元。可能有好多个神经元与当前的神经元相连，而每一个连接的权值可能不同，有正的也有负的。所以就有了一个问题，这么多条连接，每一条连接对当前神经元的刺激都不一样，这个神经元是该喜（兴奋）呢还是该悲（抑制）呢？</p>
+<p>所以就有了一个加权求和，$\sum_{i=1}^{R}w_i p_i$。我们通过这个累加值来判断当前神经元是否被激活，所以这个加权累加值又叫做激活值。这个加权累加的结果为多少的时候是激活呢？我们使用$\theta$来表示一个阈值，当$\sum_{i=1}^{R}w_i p_i &gt; \theta$的时候，我们就说当前的神经元处于激活的状态。a就是当前神经元接受到各种信号后的输出。可以看到，神经元把多个值映射到一个值，所以这是一个函数，而这个函数$f$就叫做传输函数。</p>
+<p>所以，神经元的输出可以表示为：$a=f(\sum_{i=1}^{R}w_i p_i - \theta)$</p>
+<p>费了好大劲终于有了神经元（人工神经元）。我们可以使用神经元连接成我们想要的人工神经网络。人工神经网络的连接形式和拓扑结构有好多种，就不再费心讨论了。</p>
+<h2 id="-795e-7ecf-7f51-7edc-4e0e-5206-7c7b-">神经网络与分类</h2>
+<p>把一些输入输出单元（神经元）连接起来就构成了一个神经网络，其中每个连接都与一个权重相关联。怎么用神经网络分类啊？</p>
+<p>可以这样做，假设我有了一个神经网络，把训练集的每一条事务记录输入到这个神经网络，神经元的输出计算公式可以得到最后一个神经元的输出。</p>
+<p>这样做会遇到一些问题。</p>
+<p>问题1：权重$w$和阈值$\theta$我们不知道啊！<br>解决1：没关系，我初始化为随机数（如随机数区间为[-0.5,0.5]）。</p>
+<p>问题2：这个函数$f$具体是什么啊，不知道啊！<br>解决2：这个下记录一些，一会再讨论。</p>
+<p>问题3：最终的输出是计算出来的，没有用到训练集标注好的类标号啊！<br>解决3：我们引入一个误差来修正这个问题，一会再讨论。</p>
+<p>对于这些有待商榷的问题，怎么解决呢？说好的神经网络分类呢？</p>
+<p>神经网络是可以分类的，没有骗小朋友！只是现在在样本训练（学习）阶段碰到了一下不知道怎么办的问题。比如$f$函数该设计成什么函数呢，误差怎么修正呢，有太多选择了！</p>
+<p>所以，神经网络需要结合一些特定的学习算法才能进行分类。不同的学习算法分类的结果是不一定相同的。</p>
+<p>所以，我们要学一种流行时尚的神经网络学习算法——BP算法。</p>
+<h2 id="BP-ff08-Back_Propagation-ff09-7b97-6cd5-">BP（Back Propagation）算法</h2>
+<p>BP算法规定了神经网络学习的方式。BP算法说，你们不用管这管那的，按照我说的公式来算。</p>
+<p>输出值：$O_j = \frac{1}{1+e^{-I_j}}, I_j=\sum_{i}^{}w_{ij}O_i+\theta_j$</p>
+<p>输出单元的误差：$Err_j=O_j(1-O_j)(T_j-O_j)$</p>
+<p>隐藏层单元的误差：$Err_j=O_j(1-O_j)\sum_{k}^{}Err_k w_{jk}$</p>
+<p>修正误差后的权值：$w_{ij}=w_{ij}+(l)Err_j O_i$</p>
+<p>修正后的阈值：$\theta_j=\theta_j (l)Err_j$</p>
+<p>其中，$w_{ij}$表示第i个单元到第j个单元连接的权值，$I_i$表示第i个单元的输入，$O_i$表示第i个单元的输出，$\theta_i$表示第i个单元的阈值，$T_i$表示标注的类标号，l表示学习率（通常选择0.0到1.0之间的常熟值）。</p>
+<p>还需要补充一下，所谓的输出单元指的是最后一个输出类标号的单元，隐藏单元指的是除去训练集输入单元和类标号输出单元剩下的所有单元。</p>
+<p>这样还是很抽象，应该通过一个例子来说明一下，努力寻找例子中…</p>
+<p>还有一个疑问，算法什么时候结束呢？</p>
+<ol>
+<li>经过不断的修正，权值小于指定值时终止</li>
+<li>经过不断的修正，误差小于指定值时终止</li>
+<li>训练集的单条记录可能会被用到多次（第一轮训练完了可能会有第二轮），当超过指定轮数时终止</li>
+</ol>
+<p>所以，可以看到，使用BP算法的神经网络分类器就是在不停的修正权值和阈值。权值、阈值的改变会导致输入的改变，输入的改变会导致输出的改变，输出的改变会导致误差的改变，误差的改变会导致权值、阈值的改变…</p>
+<p>直到某一项指标达到了算法终止的条件。当某个指标小于“指定值”的时候算法会结束。这个“指定值”定多少合适呢？还有学习率该取多少呢？神经网络需要多少个神经元呢，分几个层次呢？最最最大的疑问，学习得到的结果该怎么理解呢？</p>
+<p>里面太多经验性的东西了，经常用“通常，我们取值…”这句话。对于学习结果的提取，业界有各种规则提取算法。这里目前只折腾出如何使用BP算法进行学习。</p>
+<p>有人做了测试，使用决策树、朴素贝叶斯、神经网络进行网页分类。朴素贝叶斯胜出，详细见<a href="http://ijcsi.org/papers/4-1-16-23.pdf" target="_blank">Naive Bayes vs. Decision Trees vs. Neural Networks in the Classification of Training Web Pages</a>。</p>
+<p>其实BP算法挺牛的，本来神经网络只能进行线性的分类（感知器），BP算法的提出可以使得非线性分类成为了可能，感谢BP吧！</p>
+<p>最后，推荐一本神经网络书《人工神经网络导论》，搜了一些资料，这本书给我的启发很大。</p>
+<p><code>-- EOF --</code></p>
+
+      
+    </div>
+    
+    
+    <footer>  
+          
+          
+<nav id="pagination">
+  
+    <a href="/2013/11/25/data-mining-tutorial-5-4/" class="alignleft prev" title="数据挖掘入门(5-4)">数据挖掘入门(5-4)</a>
+  
+  
+    <a href="/2013/11/23/data-mining-tutorial-5-2/" class="alignright next" title="数据挖掘入门(5-2)">数据挖掘入门(5-2)</a>
+  
+  <div class="clearfix"></div>
+</nav>
+
+          
+  
+  <div class="categories">
+    <a href="/categories/数据挖掘入门/">数据挖掘入门</a>
+  </div>
+
+          
+  
+  <div class="tags">
+    <a href="/tags/data mining/">data mining</a>, <a href="/tags/数据挖掘/">数据挖掘</a>, <a href="/tags/back propagation/">back propagation</a>, <a href="/tags/神经网络/">神经网络</a>, <a href="/tags/分类/">分类</a>
+  </div>
+
+          
+  <div class="addthis addthis_toolbox addthis_default_style">
+    
+    
+    
+      <a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
+    
+    
+    <a class="addthis_counter addthis_pill_style"></a>
+  </div>
+  <!-- JiaThis Button BEGIN -->
+    <div class="jiathis_style">
+        <span class="jiathis_txt">分享到：</span>
+        <a class="jiathis_button_icons_1"></a>
+        <a class="jiathis_button_icons_2"></a>
+        <a class="jiathis_button_icons_3"></a>
+        <a class="jiathis_button_icons_4"></a>
+        <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+        <a class="jiathis_counter_style"></a>
+    </div>
+    <script type="text/javascript" src="http://v3.jiathis.com/code_mini/jia.js" charset="utf-8"></script>
+    <!-- JiaThis Button END -->
+
+      
+      <div class="clearfix">
+        <time datetime="2013-11-24T14:38:20.000Z">11月 24 2013</time>
+        
+      </div>
+    </footer>
+  </div>
+</article>
+
+
+  <div id="profile"></div>
+
+
+
+<section id="comment">
+  <h1 class="title">留言</h1>
+
+  
+      <!-- Duoshuo Comment BEGIN -->
+<div class="ds-thread"></div>
+<!-- Duoshuo Comment END -->
+  
+</section>
+
+
+</div></div>
+    <aside id="sidebar" class="alignright">
+  <div class="search">
+  <form action="//google.com/search" method="get" accept-charset="utf-8">
+    <input type="search" name="q" results="0" placeholder="搜索">
+    <input type="hidden" name="q" value="site:zhangxiaoyang.me">
+  </form>
+</div>
+
+  
+<div class="widget tag">
+  <h3 class="title">最新文章</h3>
+  <ul class="entry">
+    
+      <li>
+        <a href="/2014/01/12/introduction-to-algorithms-tutorial-9/">自学算法导论(9)</a>
+      </li>
+    
+      <li>
+        <a href="/2014/01/10/introduction-to-algorithms-tutorial-8/">自学算法导论(8)</a>
+      </li>
+    
+      <li>
+        <a href="/2013/12/30/introduction-to-algorithms-tutorial-7/">自学算法导论(7)</a>
+      </li>
+    
+      <li>
+        <a href="/2013/12/01/data-mining-tutorial-6/">数据挖掘入门(6)</a>
+      </li>
+    
+      <li>
+        <a href="/2013/11/29/introduction-to-algorithms-tutorial-6-2/">自学算法导论(6-2)</a>
+      </li>
+    
+  </ul>
+</div>
+
+
+  
+<div class="widget tagcloud">
+  <h3 class="title">标签云</h3>
+  <div class="entry">
+    <a href="/tags/FP-tree/" style="font-size: 10.00px;">FP-tree</a><a href="/tags/Ford-Fulkerson/" style="font-size: 10.00px;">Ford-Fulkerson</a><a href="/tags/KDD/" style="font-size: 10.00px;">KDD</a><a href="/tags/KNN/" style="font-size: 10.00px;">KNN</a><a href="/tags/NP/" style="font-size: 10.00px;">NP</a><a href="/tags/NPC/" style="font-size: 10.00px;">NPC</a><a href="/tags/NPH/" style="font-size: 10.00px;">NPH</a><a href="/tags/OLAP/" style="font-size: 10.00px;">OLAP</a><a href="/tags/apriori/" style="font-size: 10.00px;">apriori</a><a href="/tags/back propagation/" style="font-size: 10.00px;">back propagation</a><a href="/tags/bagging/" style="font-size: 10.00px;">bagging</a><a href="/tags/boosting/" style="font-size: 10.00px;">boosting</a><a href="/tags/data mining/" style="font-size: 17.50px;">data mining</a><a href="/tags/divide and conquer/" style="font-size: 10.00px;">divide and conquer</a><a href="/tags/dynamic programing/" style="font-size: 10.00px;">dynamic programing</a><a href="/tags/greedy/" style="font-size: 10.00px;">greedy</a><a href="/tags/linear programming/" style="font-size: 12.50px;">linear programming</a><a href="/tags/stable matching/" style="font-size: 10.00px;">stable matching</a><a href="/tags/关联规则/" style="font-size: 10.00px;">关联规则</a><a href="/tags/决策树/" style="font-size: 10.00px;">决策树</a><a href="/tags/分类/" style="font-size: 15.00px;">分类</a><a href="/tags/动态规划/" style="font-size: 10.00px;">动态规划</a><a href="/tags/单纯形/" style="font-size: 10.00px;">单纯形</a><a href="/tags/回归分析/" style="font-size: 10.00px;">回归分析</a><a href="/tags/对偶/" style="font-size: 10.00px;">对偶</a><a href="/tags/平摊分析/" style="font-size: 10.00px;">平摊分析</a><a href="/tags/总结/" style="font-size: 12.50px;">总结</a><a href="/tags/数据仓库/" style="font-size: 10.00px;">数据仓库</a><a href="/tags/数据挖掘/" style="font-size: 17.50px;">数据挖掘</a><a href="/tags/数据立方体/" style="font-size: 10.00px;">数据立方体</a><a href="/tags/数据预处理/" style="font-size: 10.00px;">数据预处理</a><a href="/tags/神经网络/" style="font-size: 10.00px;">神经网络</a><a href="/tags/算法/" style="font-size: 20.00px;">算法</a><a href="/tags/算法分析/" style="font-size: 10.00px;">算法分析</a><a href="/tags/线性规划/" style="font-size: 12.50px;">线性规划</a><a href="/tags/组合分类/" style="font-size: 10.00px;">组合分类</a><a href="/tags/组合数学/" style="font-size: 10.00px;">组合数学</a><a href="/tags/网络攻防/" style="font-size: 10.00px;">网络攻防</a><a href="/tags/网络流/" style="font-size: 10.00px;">网络流</a><a href="/tags/聚类/" style="font-size: 10.00px;">聚类</a>
+  </div>
+</div>
+
+
+  
+<div class="widget tag">
+  <h3 class="title">分类</h3>
+  <ul class="entry">
+  
+    <li><a href="/categories/总结/">总结</a><small>2</small></li>
+  
+    <li><a href="/categories/数据挖掘入门/">数据挖掘入门</a><small>10</small></li>
+  
+    <li><a href="/categories/自学算法导论/">自学算法导论</a><small>11</small></li>
+  
+  </ul>
+</div>
+
+
+  <iframe width="100%" height="100" class="share_self" frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=zh_cn&amp;width=0&amp;height=550&amp;fansRow=2&amp;ptype=1&amp;speed=0&amp;skin=1&amp;isTitle=1&amp;noborder=0&amp;isWeibo=0&amp;isFans=0&amp;uid=1704839092&amp;verifier=5f359d0c&amp;dpc=1"></iframe>
+</aside>
+    <div class="clearfix"></div>
+  </div>
+  <footer id="footer" class="inner"><div class="aligncenter">
+  
+  &copy; 2014 zhangxiaoyang
+  
+</div>
+
+<div class="clearfix"></div></footer>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+
+
+
+    <script type="text/javascript">
+        (function(){
+
+            $(window).scroll(function(){
+
+                var scrollTop = $(window).scrollTop();
+                if ( scrollTop >200 ){
+                    $("#main-nav").removeClass('normal_mode').addClass('top_mode');
+                } else{
+                    $("#main-nav").removeClass('top_mode').addClass('normal_mode');
+                }
+
+            });
+
+        })();
+    </script>
+
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+  <script type="text/javascript">
+  (function($){
+    $('.fancybox').fancybox({
+      fitToView: false
+    });
+  })(jQuery);
+  </script>
+
+
+
+    <script type="text/javascript">
+      var duoshuoQuery = {short_name:"zhangxiaoyang"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.src = 'http://static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0] 
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+
+
+
+    
+<link href="/css/prettify-github.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="/js/prettify.js"></script>
+<script type="text/javascript">
+  $(function() {
+      $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto');
+      $('code').addClass('prettyprint').attr('style', 'overflow:auto');
+      window.prettyPrint && prettyPrint();
+  });
+</script>
+
+
+
+
+    <!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],        
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"] ]
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+
+    
+<script type="text/javascript">
+(function() {
+    var $backToTopTxt = "TOP", $backToTopEle = $('<div class="backToTop"></div>').appendTo($("body"))
+        .text($backToTopTxt).attr("title", $backToTopTxt).click(function() {
+            $("html, body").animate({ scrollTop: 0 }, 120);
+    }), $backToTopFun = function() {
+        var st = $(document).scrollTop(), winh = $(window).height();
+        (st > 0)? $backToTopEle.show(): $backToTopEle.hide();    
+        //IE6�µĶ�λ
+        if (!window.XMLHttpRequest) {
+            $backToTopEle.css("top", st + winh - 166);    
+        }
+    };
+    $(window).bind("scroll", $backToTopFun);
+    $(function() { $backToTopFun(); });
+})();
+</script>
+
+
+
+<script type="text/javascript">
+  $(function(){
+    // animation
+    $('.title').hover(
+      function() {      
+        $(this).stop().animate(
+          {'marginLeft': '10px'}, 200
+        );   
+      }, 
+      function() {       
+        $(this).stop().animate({'marginLeft': '0px'}, 200);        
+    });   
+  });
+</script>
+</body>
+</html>

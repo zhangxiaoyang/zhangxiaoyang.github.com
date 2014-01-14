@@ -1,0 +1,493 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>数据挖掘入门(6) | 张小洋的布劳阁</title>
+  <meta name="author" content="zhangxiaoyang">
+  
+  <meta name="description" content="张小洋的布劳阁">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="数据挖掘入门(6)"/>
+  <meta property="og:site_name" content="张小洋的布劳阁"/>
+
+  
+    <meta property="og:image" content="undefined"/>
+  
+
+  <link href="/favicon.ico" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="张小洋的布劳阁" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-46826647-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+  
+  <meta name="google-site-verification" content="Fjy6iUBWNJ0NBNFFzR8ZxFrkCxJ9rvHeBBYPyue-HBw" />
+  <meta name="baidu-site-verification" content="yMxHzOMMAE" />
+</head>
+
+<body>
+  <header id="header" class='normal_mode'>
+    <div class='profile'>
+  <h1><a href="/"><img class="logo" src="/css/img/logo.png"/></a></h1>
+  <h2>
+  	<a href="/">
+  	张小洋的布劳阁
+  	爱美工的程序员
+  	</a>
+  </h2>
+</div>
+<nav id="main-nav">
+  <ul class='inner'>
+    
+      <li><a href="/">Blog</a></li>
+    
+      <li><a href="/archives">Archives</a></li>
+    
+      <li><a href="/about">About</a></li>
+    
+  </ul>
+  <div class="clearfix"></div>
+</nav>
+<div class="clearfix"></div>
+  </header>
+  <div id="content" class="inner">
+    <div id="main-col" class="alignleft"><div id="wrapper"><article class="post">
+  
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
+  <div class="post-content">
+    <header>
+      
+  
+    <h1 class="title">数据挖掘入门(6)</h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <p>越发的感觉到数据挖掘的目的在于“知过去未来”，而“知过去”的目的一方面是想看清楚过去，另一方面是想预知未来。这一节学习聚类，通过挖掘相似度来区分簇，进而得到聚类的结果。</p>
+<a id="more"></a>
+
+<h2 id="-4ece-5206-7c7b-5230-805a-7c7b-">从分类到聚类</h2>
+<p>分类是一种有监督的算法，根据训练集得到分类的方法（分类器），以后就可以使用分类器把未知的类别划分到已知的某个类中。</p>
+<p>聚类是一种无监督的算法，所以它不需要训练集，也不需要事先知道有哪些类别。它直接对大量的数据进行聚类，得到若干的簇，一个簇就是一类。</p>
+<p>分类和聚类可以用下图表示。</p>
+<p><img src="分类与聚类.jpg" alt=""></p>
+<p>可以看到，分类的关键在于有一个分类器，分类器里记录着如何分类。而聚类是根据量化后的距离进行分类，我们事先不知道有哪几类，关键在于距离的计算（相似度、相异度）。</p>
+<h2 id="-76f8-5f02-5ea6-">相异度</h2>
+<p>所以，就有一个小伙提出了表示相异度的矩阵，即相异度矩阵（存储n个对象两两之间的近似性）。同时，也提出了一个表示n个对象的矩阵，即数据矩阵（用p个变量来表示n个对象），如下图。</p>
+<p><img src="相异度.jpg" alt=""></p>
+<p>数据矩阵存放我们的数据源，通常需要计算相异度矩阵，因为很多聚类算法都是以相异度矩阵为基础进行计算的。</p>
+<p>可以看到，相异度矩阵中有一个函数d(i,j)，其表示对象i和对象j直接的相异度。相异度对角线均为0，说明对象自身的相异度为0，即完全一样没有什么不同。</p>
+<p>因为许多聚类算法都是以相异度矩阵为基础进行计算的，所以聚类的基础就是求相异度矩阵。而求相异度矩阵的关键是求d(i,j)，即两个对象间的相异度。</p>
+<p>如何计算相异度？</p>
+<p>根据数据类型的不同，会有不同的计算方法。常用的数据类型有：区间标量、二元变量、标称变量、序数变量、向量等。也就是说，我们要根据数据矩阵中值的类型做一些处理，并进行相应的距离计算，也就是相异度计算。</p>
+<h3 id="-533a-95f4-6807-91cf-">区间标量</h3>
+<p>数据矩阵中的值是一些粗略线性标度的连续度量，比如重量、高度等。对于这样的值，我们要先对其进行规范化。可以使用度量值（Z-score）进行规范化。</p>
+<p>$z_{if} = \frac{x_{if}-m_{f}}{s_f}$，其中$m_f = \frac{1}{n}(x_{1f}+x_{2f}+\dots+x_{nf})$，$s_f = \frac{1}{n}(|x_{1f}-m_f|+|x_{2f}-m_f|+\dots+|x_{nf}-m_f|)$。</p>
+<p>上面的公式是把$x<em>{if}$转换为$z</em>{if}$，也就是把第i个对象的第f个特征值（属性值）规范化为另个值。经过规范化以后，才可以计算d(i,j)，进而得到相异度矩阵。</p>
+<p>而d(i,j)的计算，可以使用欧式距离（Euclidean）或曼哈顿距离（Manhattan）计算，相应的公式如下。</p>
+<ol>
+<li>欧式距离：$d(i,j)=\sqrt{(|x_{i1}-x_{j1}|)^2 + (|x_{i2}-x_{j2}|)^2 + \dots + (|x_{ip}-x_{jp}|)^2}$</li>
+<li>曼哈顿距离：$d(i,j)=|x_{i1}-x_{j1}| + |x_{i2}-x_{j2}| + \dots + |x_{ip}-x_{jp}|$</li>
+</ol>
+<p>欧式距离和曼哈顿距离实质上是闵可夫斯基距离的特殊情况：$d(i,j)=\sqrt[p]{(|x_{i1}-x_{j1}|)^p + (|x_{i2}-x_{j2}|)^p + \dots + (|x_{ip}-x_{jp}|)^p}$</p>
+<h3 id="-4e8c-5143-53d8-91cf-">二元变量</h3>
+<p>顾名思义，数据矩阵中的值只有两种状态，即0和1。这时候不需要做什么规范化，直接求解d(i,j)即可。求解公式如下图。</p>
+<p><img src="二元变量.jpg" alt=""></p>
+<p>可以看到，非对称与对称的区别在于，在计算非对称二元相异度的时候分母无需关心都为0的特征。Jaccard系数等于1减去非对称二元相异度，因子这个系数挺重要的，就在此一并列出了。</p>
+<h3 id="-6807-79f0-53d8-91cf-">标称变量</h3>
+<p>标称变量是二元变量的推广，它可以具有多于两个的状态值。比如：红、绿、蓝、黄。</p>
+<p>同样无需规范化，根据二元相异度的计算公式，不难理解标称变量相异度的公式：$d(i,j)=\frac{p-m}{p}$，p是单个对象的全部属性个数，m是相同的属性个数，所以p-m就是不同的属性个数。</p>
+<h3 id="-5e8f-6570-53d8-91cf-">序数变量</h3>
+<p>序数变量可以是离散的或者是连续的，序数型变量的值之间是有顺序关系的，如：讲师、副教授、正教授。</p>
+<p>对于序数变量，一般为每个值分配一个数，叫做这个值的秩，然后以秩代替来的值作为数据矩阵。相异度根据区间标量相异度计算。</p>
+<h3 id="-5411-91cf-">向量</h3>
+<p>每个一个对象的所有特征值构成一个向量，通常使用余弦相似度来计算相似度（余弦值越接近1，说明夹角越小，说明两个向量越相似），进而得到相异度。</p>
+<p>$s = cos\theta = \frac{A \cdot  B}{|A| \times |B|}$</p>
+<h2 id="-805a-7c7b-ff08-Clustering-ff09-">聚类（Clustering）</h2>
+<p>聚类算法有很多种类，具体的选择取决于数据类型、聚类的应用和目的。常用的聚类算法有以下几种。</p>
+<ol>
+<li>划分法（Partitioning Methods）</li>
+<li>层次法（Hierarchical Methods）</li>
+<li>密度法（Density-Based Methods）</li>
+<li>网格法（Grid-Based Methods）</li>
+<li>模型法（Model-Based Methods）</li>
+</ol>
+<p>以下只是简单的学习了解下各个聚类算法的思想。</p>
+<h3 id="-5212-5206-6cd5-">划分法</h3>
+<p>把n个对象划分k个类（k个划分），每个划分表示一个簇。并要求，每个划分至少包含一个对象，每个对象仅属于一个划分。</p>
+<p>划分的思想是同一个簇中的对象尽可能的接近或相关，不同簇中的对象尽可能的远离或不同。</p>
+<p>然后在每个簇中选一个代表（点）来表示整个簇，可以选择簇的平均值（也就是簇中所有点的平均值，实际可能不存在这个点），也可以选择簇中心区域的某个点代表这个簇。对应的算法是k-means（k-平均算法）和k-medoids（k-中心点算法）。</p>
+<p>k-means示例如下图。</p>
+<p><img src="k-means.jpg" alt=""></p>
+<p>k-means算法将中心点取为当前簇中所有数据点的平均值，而在k-medoids算法中，我们从当前簇中寻找一个更好的替代点代替上一轮使用的中心。如果存在这样一个点，到其他所有（当前簇中）点的距离之和最小，这就是一个“好”的点。我们就使用这个好的点代替原来的中心。k-medoids示例如下图。</p>
+<p><img src="k-medoids.jpg" alt=""></p>
+<p>其实不难发现，初始值的不同可能会得到不同的k-means或k-medoids聚类结果。而且，k-means会很容易受到噪声的影响。所以，就有了一些改进算法。</p>
+<h3 id="-5c42-6b21-6cd5-">层次法</h3>
+<p>对给定的对象集合进行分解（根据层次来分解），即Hierarchical Clustering（层次聚类），有自底向上和自顶向下两种方法。</p>
+<p>自底向上的聚类（Agglomerative Clustering）：开始将每个对象作为单独的一个组，然后相继的合并相近的对象或组，直到所有的组合并为一个，或者达到一个终止条件。</p>
+<p>自顶向下的聚类（Divisive Clustering）：开始将所有的对象置于一个簇中，在迭代的每一步，一个簇被分裂为多个更小的簇，直到最终每个对象在一个单独的簇中，或达到一个终止条件。</p>
+<p>对于自底向上的层次聚类，需要考虑如何定义“相近”。两个点的相近指的就是这两个点的距离。如果计算两个类别的距离，有三个计算方法：</p>
+<blockquote>
+<ol>
+<li>Single Linkage：又叫做 nearest-neighbor ，就是取两个集合中距离最近的两个点的距离作为这两个集合的距离，容易造成一种叫做 Chaining 的效果，两个 cluster 明明从“大局”上离得比较远，但是由于其中个别的点距离比较近就被合并了，并且这样合并之后 Chaining 效应会进一步扩大，最后会得到比较松散的 cluster 。</li>
+<li>Complete Linkage：这个则完全是 Single Linkage 的反面极端，取两个集合中距离最远的两个点的距离作为两个集合的距离。其效果也是刚好相反的，限制非常大，两个 cluster 即使已经很接近了，但是只要有不配合的点存在，就顽固到底，老死不相合并，也是不太好的办法。</li>
+<li>Group Average：这种方法看起来相对有道理一些，也就是把两个集合中的点两两的距离全部放在一起求一个平均值，相对也能得到合适一点的结果。（来自<a href="http://blog.pluskid.org/?p=407" target="_blank">这里</a>）</li>
+</ol>
+</blockquote>
+<p>对于自顶向下的层次聚类，聚类的关键在于如何选一个簇进行分割和如何进行分割。</p>
+<p>通常采用一些衡量松散程度的度量值度量每一个簇，度量值可以是簇中距离最远的两个数据点之间的距离，或者簇中所有节点相互距离的平均值等。然后选择最松散簇进行分割。</p>
+<p>而分割的方法也有多种，最普通的就是使用k-means进行二类聚类，即k=2，但是这种方法的计算量很大。所以，我们常用以下这种方法。</p>
+<ol>
+<li>待分割的簇记为G，在G中取出一个到其他点的平均距离最远的点x，构成一个新簇H</li>
+<li>在G中选取这样的点x’，使得x’到G中其他点的平均距离减去x’到H中所有点的平均距离最大，将x归入H中</li>
+<li>重复上一个步骤，直到差值为负</li>
+</ol>
+<p>层次聚类示例如下图。</p>
+<p><img src="层次聚类.jpg" alt=""></p>
+<h3 id="-5bc6-5ea6-6cd5-">密度法</h3>
+<p>只要临近区域的密度（对象或数据点的数目）超过某个临界值，就继续聚类。</p>
+<p>密度聚类（DBScan聚类）示例如下图。</p>
+<p><img src="密度聚类.jpg" alt=""></p>
+<p>最开始的时候，图中的点均为浅蓝色点。从中任选一个点作为算法的入口点，图中选择红色的点。设定eps范围为图中的圆的半径R，minPoints为2。</p>
+<p>这样，我们标记的红点为中心，以eps为半径画圆，可以发现有两个粉色的点（边缘点）在这个圆中（小于等于半径），并且点的个数不小于minPoints（2大于等于2），所以它们成为一个簇。然后在边缘点中选取一个再次画半径为eps的圆，如果该圆内的点的个数超过minPoints，则该点也标记为中心点，圆内的其它点标为粉色（边缘点）。这样，经过递归，最终会得到一个大的簇。图中红色的为中心点，粉色的为边缘点。如果还有一些点未处理，则在其中再次选一个点开始生成新的簇，算法过程一样。当算法执行结束后，可能会出现既不是边缘点也不是中心点的点，图中紫色的点，这样的点就是噪音。</p>
+<p>过程中所说的中心点又称作核心对象（core object）。如果从某一个点p经过一跳可以到达点q，就说对象q是从对象p直接密度可达的（directly density-reachable）。如果从某一个点p经过若干跳可以到的点q，就说对象q是从对象p密度可达的（density-reachable）。如果对象q是从对象p密度可达的，且对象p是从对象q密度可达，就说对象p和q密度相连（density-connected）。上面说的“跳”是指经过箭头的个数，并且只能按照箭头的方向前进。</p>
+<h3 id="-7f51-683c-6cd5-">网格法</h3>
+<p>基于网格的聚类方法采用一个多分辨率的网格数据结构。它将空间量化为有限数目的单元，这些单元形成了网格结构，所有的聚类操作都在网格上进行。这种方法的主要优点是处理速度快，其处理时间独立于数据对象的数目，仅依赖于量化空间中每一维上的单元数目。<br>基于网格方法的有代表性的例子包括STING，它利用了存储在网格单元中的统计信息；WaveCluster，它用一种小波转换方法来聚类对象；CLIQUE，它是在高维数据空间中基于网格和密度的聚类方法。</p>
+<h3 id="-6a21-578b-6cd5-">模型法</h3>
+<p>基于模型的方法为每个簇假定了一个模型，寻找数据对给定模型的最佳拟合。一个基于模型的算法可能通过构建反映数据点空间分布的密度函数来定位聚类。它也基于标准的统计数字自动决定聚类的数目，考虑“噪声”数据或孤立点，从而产生健壮的聚类方法。基于模型聚类方法主要有两种：统计学方法和神经网络方法。</p>
+<h2 id="-5b64-7acb-70b9-68c0-67e5-ff08-Outlier_detection-ff09-">孤立点检查（Outlier detection）</h2>
+<p>孤立点，又叫做离群点，指数据集中那些小模式数据，它可能是度量或执行错误所导致的, 也可能是固有数据变异性的结果。总之，这样的点与众不同，不合群，和别人都不一样。孤立点的挖掘相当于是对异常的挖掘，而异常检测是相当有意义的。</p>
+<p>一般的孤立点检测（挖掘）需要做两件事情：根据数据集定义什么是孤立点、挖掘孤立点。</p>
+<p>目前已有的孤立点挖掘算法主要有基于统计的方法、基于距离的方法、基于密度的方法、基于偏离的方法和基于聚类的挖掘算法。</p>
+<p>以下介绍摘自<a href="http://blog.sina.com.cn/s/blog_5fc375650100ggwu.html" target="_blank">http://blog.sina.com.cn/s/blog_5fc375650100ggwu.html</a>。</p>
+<h3 id="-57fa-4e8e-7edf-8ba1-7684-65b9-6cd5-">基于统计的方法</h3>
+<p>根据数据集的特性事先假定一个数据分布的概率模型，然后根据模型的不一致性来确定异常。</p>
+<p>问题是，我们并不知道数据的分布，而且现实数据也往往不符合任何一种理想状态的数学分布，这样就对后期的孤立点发掘产生了很大的困难。而且，基于统计的方法比较适合于低维空间的孤立点挖掘，而实际的数据大多都是高维空间的数据，在这种情况下，事先估算数据的分布是很困难的。</p>
+<h3 id="-57fa-4e8e-8ddd-79bb-7684-65b9-6cd5-">基于距离的方法</h3>
+<p>以距离的大小来检测小模式，孤立点被认为是没有足够多的邻居。它可以描述为在数据对象集合中N中，至少有P个对象和某孤立点的距离大于阈值D，这个孤立点带有参数P和D。</p>
+<p>这种方法的优势在于不需要事先了解数据集本身的特性，是与领域无关的。问题是，对参数P和D估计的困难性。不同的P和D参数的确定会对结果带来很大的影响。由于基于距离的方法的参数P和D是一定的所以发现的孤立点是全局孤立点。</p>
+<h3 id="-57fa-4e8e-5bc6-5ea6-7684-65b9-6cd5-">基于密度的方法</h3>
+<p>对全局各个聚类的数据提出了统一的P和D的参数，但是如果各个聚类本身的密度存在不同,则基于距离的方法会出现问题，因此提出了基于密度模型的局部异常点挖掘算法，通过局部异常点因子LOF的计算来确定异常点。只要一个对象的LOF远大于1，它可能就是一个异常点。簇内靠近核心点的对象的LOF接近于1，处于簇的边缘或是簇的外面的对象的LOF相对较大，这样便能检测到局部异常点，更贴近于实际的数据集的特性。</p>
+<p>问题是，局部范围的参数Minpts值存在选择上的困难，可以运用多粒度偏差因子代替Minpts来评价，这样便能得到比较好的解决方案。</p>
+<h3 id="-57fa-4e8e-504f-79bb-7684-65b9-6cd5-">基于偏离的方法</h3>
+<p>通过检查一组对象的主要特征来确定异常点，如果一个对象的特征与给定的”描述”过分”偏离”，则该对象被认为是异常点。现有的基于偏离的方法主要有序列异常技术和OLAP数据立方体方法。前者是以样本集的总体的方差为相异度函数，描述了样本集的基本特征，所有背离这些特征的样本都是异常样本，这种方法在对异常存在的假设太过理想化，对现实复杂数据效果不太好。而后者利用在大规模的多维数据中采用数据立方体确定反常区域，如果一个立方体的单元值显著地不同于根据统计模型得到的期望值，该单元值被认为是一个孤立点，当存在许多涉及多层概念层次的维时，人工探测变得非常困难。</p>
+<h3 id="-57fa-4e8e-805a-7c7b-7684-65b9-6cd5-">基于聚类的方法</h3>
+<p>基于聚类的方法的基本思想是将孤立点挖掘的过程转换成聚类的过程。首先将数据集利用已经成熟的模型进行聚类分析，是数据集形成簇，而那些不在簇中的样本点即被视为异常点进行再处理。除了上述所述的4中基本的聚类方法外，还包括基于网格的的方法等。</p>
+<p><code>-- EOF --</code></p>
+
+      
+    </div>
+    
+    
+    <footer>  
+          
+          
+<nav id="pagination">
+  
+    <a href="/2013/12/30/introduction-to-algorithms-tutorial-7/" class="alignleft prev" title="自学算法导论(7)">自学算法导论(7)</a>
+  
+  
+    <a href="/2013/11/29/introduction-to-algorithms-tutorial-6-2/" class="alignright next" title="自学算法导论(6-2)">自学算法导论(6-2)</a>
+  
+  <div class="clearfix"></div>
+</nav>
+
+          
+  
+  <div class="categories">
+    <a href="/categories/数据挖掘入门/">数据挖掘入门</a>
+  </div>
+
+          
+  
+  <div class="tags">
+    <a href="/tags/data mining/">data mining</a>, <a href="/tags/数据挖掘/">数据挖掘</a>, <a href="/tags/聚类/">聚类</a>
+  </div>
+
+          
+  <div class="addthis addthis_toolbox addthis_default_style">
+    
+    
+    
+      <a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
+    
+    
+    <a class="addthis_counter addthis_pill_style"></a>
+  </div>
+  <!-- JiaThis Button BEGIN -->
+    <div class="jiathis_style">
+        <span class="jiathis_txt">分享到：</span>
+        <a class="jiathis_button_icons_1"></a>
+        <a class="jiathis_button_icons_2"></a>
+        <a class="jiathis_button_icons_3"></a>
+        <a class="jiathis_button_icons_4"></a>
+        <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+        <a class="jiathis_counter_style"></a>
+    </div>
+    <script type="text/javascript" src="http://v3.jiathis.com/code_mini/jia.js" charset="utf-8"></script>
+    <!-- JiaThis Button END -->
+
+      
+      <div class="clearfix">
+        <time datetime="2013-12-01T11:42:53.000Z">12月 1 2013</time>
+        
+      </div>
+    </footer>
+  </div>
+</article>
+
+
+  <div id="profile"></div>
+
+
+
+<section id="comment">
+  <h1 class="title">留言</h1>
+
+  
+      <!-- Duoshuo Comment BEGIN -->
+<div class="ds-thread"></div>
+<!-- Duoshuo Comment END -->
+  
+</section>
+
+
+</div></div>
+    <aside id="sidebar" class="alignright">
+  <div class="search">
+  <form action="//google.com/search" method="get" accept-charset="utf-8">
+    <input type="search" name="q" results="0" placeholder="搜索">
+    <input type="hidden" name="q" value="site:zhangxiaoyang.me">
+  </form>
+</div>
+
+  
+<div class="widget tag">
+  <h3 class="title">最新文章</h3>
+  <ul class="entry">
+    
+      <li>
+        <a href="/2014/01/12/introduction-to-algorithms-tutorial-9/">自学算法导论(9)</a>
+      </li>
+    
+      <li>
+        <a href="/2014/01/10/introduction-to-algorithms-tutorial-8/">自学算法导论(8)</a>
+      </li>
+    
+      <li>
+        <a href="/2013/12/30/introduction-to-algorithms-tutorial-7/">自学算法导论(7)</a>
+      </li>
+    
+      <li>
+        <a href="/2013/12/01/data-mining-tutorial-6/">数据挖掘入门(6)</a>
+      </li>
+    
+      <li>
+        <a href="/2013/11/29/introduction-to-algorithms-tutorial-6-2/">自学算法导论(6-2)</a>
+      </li>
+    
+  </ul>
+</div>
+
+
+  
+<div class="widget tagcloud">
+  <h3 class="title">标签云</h3>
+  <div class="entry">
+    <a href="/tags/FP-tree/" style="font-size: 10.00px;">FP-tree</a><a href="/tags/Ford-Fulkerson/" style="font-size: 10.00px;">Ford-Fulkerson</a><a href="/tags/KDD/" style="font-size: 10.00px;">KDD</a><a href="/tags/KNN/" style="font-size: 10.00px;">KNN</a><a href="/tags/NP/" style="font-size: 10.00px;">NP</a><a href="/tags/NPC/" style="font-size: 10.00px;">NPC</a><a href="/tags/NPH/" style="font-size: 10.00px;">NPH</a><a href="/tags/OLAP/" style="font-size: 10.00px;">OLAP</a><a href="/tags/apriori/" style="font-size: 10.00px;">apriori</a><a href="/tags/back propagation/" style="font-size: 10.00px;">back propagation</a><a href="/tags/bagging/" style="font-size: 10.00px;">bagging</a><a href="/tags/boosting/" style="font-size: 10.00px;">boosting</a><a href="/tags/data mining/" style="font-size: 17.50px;">data mining</a><a href="/tags/divide and conquer/" style="font-size: 10.00px;">divide and conquer</a><a href="/tags/dynamic programing/" style="font-size: 10.00px;">dynamic programing</a><a href="/tags/greedy/" style="font-size: 10.00px;">greedy</a><a href="/tags/linear programming/" style="font-size: 12.50px;">linear programming</a><a href="/tags/stable matching/" style="font-size: 10.00px;">stable matching</a><a href="/tags/关联规则/" style="font-size: 10.00px;">关联规则</a><a href="/tags/决策树/" style="font-size: 10.00px;">决策树</a><a href="/tags/分类/" style="font-size: 15.00px;">分类</a><a href="/tags/动态规划/" style="font-size: 10.00px;">动态规划</a><a href="/tags/单纯形/" style="font-size: 10.00px;">单纯形</a><a href="/tags/回归分析/" style="font-size: 10.00px;">回归分析</a><a href="/tags/对偶/" style="font-size: 10.00px;">对偶</a><a href="/tags/平摊分析/" style="font-size: 10.00px;">平摊分析</a><a href="/tags/总结/" style="font-size: 12.50px;">总结</a><a href="/tags/数据仓库/" style="font-size: 10.00px;">数据仓库</a><a href="/tags/数据挖掘/" style="font-size: 17.50px;">数据挖掘</a><a href="/tags/数据立方体/" style="font-size: 10.00px;">数据立方体</a><a href="/tags/数据预处理/" style="font-size: 10.00px;">数据预处理</a><a href="/tags/神经网络/" style="font-size: 10.00px;">神经网络</a><a href="/tags/算法/" style="font-size: 20.00px;">算法</a><a href="/tags/算法分析/" style="font-size: 10.00px;">算法分析</a><a href="/tags/线性规划/" style="font-size: 12.50px;">线性规划</a><a href="/tags/组合分类/" style="font-size: 10.00px;">组合分类</a><a href="/tags/组合数学/" style="font-size: 10.00px;">组合数学</a><a href="/tags/网络攻防/" style="font-size: 10.00px;">网络攻防</a><a href="/tags/网络流/" style="font-size: 10.00px;">网络流</a><a href="/tags/聚类/" style="font-size: 10.00px;">聚类</a>
+  </div>
+</div>
+
+
+  
+<div class="widget tag">
+  <h3 class="title">分类</h3>
+  <ul class="entry">
+  
+    <li><a href="/categories/总结/">总结</a><small>2</small></li>
+  
+    <li><a href="/categories/数据挖掘入门/">数据挖掘入门</a><small>10</small></li>
+  
+    <li><a href="/categories/自学算法导论/">自学算法导论</a><small>11</small></li>
+  
+  </ul>
+</div>
+
+
+  <iframe width="100%" height="100" class="share_self" frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=zh_cn&amp;width=0&amp;height=550&amp;fansRow=2&amp;ptype=1&amp;speed=0&amp;skin=1&amp;isTitle=1&amp;noborder=0&amp;isWeibo=0&amp;isFans=0&amp;uid=1704839092&amp;verifier=5f359d0c&amp;dpc=1"></iframe>
+</aside>
+    <div class="clearfix"></div>
+  </div>
+  <footer id="footer" class="inner"><div class="aligncenter">
+  
+  &copy; 2014 zhangxiaoyang
+  
+</div>
+
+<div class="clearfix"></div></footer>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+
+
+
+    <script type="text/javascript">
+        (function(){
+
+            $(window).scroll(function(){
+
+                var scrollTop = $(window).scrollTop();
+                if ( scrollTop >200 ){
+                    $("#main-nav").removeClass('normal_mode').addClass('top_mode');
+                } else{
+                    $("#main-nav").removeClass('top_mode').addClass('normal_mode');
+                }
+
+            });
+
+        })();
+    </script>
+
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+  <script type="text/javascript">
+  (function($){
+    $('.fancybox').fancybox({
+      fitToView: false
+    });
+  })(jQuery);
+  </script>
+
+
+
+    <script type="text/javascript">
+      var duoshuoQuery = {short_name:"zhangxiaoyang"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.src = 'http://static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0] 
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+
+
+
+    
+<link href="/css/prettify-github.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="/js/prettify.js"></script>
+<script type="text/javascript">
+  $(function() {
+      $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto');
+      $('code').addClass('prettyprint').attr('style', 'overflow:auto');
+      window.prettyPrint && prettyPrint();
+  });
+</script>
+
+
+
+
+    <!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],        
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"] ]
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+
+    
+<script type="text/javascript">
+(function() {
+    var $backToTopTxt = "TOP", $backToTopEle = $('<div class="backToTop"></div>').appendTo($("body"))
+        .text($backToTopTxt).attr("title", $backToTopTxt).click(function() {
+            $("html, body").animate({ scrollTop: 0 }, 120);
+    }), $backToTopFun = function() {
+        var st = $(document).scrollTop(), winh = $(window).height();
+        (st > 0)? $backToTopEle.show(): $backToTopEle.hide();    
+        //IE6�µĶ�λ
+        if (!window.XMLHttpRequest) {
+            $backToTopEle.css("top", st + winh - 166);    
+        }
+    };
+    $(window).bind("scroll", $backToTopFun);
+    $(function() { $backToTopFun(); });
+})();
+</script>
+
+
+
+<script type="text/javascript">
+  $(function(){
+    // animation
+    $('.title').hover(
+      function() {      
+        $(this).stop().animate(
+          {'marginLeft': '10px'}, 200
+        );   
+      }, 
+      function() {       
+        $(this).stop().animate({'marginLeft': '0px'}, 200);        
+    });   
+  });
+</script>
+</body>
+</html>

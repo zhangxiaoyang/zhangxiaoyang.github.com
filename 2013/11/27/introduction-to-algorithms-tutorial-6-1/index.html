@@ -1,0 +1,496 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>自学算法导论(6-1) | 张小洋的布劳阁</title>
+  <meta name="author" content="zhangxiaoyang">
+  
+  <meta name="description" content="张小洋的布劳阁">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="自学算法导论(6-1)"/>
+  <meta property="og:site_name" content="张小洋的布劳阁"/>
+
+  
+    <meta property="og:image" content="undefined"/>
+  
+
+  <link href="/favicon.ico" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="张小洋的布劳阁" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-46826647-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+  
+  <meta name="google-site-verification" content="Fjy6iUBWNJ0NBNFFzR8ZxFrkCxJ9rvHeBBYPyue-HBw" />
+  <meta name="baidu-site-verification" content="yMxHzOMMAE" />
+</head>
+
+<body>
+  <header id="header" class='normal_mode'>
+    <div class='profile'>
+  <h1><a href="/"><img class="logo" src="/css/img/logo.png"/></a></h1>
+  <h2>
+  	<a href="/">
+  	张小洋的布劳阁
+  	爱美工的程序员
+  	</a>
+  </h2>
+</div>
+<nav id="main-nav">
+  <ul class='inner'>
+    
+      <li><a href="/">Blog</a></li>
+    
+      <li><a href="/archives">Archives</a></li>
+    
+      <li><a href="/about">About</a></li>
+    
+  </ul>
+  <div class="clearfix"></div>
+</nav>
+<div class="clearfix"></div>
+  </header>
+  <div id="content" class="inner">
+    <div id="main-col" class="alignleft"><div id="wrapper"><article class="post">
+  
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
+  <div class="post-content">
+    <header>
+      
+  
+    <h1 class="title">自学算法导论(6-1)</h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <p>不小心在运筹学里看到了动态规划、线性规划…什么是运筹学？吉大老师给出的解释：运算筹划，出谋献策，以最佳策略取胜。</p>
+<a id="more"></a>
+
+<p>原来在学算法的同时也学了运筹学！回忆一下动态规划，可以看成一系列决策，决策1、决策2、…、决策n，使目标函数f(决策1、决策2、…、决策n)达到最优（求极值）。</p>
+<p>所以，不管是动态规划还是线性规划，都是为了寻找最优的解决方案。</p>
+<h2 id="-7ebf-6027-89c4-5212-ff08-Linear_Programming-ff09-">线性规划（Linear Programming）</h2>
+<blockquote>
+<p>动态规划与静态规划（线性和非线性规划等）研究的对象本质上都是在若干约束条件下的函数极值问题。两种规划在很多情况下原则上可以相互转换。（来自<a href="http://www.cnblogs.com/xueda120/articles/3082243.html" target="_blank">这里</a>）</p></p>
+<p>Linear programming: Optimize a linear function subject to linear inequalities. （来自Kevin Wayne的PPT）</p>
+</blockquote>
+<p>所以，线性规划就是优化一个被线性约束（线性等式或不等式）的线性函数，使用数学公式如下表示（右侧是矩阵表示法，P代表目标函数，s.t.代表约束条件）。判断一个模型是不是线性规划模型要考虑这些问题：有没有约束（线性）、有没有目标函数（线性，极值）、有没有决策变量（非负）。</p>
+<p><img src="线性规划形式.jpg" alt=""></p>
+<p>所谓的线性，是指以上公式中不存在$x^2,xy,cos(x)$类似的项。</p>
+<h3 id="-7ebf-6027-89c4-5212-2014-2014-5b85-7537-793a-4f8b-">线性规划——宅男示例</h3>
+<p>高中的时候就学习过使用线性规划求解一些问题。考虑这样一个问题，一个宅男需要在家里宅一星期（7天），他只喜欢吃乐事薯片和香飘飘奶茶。他希望能够满足日常的能量、蛋白质摄入量，并花费最少的钱来购买食物。</p>
+<p>根据中国营养学会的推荐，每天需要摄入能量2400KJ，蛋白质75g。可以求出一星期需要摄入能量16800KJ，蛋白质525g。</p>
+<p>这就是一个线性规划问题，设购买x1包乐事薯片，x2袋香飘飘奶茶，只要求出价格的最小值即可。</p>
+<p><img src="线性规划示例.jpg" alt=""></p>
+<h3 id="-7ebf-6027-89c4-5212-2014-2014-4f60-4e0d-77e5-9053-7684-4e8b-">线性规划——你不知道的事</h3>
+<p>我们需要了解下把线性规划模型（公式）转换为标准形式（standard form），为后面的单纯形方法铺垫一下下。</p>
+<p>原来的公式：</p>
+<p>$$min \text{ } 6.8x_1+2.7x_2$$</p>
+<p>$$668x_1+883x_2 \geq 16800$$</p>
+<p>$$1.5x_1+1.2x_2 \geq 525$$</p>
+<p>$$x_1 \geq 0, x_2 \geq 0$$</p>
+<p>标准形式的公式：</p>
+<p>$$max \text{ } -6.8x_1-2.7x_2$$</p>
+<p>$$668x_1+883x_2 -s_1 = 16800$$</p>
+<p>$$1.5x_1+1.2x_2 -s_2 = 525$$</p>
+<p>$$x_1 \geq 0, x_2 \geq 0, s_1 \geq 0, s_2 \geq 0$$</p>
+<p>通过加入变量s1和s2，将约束条件的符号变为了等号，加入的变量称作松弛变量。并且，把min转换为了max。这样我们就得到了线性规划的标准形式。</p>
+<h3 id="-7406-89e3-7ebf-6027-89c4-5212-2014-2014-51e0-4f55-89c6-89d2-">理解线性规划——几何视角</h3>
+<p>上面的薯片、奶茶问题可以借助坐标系来求解，如下图。如果仅仅满足能量、蛋白质的摄入（不考虑价格）的话，可以看到是粉色的区域。若要求价格最低，则橘色线与纵轴的交点。可以求出最终的最低价格为437.5*2.7=1181.25（元），指望吃零食来满足人体的基本需求还是挺贵的！</p>
+<p><img src="线性规划几何解法.jpg" alt=""></p>
+<p>通过观察+直觉，可以得出结论：最优解总是出现在顶点（vertex）的位置。</p>
+<p>为什么一定在顶点呢？</p>
+<p>下面是几种使用几何解法可能遇到的情况，很明显，只有(a)和(b)有最优解。(a)的最优解只有一个（在顶点），(b)的最优解有无数个（顶点也是最优解），(c)无界解（无界，无法给出最优解），(d)无可行解（连可行解都没有，更谈不上最优解了）。</p>
+<p><img src="几何解法问题.jpg" alt=""></p>
+<p>所以，通过几何视角去看线性规划，我们发现，如果有最优解的话，一定会在顶点出现（可能有其它的点也最优，但是顶点肯定会出现）。而且，可行域必然是一个凸集。什么是凸集？集合中任意两点的连线仍然在集合中，如下图。</p>
+<p><img src="凸集.jpg" alt=""></p>
+<h3 id="-7406-89e3-7ebf-6027-89c4-5212-2014-2014-4ee3-6570-89c6-89d2-">理解线性规划——代数视角</h3>
+<p>为什么要用这么多视角看线性规划问题呢？还有前面所谓的类型转换（把线性规划模型转换为标准形式）。Why？</p>
+<p>我们感受到了几何辅助我们求最优解的魅力，但是有一个问题。如果不是二维的话（比如宅男除了考虑能力和蛋白质，还考虑钙的含量、铁的含量、锌的含量），我们如何画图，如何求解最优值？</p>
+<p>这时候几何的优势就很弱了。所以，我们才用代数的视角分析一下线性规划问题。代数不像几何那么直观，它的优势在于适合理论的分析、公式推导。</p>
+<p>回答第二个问题，为什么非要转成所谓的标准形式？因为通过这部分代数视角的分析，我们得出了一些解决线性规划问题的办法。要想使用这里的办法，标准形式会很方便。为什么很方便呢？因为一系列的约束等式可以理解为方程组，所以，可以使用矩阵来表示。</p>
+<p>通过矩阵和线性代数的方法，在这里定义一系列晦涩的概念，如可行基、基解等。很抽象，但是可以通过实际的例子体会。这些概念可以帮助我们像解决高维的线性规划问题，也就是用几何方式难以表达的问题。</p>
+<h3 id="-7406-89e3-7ebf-6027-89c4-5212-2014-2014-4ee3-6570-89c6-89d2--1">理解线性规划——代数视角</h3>
+<p>先回顾一下基本概念，很简单。</p>
+<ol>
+<li>可行解：满足约束条件的解称为可行解</li>
+<li>可行域：全部的可行解构成了可行域</li>
+<li>最优解：使目标函数达到最优值（标准形式里是最大值）的可行解称为最优解</li>
+</ol>
+<p>可以这样对比，星空是所有可能的取值，银河系是可行域，银河系的每一颗星星都是可行解，最优解（最适合人类生存的）是地球。</p>
+<p>开始学习高大上的新概念。</p>
+<p>以上面的“宅男”为例，上面已经转换得到了标准形式：</p>
+<p>$$max \text{ } -6.8x_1-2.7x_2 + 0x_3 + 0x_4$$</p>
+<p>$$668x_1+883x_2 -x_3 + 0x_4 = 16800$$</p>
+<p>$$1.5x_1+1.2x_2 +0x_3 -x_4 = 525$$</p>
+<p>$$x_1 \geq 0, x_2 \geq 0, x_3 \geq 0, x_4 \geq 0$$</p>
+<p>可以写出约束方程组的系数矩阵：</p>
+<p>$$A=\begin{bmatrix}<br>668 &amp; 883  &amp; -1  &amp; 0 \cr<br>1.5 &amp; 1.2 &amp; 0 &amp; -1<br>\end{bmatrix}$$</p>
+<p>现在，我们要求一下矩阵的秩（矩阵中不为0的子式的最大阶数）。得到r(A)=2。</p>
+<p>我们用$(P_1,P_2,P_3,P_4)$代表矩阵A，每一个P代表一列。</p>
+<p>因为我们已经得到了r(A)=2，所以，$(P_1,P_2),(P_1,P_3),(P_1,P_4),(P_2,P_3),\dots, (P_3,P_4)$，一共C(4,r(A))=C(4,2)=6种可能。这六个子阵，如果满足满秩的条件（矩阵的行列式不为0），就称其为一个基。</p>
+<p>例如，$(P_2,P_3)$就是一个基。当然，其它的5种情况都满足满秩的条件，也是基。</p>
+<p>对于一个基，以$(P_2,P_3)$为例，相应的$x_2,x_3$则称为基变量，$x_1,x_4$称为非基变量。把非基变量置为0，可以求出基变量的值。最终得到$X=(x_1,x_2,x_3,x_4)=(0,437.5,369512.5,0)$，X称为基解。因为所有的变量（基变量和非基变量）都是非负的，我们称X是一个基可行解。对应的基$P_2,P_3$被称作可行基。</p>
+<p>至此，新概念介绍完毕。</p>
+<p>这个过程还是有些麻烦。我们最终是想得到基可行解。得到基可行解必须先得到基，基是一个满秩的子阵。有了基还不行。每个基对应一个基解，只有基解的每一个变量都非负才能认为当前的基解是一个基可行解，对应的基就是一个可行基。</p>
+<p>因为基的个数不是唯一的，所以可能会有很多个基可行解，相当于可行域的顶点。我们知道这些顶点中会有一个或者若干个能够使目标函数最优，所以只需要在这些顶点中寻找使目标函数最优的点即可。</p>
+<p>升华一下，就得到了两个线性规划问题的定理：</p>
+<ol>
+<li>线性规划问题的基可行解x对应于可行域D的顶点</li>
+<li>若可行域有界，线性规划问题的目标函数一定可以在其可行域的顶点上达到最优，即一定存在一个基可行解是最优解</li>
+</ol>
+<p>不要小看这个基可行解和顶点的关系，这个把代数和几何联系起来了！以后可以通过求基可行解的线性代数方法来得到一切顶点，而顶点之中就有我们要的最优解。</p>
+<h3 id="-5355-7eaf-5f62-65b9-6cd5-ff08-Simplex_algorithm-ff09-">单纯形方法（Simplex algorithm）</h3>
+<p>经过各种努力终于得到了线性规划模型的标准形式，可以使用单纯形方法解决。</p>
+<p>单纯形方法是一种寻找最优值的方法，主要思想是先找一个基可行解，看一看是不是最优的，如果不是，则找另外一个解，再进行判定，如此迭代运算，直至找到最优解或者判定其无界。</p>
+<p>可以通过一个实际的例子理解单纯形方法。</p>
+<p>这里不使用上面“宅男”的例子说明单纯形方法，具体原因后面会说。</p>
+<p>使用另一个例子（假设经过各种变换，终于得到了标准的形式），如下：</p>
+<p>$$max -x_1+2x_2+x_3$$</p>
+<p>$$2x_1+x_2+x_3+x_4=4$$</p>
+<p>$$x_1+2x_2+x_5=6$$</p>
+<p>$$x_1,x_2,x_3,x_4,x_5 \geq 0$$</p>
+<p>下面，我们使用单纯形方法求解这个线性规划问题，求解过程如下图。</p>
+<p><img src="单纯形法求解过程.jpg" alt=""></p>
+<p>过程说明：</p>
+<ol>
+<li>首先，把目标函数、约束条件填写到一个表中，得到Pivot 1的第一个图（因为目标函数不是一个等式，令其等于0）</li>
+<li>在Pivot 1的第二个图中的灰色区域找单位列向量，并且要求橘色的区域值为0，可以得到红色虚线的部分。这时候的x4、x5被选中作为基变量，所以Basis={x4,x5}。有了基变量就会有非基变量，看一下非基变量是否全小于等于0，可以看到有2和1不满足条件。这时候选择一个较大的，即2作为下一轮的基变量，并把2的值化为1（同时除以2），把2上面两列的对应位置的值化为0（与当前列进行相加减来达到这个目的）</li>
+<li>经过计算，我们会得到Pivot 2的第一个图。可以看到，原来红色区域的2已经被化为了1，并且它上面的两个单元格的值化为了0。这时候的基变量就是x2和x4，和上面的方法一样，在非基变量中找大于0且较大的那个，这里是x3。选择一个较小的单元（第二个图的红色区域）进行基变换，也就是把当前单元格变成1，其它同列的单元格变成0</li>
+<li>Pivot 3中，我们发现所有的非基变量都是小于等于0的（在这里是小于0），变换结束。我们可以得出结论，当前的基变量x2和x3和非基变量构成的解X为基可行解，并且是最优解</li>
+</ol>
+<p>其实，上面的“非基变量小于等于0”这种说法是不恰当的。这里并不是“非基变量”小于等于0，而是对应的目标函数的系数小于等于0。我们把这些系数叫做检验数。</p>
+<p>通过检验数，可以定义算法的结束条件。</p>
+<ol>
+<li>所有的非基变量的检验数小于0，则有唯一最优解</li>
+<li>所有的非基变量的检验数小于等于0，且至少有一个非基变量的检验数等于0，则有无限个最优解</li>
+<li>所有的非基变量的检验数大于0，且对应列向量的各个分量都小于等于0，则无界解</li>
+<li>所有的非基变量的检验数大于0，且对应列向量的各个分量存在大于0的，则继续进行基变换（即算法没有结束）</li>
+</ol>
+<p>还有，这里没有用什么“宅男”的例子。如若使用那个例子，会发现在算法第一步的时候，找不到单位列向量，所以算法无法继续下去。</p>
+<p>有人工变量法可以解决这个问题，比如大M法、两阶段法，可以参看一下中国地质大学的<a href="http://course.cug.edu.cn/cugFirst/operational_research/main/charpter1/p4.htm" target="_blank">讲义</a>。</p>
+<p>主要的方法是通过引入若干个变量，人工构造单位列向量使得算法能够继续下去。</p>
+<p>注：上面介绍单纯形法用的表不是单纯形表，个人感觉入门的话单纯形表有点死记硬背的感觉，过程很明确，即便是不理解也能用单纯形法，这样不太好吧~</p>
+<p>结束语：这个线性规划学的好生纠结，感谢以下优质资源：</p>
+<ol>
+<li>Princeton线性规划课件：<a href="http://www.cs.princeton.edu/~wayne/kleinberg-tardos/" target="_blank">http://www.cs.princeton.edu/~wayne/kleinberg-tardos/</a></li>
+<li>游庆山老师讲单纯形法视频：<a href="http://v.youku.com/v_show/id_XMjY0NjI0MDAw.html" target="_blank">http://v.youku.com/v_show/id_XMjY0NjI0MDAw.html</a></li>
+<li>清华胡运权老师讲线性规划课件：<a href="http://wenku.baidu.com/view/aa0f5742f242336c1eb95e5d.html" target="_blank">http://wenku.baidu.com/view/aa0f5742f242336c1eb95e5d.html</a></li>
+</ol>
+<p><code>-- EOF --</code></p>
+
+      
+    </div>
+    
+    
+    <footer>  
+          
+          
+<nav id="pagination">
+  
+    <a href="/2013/11/29/introduction-to-algorithms-tutorial-6-2/" class="alignleft prev" title="自学算法导论(6-2)">自学算法导论(6-2)</a>
+  
+  
+    <a href="/2013/11/26/data-mining-tutorial-5-5/" class="alignright next" title="数据挖掘入门(5-5)">数据挖掘入门(5-5)</a>
+  
+  <div class="clearfix"></div>
+</nav>
+
+          
+  
+  <div class="categories">
+    <a href="/categories/自学算法导论/">自学算法导论</a>
+  </div>
+
+          
+  
+  <div class="tags">
+    <a href="/tags/算法/">算法</a>, <a href="/tags/linear programming/">linear programming</a>, <a href="/tags/线性规划/">线性规划</a>, <a href="/tags/单纯形/">单纯形</a>
+  </div>
+
+          
+  <div class="addthis addthis_toolbox addthis_default_style">
+    
+    
+    
+      <a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
+    
+    
+    <a class="addthis_counter addthis_pill_style"></a>
+  </div>
+  <!-- JiaThis Button BEGIN -->
+    <div class="jiathis_style">
+        <span class="jiathis_txt">分享到：</span>
+        <a class="jiathis_button_icons_1"></a>
+        <a class="jiathis_button_icons_2"></a>
+        <a class="jiathis_button_icons_3"></a>
+        <a class="jiathis_button_icons_4"></a>
+        <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+        <a class="jiathis_counter_style"></a>
+    </div>
+    <script type="text/javascript" src="http://v3.jiathis.com/code_mini/jia.js" charset="utf-8"></script>
+    <!-- JiaThis Button END -->
+
+      
+      <div class="clearfix">
+        <time datetime="2013-11-27T05:42:54.000Z">11月 27 2013</time>
+        
+      </div>
+    </footer>
+  </div>
+</article>
+
+
+  <div id="profile"></div>
+
+
+
+<section id="comment">
+  <h1 class="title">留言</h1>
+
+  
+      <!-- Duoshuo Comment BEGIN -->
+<div class="ds-thread"></div>
+<!-- Duoshuo Comment END -->
+  
+</section>
+
+
+</div></div>
+    <aside id="sidebar" class="alignright">
+  <div class="search">
+  <form action="//google.com/search" method="get" accept-charset="utf-8">
+    <input type="search" name="q" results="0" placeholder="搜索">
+    <input type="hidden" name="q" value="site:zhangxiaoyang.me">
+  </form>
+</div>
+
+  
+<div class="widget tag">
+  <h3 class="title">最新文章</h3>
+  <ul class="entry">
+    
+      <li>
+        <a href="/2014/01/12/introduction-to-algorithms-tutorial-9/">自学算法导论(9)</a>
+      </li>
+    
+      <li>
+        <a href="/2014/01/10/introduction-to-algorithms-tutorial-8/">自学算法导论(8)</a>
+      </li>
+    
+      <li>
+        <a href="/2013/12/30/introduction-to-algorithms-tutorial-7/">自学算法导论(7)</a>
+      </li>
+    
+      <li>
+        <a href="/2013/12/01/data-mining-tutorial-6/">数据挖掘入门(6)</a>
+      </li>
+    
+      <li>
+        <a href="/2013/11/29/introduction-to-algorithms-tutorial-6-2/">自学算法导论(6-2)</a>
+      </li>
+    
+  </ul>
+</div>
+
+
+  
+<div class="widget tagcloud">
+  <h3 class="title">标签云</h3>
+  <div class="entry">
+    <a href="/tags/FP-tree/" style="font-size: 10.00px;">FP-tree</a><a href="/tags/Ford-Fulkerson/" style="font-size: 10.00px;">Ford-Fulkerson</a><a href="/tags/KDD/" style="font-size: 10.00px;">KDD</a><a href="/tags/KNN/" style="font-size: 10.00px;">KNN</a><a href="/tags/NP/" style="font-size: 10.00px;">NP</a><a href="/tags/NPC/" style="font-size: 10.00px;">NPC</a><a href="/tags/NPH/" style="font-size: 10.00px;">NPH</a><a href="/tags/OLAP/" style="font-size: 10.00px;">OLAP</a><a href="/tags/apriori/" style="font-size: 10.00px;">apriori</a><a href="/tags/back propagation/" style="font-size: 10.00px;">back propagation</a><a href="/tags/bagging/" style="font-size: 10.00px;">bagging</a><a href="/tags/boosting/" style="font-size: 10.00px;">boosting</a><a href="/tags/data mining/" style="font-size: 17.50px;">data mining</a><a href="/tags/divide and conquer/" style="font-size: 10.00px;">divide and conquer</a><a href="/tags/dynamic programing/" style="font-size: 10.00px;">dynamic programing</a><a href="/tags/greedy/" style="font-size: 10.00px;">greedy</a><a href="/tags/linear programming/" style="font-size: 12.50px;">linear programming</a><a href="/tags/stable matching/" style="font-size: 10.00px;">stable matching</a><a href="/tags/关联规则/" style="font-size: 10.00px;">关联规则</a><a href="/tags/决策树/" style="font-size: 10.00px;">决策树</a><a href="/tags/分类/" style="font-size: 15.00px;">分类</a><a href="/tags/动态规划/" style="font-size: 10.00px;">动态规划</a><a href="/tags/单纯形/" style="font-size: 10.00px;">单纯形</a><a href="/tags/回归分析/" style="font-size: 10.00px;">回归分析</a><a href="/tags/对偶/" style="font-size: 10.00px;">对偶</a><a href="/tags/平摊分析/" style="font-size: 10.00px;">平摊分析</a><a href="/tags/总结/" style="font-size: 12.50px;">总结</a><a href="/tags/数据仓库/" style="font-size: 10.00px;">数据仓库</a><a href="/tags/数据挖掘/" style="font-size: 17.50px;">数据挖掘</a><a href="/tags/数据立方体/" style="font-size: 10.00px;">数据立方体</a><a href="/tags/数据预处理/" style="font-size: 10.00px;">数据预处理</a><a href="/tags/神经网络/" style="font-size: 10.00px;">神经网络</a><a href="/tags/算法/" style="font-size: 20.00px;">算法</a><a href="/tags/算法分析/" style="font-size: 10.00px;">算法分析</a><a href="/tags/线性规划/" style="font-size: 12.50px;">线性规划</a><a href="/tags/组合分类/" style="font-size: 10.00px;">组合分类</a><a href="/tags/组合数学/" style="font-size: 10.00px;">组合数学</a><a href="/tags/网络攻防/" style="font-size: 10.00px;">网络攻防</a><a href="/tags/网络流/" style="font-size: 10.00px;">网络流</a><a href="/tags/聚类/" style="font-size: 10.00px;">聚类</a>
+  </div>
+</div>
+
+
+  
+<div class="widget tag">
+  <h3 class="title">分类</h3>
+  <ul class="entry">
+  
+    <li><a href="/categories/总结/">总结</a><small>2</small></li>
+  
+    <li><a href="/categories/数据挖掘入门/">数据挖掘入门</a><small>10</small></li>
+  
+    <li><a href="/categories/自学算法导论/">自学算法导论</a><small>11</small></li>
+  
+  </ul>
+</div>
+
+
+  <iframe width="100%" height="100" class="share_self" frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=zh_cn&amp;width=0&amp;height=550&amp;fansRow=2&amp;ptype=1&amp;speed=0&amp;skin=1&amp;isTitle=1&amp;noborder=0&amp;isWeibo=0&amp;isFans=0&amp;uid=1704839092&amp;verifier=5f359d0c&amp;dpc=1"></iframe>
+</aside>
+    <div class="clearfix"></div>
+  </div>
+  <footer id="footer" class="inner"><div class="aligncenter">
+  
+  &copy; 2014 zhangxiaoyang
+  
+</div>
+
+<div class="clearfix"></div></footer>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+
+
+
+    <script type="text/javascript">
+        (function(){
+
+            $(window).scroll(function(){
+
+                var scrollTop = $(window).scrollTop();
+                if ( scrollTop >200 ){
+                    $("#main-nav").removeClass('normal_mode').addClass('top_mode');
+                } else{
+                    $("#main-nav").removeClass('top_mode').addClass('normal_mode');
+                }
+
+            });
+
+        })();
+    </script>
+
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+  <script type="text/javascript">
+  (function($){
+    $('.fancybox').fancybox({
+      fitToView: false
+    });
+  })(jQuery);
+  </script>
+
+
+
+    <script type="text/javascript">
+      var duoshuoQuery = {short_name:"zhangxiaoyang"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.src = 'http://static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0] 
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+
+
+
+    
+<link href="/css/prettify-github.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="/js/prettify.js"></script>
+<script type="text/javascript">
+  $(function() {
+      $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto');
+      $('code').addClass('prettyprint').attr('style', 'overflow:auto');
+      window.prettyPrint && prettyPrint();
+  });
+</script>
+
+
+
+
+    <!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],        
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"] ]
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+
+    
+<script type="text/javascript">
+(function() {
+    var $backToTopTxt = "TOP", $backToTopEle = $('<div class="backToTop"></div>').appendTo($("body"))
+        .text($backToTopTxt).attr("title", $backToTopTxt).click(function() {
+            $("html, body").animate({ scrollTop: 0 }, 120);
+    }), $backToTopFun = function() {
+        var st = $(document).scrollTop(), winh = $(window).height();
+        (st > 0)? $backToTopEle.show(): $backToTopEle.hide();    
+        //IE6�µĶ�λ
+        if (!window.XMLHttpRequest) {
+            $backToTopEle.css("top", st + winh - 166);    
+        }
+    };
+    $(window).bind("scroll", $backToTopFun);
+    $(function() { $backToTopFun(); });
+})();
+</script>
+
+
+
+<script type="text/javascript">
+  $(function(){
+    // animation
+    $('.title').hover(
+      function() {      
+        $(this).stop().animate(
+          {'marginLeft': '10px'}, 200
+        );   
+      }, 
+      function() {       
+        $(this).stop().animate({'marginLeft': '0px'}, 200);        
+    });   
+  });
+</script>
+</body>
+</html>

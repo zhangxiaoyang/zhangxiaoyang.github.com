@@ -1,0 +1,529 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>自学算法导论(1) | 张小洋的布劳阁</title>
+  <meta name="author" content="zhangxiaoyang">
+  
+  <meta name="description" content="张小洋的布劳阁">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="自学算法导论(1)"/>
+  <meta property="og:site_name" content="张小洋的布劳阁"/>
+
+  
+    <meta property="og:image" content="undefined"/>
+  
+
+  <link href="/favicon.ico" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="张小洋的布劳阁" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-46826647-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+  
+  <meta name="google-site-verification" content="Fjy6iUBWNJ0NBNFFzR8ZxFrkCxJ9rvHeBBYPyue-HBw" />
+  <meta name="baidu-site-verification" content="yMxHzOMMAE" />
+</head>
+
+<body>
+  <header id="header" class='normal_mode'>
+    <div class='profile'>
+  <h1><a href="/"><img class="logo" src="/css/img/logo.png"/></a></h1>
+  <h2>
+  	<a href="/">
+  	张小洋的布劳阁
+  	爱美工的程序员
+  	</a>
+  </h2>
+</div>
+<nav id="main-nav">
+  <ul class='inner'>
+    
+      <li><a href="/">Blog</a></li>
+    
+      <li><a href="/archives">Archives</a></li>
+    
+      <li><a href="/about">About</a></li>
+    
+  </ul>
+  <div class="clearfix"></div>
+</nav>
+<div class="clearfix"></div>
+  </header>
+  <div id="content" class="inner">
+    <div id="main-col" class="alignleft"><div id="wrapper"><article class="post">
+  
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
+  <div class="post-content">
+    <header>
+      
+  
+    <h1 class="title">自学算法导论(1)</h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <p>算法设计——程序设计中的艺术。</p>
+<a id="more"></a>
+
+<h2 id="Introduction">Introduction</h2>
+<p>为什么这么说呢？</p>
+<p>V. Vazirani在<a href="http://cs.gzu.edu.cn/lab/upload/cont/资料中心/近似算法.pdf" target="_blank">《Approximation algorithm》</a>一书中提到：</p>
+<blockquote>
+<p>Our philosophy on the design and exposition of algorithms is nicely illustrated by the following analogy with an aspect of Michelangelo’s art. A major part of his effort involved looking for interesting pieces of stone in the<br>quarry and staring at them for long hours to determine the form they naturally wanted to take. The chisel work exposed, in a minimalistic manner, this form. By analogy, we would like to start with a clean, simply stated problem<br>(perhaps a simplified version of the problem we actually want to solve in practice). Most of the algorithm design effort actually goes into understanding the algorithmically relevant combinatorial structure of the problem. The<br>algorithm exploits this structure in a minimalistic manner. The exposition of algorithms in this book will also follow this analogy, with emphasis on stating the structure offered by problems, and keeping the algorithms minimalistic.</p>
+</blockquote>
+<p>此书的封面中也显示了一些米开朗基罗的手稿。</p>
+<p><img src="图书封面.jpg" alt=""></p>
+<p>可以看到，V. Vazirani很强调算法设计的艺术性。而算法课的卜东波老师也引用V. Vazirani的话，作为本门课的开篇。</p>
+<p>原来以为算法就是解决问题的方法，我们学算法就是学一下别人设计好的很有名的算法。</p>
+<p>现在想想，其实不然。</p>
+<p>我们应该学会设计有艺术性的算法，美丽的算法。</p>
+<p>就像《Algorithm design》中所说的：非常clean，同时我们要证明算法是正确的，并且算法所花费的时间是我们可以接受的。具体的算法设计过程如下：</p>
+<p><img src="算法设计过程.jpg" alt=""></p>
+<p>感觉这样想还是太笼统抽象了~最好有一个例子，让我们感受一下有艺术细胞的算法。</p>
+<p>果不其然，卜老师给出了第一个例子——Stable Matching。这可不是一个普通的算法，这个可是获过诺贝尔奖的！</p>
+<p>OMG！赶紧收拾一下心情，看一看艺术大师的作品！</p>
+<h2 id="Representative_problem_-_stable_matching">Representative problem - stable matching</h2>
+<p>算法的提出可能是为了解决某些现实问题，也就是这个natural and practical concerns。</p>
+<p>有一天，David Gale对好基友Lloyd Shapley说：能不能设计一个算法，用来帮助学校招生或者公司招聘之类的问题，对了，关键是要self-enforcing！</p>
+<p>Shapley困惑了有木有：什么是self-enforcing？这个月的补贴还没发呢你这是要闹哪样啊！再说了，现在的招生和招聘有什么问题么？</p>
+<p>Gale必须得说服Shapley一起来解决这个问题，因为N年以后是要获诺贝尔奖的啊！</p>
+<p>Gale：Shapley贤弟，莫着急，且听我慢慢道来…</p>
+<p>你想想看，你去烧饼店和肉火烧店应聘，由于你能力出众，他们两家都决定聘用你。而你心里更喜欢肉火烧这个行业，怎么办？你肯定会拒绝烧饼店的聘用了，挥一挥衣袖去肉火烧店工作。<br>这样还没完，如果和你一起去面试的小黄也拒绝了烧饼店，去肉火烧店呢？<br>……<br>这样想一下，烧饼店岂不是很可怜！最后没招到人，老板一个人兼任所有职务，还有没有天理，不得把他累死吗！</p>
+<p>Shapley：貌似有点道理，那你说的self-enforcing应该就是一个美好的结局呗，老板招到人了，而应聘者也去了他们想去的地方。</p>
+<p>Gale：差不多这个意思吧。帮助社会谋福利，还不加入我！</p>
+<p>Shapley：好吧，为人民服务。对了，我学过算法课，面对问题不要慌，应该先捋一捋。给出一个clean and simple statement of a problem。那我就把这个问题叫做stable matching problem吧。</p>
+<p>下面我来描述一下这个问题：</p>
+<p>找一个稳定的匹配（stable matching），稳定匹配的两个人愿意白首偕老，在茫茫人海中他们两个都觉得对方是最合适的。（可能他们两个中的某人觉得人群中还是有更好的，但是那个更好的人不会成为小三，因为他也心有所属了。）</p>
+<p>Gale：我也上过算法课！描述完问题了，下面由我来建模（Formulation）吧！</p>
+<p>Input：n个男生和n个女生，他们每一个人的脑海中都心动女生、男生的排行，也就是说他们心里其实都对异性编好号了，最喜欢的编号为1，第二喜欢的编号为2，以此类推。</p>
+<p>Output：稳定的匹配，即生成n对情侣，他们里面没有不稳定的情况存在（如，两对情侣见面后，某男生和对方的女生好上了，如下图）。</p>
+<p><img src="不稳定匹配.jpg" alt=""></p>
+<p>Gale：3对情侣的情况，我们也需要考察一下，看看什么叫做不稳定的匹配。其中，Xavier、Yancey、Zeus为三位男生，Amy、Bertha、Clare为三位女生。用两张表来分别表示男生和女生对异性的排名。</p>
+<p><img src="3对情侣的不稳定匹配.jpg" alt=""></p>
+<p>这里面有不稳定的匹配吗？有！Xavier和Bertha就是，估计他们俩一见面就会好上，原来的男朋友女朋友就都不管了，这就是爱情，唉。</p>
+<p>Shapley：貌似这是在考眼力啊，完全可以PK找你妹了！怎样才能确定不包含不稳定的匹配，即找到稳定的匹配呢？讨论了半天，也不给个算法，能不能先设计个alpha版的算法啊！</p>
+<p>Gale：我倒是想出来了个<strong>improve strategy</strong>，且听我絮叨絮叨。直接看伪代码吧，很简单，Basic idea就不再赘述啦。</p>
+<pre class="lang:default decode:true " >
+随机的把男生、女生配对
+while 存在不稳定的匹配
+    随便选择一个不稳定的匹配
+    执行一次SWITCHING操作，即把当前的不稳定性变成稳定
+</pre> 
+
+<p>举个例子吧，这个算法成功将unstable变成了stable，如下图。</p>
+<p><img src="算法成功的情况.jpg" alt=""></p>
+<p>Shapley：有成功的例子但不能说明你的算法一定就正确啊！我就找到一个不成功的例子，如下图。你看，经过各种SWITCHING，最终回到了初始状态，死循环！</p>
+<p><img src="算法失败的情况.jpg" alt=""></p>
+<p>Gale：啊？这都被你找到了！那怎么办啊，呜呜呜！</p>
+<p>Shapley：没事！你的算法给了我很多启发啊，我搞了个<strong>increment strategy</strong>，看看这个有没有破绽。</p>
+<p>Basic idea：与improved strategy不同，这个算法是从局部的匹配一步步增量扩展到全部都稳定匹配。（Improved strategy是先把所有的都匹配起来，不管稳定不稳定，然后去消除不稳定的匹配，即SWITCHING。）</p>
+<p>具体的方法是抽象出一种propose-engage的过程，男生负责求婚，女生负责接收和拒绝。也就是说，男生依次从自己的偏好列表中选一个妹子去求婚，如果妹子答应了，男生就要负责到底。而女生在已经接受求婚的情况下仍然可以接受更好男生的求婚，原来的求婚就作废了。这时候，男生只能继续寻找适合自己的妹子，曾经抛弃自己的妹子他不会再去打扰了，祝他们幸福。具体的伪代码实现：</p>
+<pre><code>for m = 1 to M //存放男生是否已经配对
+    m_state[m] = FREE
+for w = 1 to W //存放女生是否已经配对
+    w_state[w] = FREE
+while TRUE
+    if 男生都配对了
+        return
+    随便选择一个没有配对的男生
+    w = 男生还没有求过婚的妹子（从偏爱列表中依次查找）
+    if w_state[w] == FREE //这个女生没有配对
+        m_state[m] = w //男生已经和w配对
+        w_state[w] = m //女生已经和m配对
+    else if w更喜欢m，准备抛弃原来的w_state[w]
+        m_state[w_state[w]] = FREE //男生被抛弃了，继续光棍
+        w_state[w] = m //女生向新的男朋友示爱
+        m_state[m] = w //新的男生顺利挤掉女生的旧爱
+    else //女生已经有男朋友了，各方面条件要比现在这个求婚的要好
+        //什么都不做，表示拒绝求婚
+</code></pre><p>Gale：NB啊！我还真没发现有什么破绽，这个propose-engage的思想很赞啊！</p>
+<p>Shapley：嘿嘿，多亏了你的启发~既然一眼看不出来对不对，那就证明一下吧！</p>
+<p>我们分两步来证明该算法的正确性。</p>
+<ol>
+<li><p>证明所有的男生、女生都将配对<br>证明：假设有一个男生直到算法结束也没有找到女朋友。既然有一个男生处于单身状态，那么肯定也有一个女生处于单身状态（总不能有某个男生找了2个女朋友吧）。既然有一个男生和一个女生都是单身了，他们还没有在一起，只能说明这个男生没有去和这个女生求婚（如果求过婚，女生肯定永远都处于有男朋友的状态）。不对啊，通过伪代码我们看到，男生会像所有的女生求婚的，直到找到一个女朋友，这样就矛盾了。这样，通过反证法，我们得到了第一个结论，即最终男女都将配对。</p>
+</li>
+<li><p>证明这种配对是稳定的<br>证明：假设有一个男生直到算法结束也没有找到稳定的匹配。也就是说，这个男生喜欢一个比现在的女朋友更好的女生，而刚好那个女生也喜欢这个男生。我们需要分情况讨论一下了：<br>(1) 男生没有和这个女生求过婚。捋一捋，男生和当前和他在一起的妹子求过婚，和那啥他更爱的女生没求过婚。这不矛盾了吗，因为男生肯定是按照偏好列表的顺序依次求婚，先和谁求就说明更喜欢谁。<br>(2) 男生和这个女生求过婚。既然求过婚了又没在一起，说明那个女生有更喜欢的人了。既然有更喜欢的人了，怎么可能和这个男生玩暧昧呢？依然是和假设矛盾。</p>
+</li>
+</ol>
+<p>所以，我们的算法是正确的。</p>
+<p>其实，还有一个问题：我们每次产生的稳定匹配是不是都一样呢，会不会出现两种稳定匹配的情况？答案是不会，即稳定匹配是唯一的，此处不给予证明了。</p>
+<p>Gale：果然是正确的算法，性能怎么样啊？让我来求一下时间复杂度吧！</p>
+<p>通过伪代码可以看到，当男生都配对的时候就会结束算法。所以，最坏的情况是延长男生配对的时间，也就是增加男生求婚的次数。求婚次数最多最多也就是$n^2$，即每一个男生都求n次婚。所以，时间复杂度为$O(n^2)$。</p>
+<p>就这样，好基友不搞基搞出了诺贝尔奖。当然，具体的科研过程肯定不是我调侃的这样啦~</p>
+<p>通过第一个伟大的例子——stable matching可以学习到算法设计的基本思路。</p>
+<p>大致是：寻找一个问题 → 简单清晰的描述问题 → 建模 → 设计算法（basic idea和伪代码） → 证明算法的正确性 → 分析算法的复杂度。</p>
+<h2 id="-9644-5f55-">附录</h2>
+<p>Stable matching python实现代码，测试数据<a href="http://pan.baidu.com/s/15Tlyf" target="_blank">点我</a>下载。</p>
+<pre><code>import random
+
+def ReadToDict(filename):
+    preferred_dict = {}
+    try:
+        file = open(filename)
+    except:
+        print &#39;can not find file:&#39;, filename
+        exit(-1)
+
+    for line in file:
+        name = line.split(&#39;:&#39;)[0].strip()
+
+        preferred_list = []
+        for preferred in line.replace(name+&#39;:&#39;, &#39;&#39;).strip().split(&#39; &#39;):
+            preferred_list.append(preferred)
+        preferred_dict.update({name:preferred_list})
+    file.close()
+    return preferred_dict
+
+def FindABoy(boys_state):
+    while True:
+        index = random.randint(0, len(boys_state)-1)
+        if boys_state[index] == &#39;FREE&#39;:
+            return &#39;B&#39; + str(index)
+
+def FindAGirl(preferred_list):
+    for i in range(len(preferred_list)):
+        if preferred_list[i][0] == &#39;G&#39;:
+            preferred_list[i] = preferred_list[i].lower()
+            return preferred_list[i].upper()
+
+def StableMatching(boys_dict, girls_dict):
+    boys_state = [ &#39;FREE&#39; for i in boys_dict ]
+    girls_state = [ &#39;FREE&#39; for i in girls_dict ]
+
+    while True:
+        if &#39;FREE&#39; not in boys_state:
+            return boys_state
+        boy_name = FindABoy(boys_state)
+        boy_index = int(boy_name.replace(&#39;B&#39;,&#39;&#39;))
+        girl_name = FindAGirl(boys_dict[boy_name])
+        girl_index = int(girl_name.replace(&#39;G&#39;,&#39;&#39;))
+        if girls_state[int(girl_index)] == &#39;FREE&#39;:
+            girls_state[girl_index] = boy_name
+            boys_state[boy_index] = girl_name
+        elif girls_dict[girl_name].index(boy_name) &lt; girls_dict[girl_name].index(girls_state[girl_index]):
+            boys_state[int(girls_state[girl_index].replace(&#39;B&#39;, &#39;&#39;))] = &#39;FREE&#39;
+            girls_state[girl_index] = boy_name
+            boys_state[boy_index] = girl_name
+        else:pass
+    return &#39;Never be here&#39;
+if __name__ == &#39;__main__&#39;:
+    boys_dict = ReadToDict(&#39;boys_rankings.txt&#39;)
+    girls_dict = ReadToDict(&#39;girls_rankings.txt&#39;)
+    print StableMatching(boys_dict, girls_dict)
+</code></pre><p><code>-- EOF --</code></p>
+
+      
+    </div>
+    
+    
+    <footer>  
+          
+          
+<nav id="pagination">
+  
+    <a href="/2013/11/07/introduction-to-algorithms-tutorial-2-1/" class="alignleft prev" title="自学算法导论(2-1)">自学算法导论(2-1)</a>
+  
+  
+  <div class="clearfix"></div>
+</nav>
+
+          
+  
+  <div class="categories">
+    <a href="/categories/自学算法导论/">自学算法导论</a>
+  </div>
+
+          
+  
+  <div class="tags">
+    <a href="/tags/算法/">算法</a>, <a href="/tags/stable matching/">stable matching</a>
+  </div>
+
+          
+  <div class="addthis addthis_toolbox addthis_default_style">
+    
+    
+    
+      <a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
+    
+    
+    <a class="addthis_counter addthis_pill_style"></a>
+  </div>
+  <!-- JiaThis Button BEGIN -->
+    <div class="jiathis_style">
+        <span class="jiathis_txt">分享到：</span>
+        <a class="jiathis_button_icons_1"></a>
+        <a class="jiathis_button_icons_2"></a>
+        <a class="jiathis_button_icons_3"></a>
+        <a class="jiathis_button_icons_4"></a>
+        <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+        <a class="jiathis_counter_style"></a>
+    </div>
+    <script type="text/javascript" src="http://v3.jiathis.com/code_mini/jia.js" charset="utf-8"></script>
+    <!-- JiaThis Button END -->
+
+      
+      <div class="clearfix">
+        <time datetime="2013-11-05T06:08:54.000Z">11月 5 2013</time>
+        
+      </div>
+    </footer>
+  </div>
+</article>
+
+
+  <div id="profile"></div>
+
+
+
+<section id="comment">
+  <h1 class="title">留言</h1>
+
+  
+      <!-- Duoshuo Comment BEGIN -->
+<div class="ds-thread"></div>
+<!-- Duoshuo Comment END -->
+  
+</section>
+
+
+</div></div>
+    <aside id="sidebar" class="alignright">
+  <div class="search">
+  <form action="//google.com/search" method="get" accept-charset="utf-8">
+    <input type="search" name="q" results="0" placeholder="搜索">
+    <input type="hidden" name="q" value="site:zhangxiaoyang.me">
+  </form>
+</div>
+
+  
+<div class="widget tag">
+  <h3 class="title">最新文章</h3>
+  <ul class="entry">
+    
+      <li>
+        <a href="/2014/01/12/introduction-to-algorithms-tutorial-9/">自学算法导论(9)</a>
+      </li>
+    
+      <li>
+        <a href="/2014/01/10/introduction-to-algorithms-tutorial-8/">自学算法导论(8)</a>
+      </li>
+    
+      <li>
+        <a href="/2013/12/30/introduction-to-algorithms-tutorial-7/">自学算法导论(7)</a>
+      </li>
+    
+      <li>
+        <a href="/2013/12/01/data-mining-tutorial-6/">数据挖掘入门(6)</a>
+      </li>
+    
+      <li>
+        <a href="/2013/11/29/introduction-to-algorithms-tutorial-6-2/">自学算法导论(6-2)</a>
+      </li>
+    
+  </ul>
+</div>
+
+
+  
+<div class="widget tagcloud">
+  <h3 class="title">标签云</h3>
+  <div class="entry">
+    <a href="/tags/FP-tree/" style="font-size: 10.00px;">FP-tree</a><a href="/tags/Ford-Fulkerson/" style="font-size: 10.00px;">Ford-Fulkerson</a><a href="/tags/KDD/" style="font-size: 10.00px;">KDD</a><a href="/tags/KNN/" style="font-size: 10.00px;">KNN</a><a href="/tags/NP/" style="font-size: 10.00px;">NP</a><a href="/tags/NPC/" style="font-size: 10.00px;">NPC</a><a href="/tags/NPH/" style="font-size: 10.00px;">NPH</a><a href="/tags/OLAP/" style="font-size: 10.00px;">OLAP</a><a href="/tags/apriori/" style="font-size: 10.00px;">apriori</a><a href="/tags/back propagation/" style="font-size: 10.00px;">back propagation</a><a href="/tags/bagging/" style="font-size: 10.00px;">bagging</a><a href="/tags/boosting/" style="font-size: 10.00px;">boosting</a><a href="/tags/data mining/" style="font-size: 17.50px;">data mining</a><a href="/tags/divide and conquer/" style="font-size: 10.00px;">divide and conquer</a><a href="/tags/dynamic programing/" style="font-size: 10.00px;">dynamic programing</a><a href="/tags/greedy/" style="font-size: 10.00px;">greedy</a><a href="/tags/linear programming/" style="font-size: 12.50px;">linear programming</a><a href="/tags/stable matching/" style="font-size: 10.00px;">stable matching</a><a href="/tags/关联规则/" style="font-size: 10.00px;">关联规则</a><a href="/tags/决策树/" style="font-size: 10.00px;">决策树</a><a href="/tags/分类/" style="font-size: 15.00px;">分类</a><a href="/tags/动态规划/" style="font-size: 10.00px;">动态规划</a><a href="/tags/单纯形/" style="font-size: 10.00px;">单纯形</a><a href="/tags/回归分析/" style="font-size: 10.00px;">回归分析</a><a href="/tags/对偶/" style="font-size: 10.00px;">对偶</a><a href="/tags/平摊分析/" style="font-size: 10.00px;">平摊分析</a><a href="/tags/总结/" style="font-size: 12.50px;">总结</a><a href="/tags/数据仓库/" style="font-size: 10.00px;">数据仓库</a><a href="/tags/数据挖掘/" style="font-size: 17.50px;">数据挖掘</a><a href="/tags/数据立方体/" style="font-size: 10.00px;">数据立方体</a><a href="/tags/数据预处理/" style="font-size: 10.00px;">数据预处理</a><a href="/tags/神经网络/" style="font-size: 10.00px;">神经网络</a><a href="/tags/算法/" style="font-size: 20.00px;">算法</a><a href="/tags/算法分析/" style="font-size: 10.00px;">算法分析</a><a href="/tags/线性规划/" style="font-size: 12.50px;">线性规划</a><a href="/tags/组合分类/" style="font-size: 10.00px;">组合分类</a><a href="/tags/组合数学/" style="font-size: 10.00px;">组合数学</a><a href="/tags/网络攻防/" style="font-size: 10.00px;">网络攻防</a><a href="/tags/网络流/" style="font-size: 10.00px;">网络流</a><a href="/tags/聚类/" style="font-size: 10.00px;">聚类</a>
+  </div>
+</div>
+
+
+  
+<div class="widget tag">
+  <h3 class="title">分类</h3>
+  <ul class="entry">
+  
+    <li><a href="/categories/总结/">总结</a><small>2</small></li>
+  
+    <li><a href="/categories/数据挖掘入门/">数据挖掘入门</a><small>10</small></li>
+  
+    <li><a href="/categories/自学算法导论/">自学算法导论</a><small>11</small></li>
+  
+  </ul>
+</div>
+
+
+  <iframe width="100%" height="100" class="share_self" frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=zh_cn&amp;width=0&amp;height=550&amp;fansRow=2&amp;ptype=1&amp;speed=0&amp;skin=1&amp;isTitle=1&amp;noborder=0&amp;isWeibo=0&amp;isFans=0&amp;uid=1704839092&amp;verifier=5f359d0c&amp;dpc=1"></iframe>
+</aside>
+    <div class="clearfix"></div>
+  </div>
+  <footer id="footer" class="inner"><div class="aligncenter">
+  
+  &copy; 2014 zhangxiaoyang
+  
+</div>
+
+<div class="clearfix"></div></footer>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+
+
+
+    <script type="text/javascript">
+        (function(){
+
+            $(window).scroll(function(){
+
+                var scrollTop = $(window).scrollTop();
+                if ( scrollTop >200 ){
+                    $("#main-nav").removeClass('normal_mode').addClass('top_mode');
+                } else{
+                    $("#main-nav").removeClass('top_mode').addClass('normal_mode');
+                }
+
+            });
+
+        })();
+    </script>
+
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+  <script type="text/javascript">
+  (function($){
+    $('.fancybox').fancybox({
+      fitToView: false
+    });
+  })(jQuery);
+  </script>
+
+
+
+    <script type="text/javascript">
+      var duoshuoQuery = {short_name:"zhangxiaoyang"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.src = 'http://static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0] 
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+
+
+
+    
+<link href="/css/prettify-github.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="/js/prettify.js"></script>
+<script type="text/javascript">
+  $(function() {
+      $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto');
+      $('code').addClass('prettyprint').attr('style', 'overflow:auto');
+      window.prettyPrint && prettyPrint();
+  });
+</script>
+
+
+
+
+    <!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],        
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"] ]
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+
+    
+<script type="text/javascript">
+(function() {
+    var $backToTopTxt = "TOP", $backToTopEle = $('<div class="backToTop"></div>').appendTo($("body"))
+        .text($backToTopTxt).attr("title", $backToTopTxt).click(function() {
+            $("html, body").animate({ scrollTop: 0 }, 120);
+    }), $backToTopFun = function() {
+        var st = $(document).scrollTop(), winh = $(window).height();
+        (st > 0)? $backToTopEle.show(): $backToTopEle.hide();    
+        //IE6�µĶ�λ
+        if (!window.XMLHttpRequest) {
+            $backToTopEle.css("top", st + winh - 166);    
+        }
+    };
+    $(window).bind("scroll", $backToTopFun);
+    $(function() { $backToTopFun(); });
+})();
+</script>
+
+
+
+<script type="text/javascript">
+  $(function(){
+    // animation
+    $('.title').hover(
+      function() {      
+        $(this).stop().animate(
+          {'marginLeft': '10px'}, 200
+        );   
+      }, 
+      function() {       
+        $(this).stop().animate({'marginLeft': '0px'}, 200);        
+    });   
+  });
+</script>
+</body>
+</html>
