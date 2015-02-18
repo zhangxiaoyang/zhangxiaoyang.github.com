@@ -1,0 +1,298 @@
+<!doctype html>
+<html>
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="description" content="爱美工的程序员"/>
+    <meta name="keywords" content="学习，思考，想法"/>
+    <meta name="author" content="zhangxiaoyang"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+    <title>zhangxiaoyang.me</title>
+    <link rel="shortcut icon" href="/favicon.ico"/>
+    <link rel="stylesheet" type="text/css" href="/themes/default/css/style.css"/>
+    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.css"/>
+    <link rel="stylesheet" type="text/css" href="/themes/default/css/scrollUp.css"/>
+<link rel="stylesheet" type="text/css" href="/themes/default/css/prettify-solarized-dark.css"/>
+
+  </head>
+  <body>
+    <div id="container">
+      <div id="wrap">
+        <header id="header">
+          <div id="banner" style="background: url(http://ww1.sinaimg.cn/large/659dc7b4jw1epck11njxej20sg0lcdi1.jpg) no-repeat center center; background-size: cover;">
+          </div>
+          <div id="header-outer" class="outer">
+            <div id="header-title" class="inner">
+              <div class="logo">
+                <img src="http://ww1.sinaimg.cn/mw690/659dc7b4gw1eh4vx1nf09j205k05kdfx.jpg" alt="Profile Picture">
+              </div>
+              <div id="title">
+                爱美工的程序员
+              </div>
+              <ul class="my-navigation">
+                
+                <li>
+                <a href="/index.html" class="index" title="index">
+                  <i class="fa fa-home" style="color: #3369e8;"> </i>
+                  </a>
+                </li>
+                
+                <li>
+                <a href="/category.html" class="category" title="category">
+                  <i class="fa fa-th-large" style="color: #3369e8;"> </i>
+                  </a>
+                </li>
+                
+                <li>
+                <a href="/about.html" class="about" title="about">
+                  <i class="fa fa-lightbulb-o" style="color: #3369e8;"> </i>
+                  </a>
+                </li>
+                
+              </ul>
+            </div>
+          </div>
+          <div id="header-inner" class="">
+            <nav id="title-nav" style="display: none;">
+              <span id="title-nav-items">
+                
+                  <a href="/index.html" class="index">
+                    <i class="fa fa-home"></i>
+                  </a>
+                
+                  <a href="/category.html" class="category">
+                    <i class="fa fa-th-large"></i>
+                  </a>
+                
+                  <a href="/about.html" class="about">
+                    <i class="fa fa-lightbulb-o"></i>
+                  </a>
+                
+              </span>
+            </nav>
+            <nav id="sub-nav">
+              <a id="nav-search-btn" class="nav-icon" title="Search">
+              </a>
+            </nav>
+            <div id="search-form-wrap">
+              <form action="http://www.baidu.com/baidu" method="get" accept-charset="utf-8"
+              class="search-form">
+                <input type="search" name="word" maxlength="20" class="search-form-input"
+                placeholder="搜索">
+                <input type="submit" value="" class="search-form-submit">
+                <input name="tn" type="hidden" value="bds">
+                <input name="cl" type="hidden" value="3">
+                <input name="ct" type="hidden" value="2097152">
+                <input type="hidden" name="si" value="zhangxiaoyang.me">
+              </form>
+            </div>
+          </div>
+        </header>
+
+<div class="outer">
+  <section id="main">
+    <article id="data-mining-tutorial/data-mining-tutorial-2" class="article article-type-post"
+    itemscope="" itemprop="blogPost">
+      <div class="article-inner">
+        <header class="article-header">
+          <h1 itemprop="name">
+            <a class="article-title" href="/categories/data-mining-tutorial/data-mining-tutorial-2.html">
+              数据挖掘自学笔记(2)
+            </a>
+          </h1>
+        </header>
+        <footer class="article-footer">
+          <ul class="article-time-list">
+            <li class="article-time-list-item">
+              <a class="article-time-list-link" href="/archive.html">
+                2013-11-19 00:03:25
+              </a>
+            </li>
+          </ul>
+          <br/>
+          <ul class="article-category-list">
+            <li class="article-category-list-item">
+              <a class="article-category-list-link" href="/category.html">
+                数据挖掘自学笔记
+              </a>
+            </li>
+          </ul>
+          <br/>
+          <ul class="article-tag-list">
+            
+              <li class="article-tag-list-item">
+                <a class="article-tag-list-link" href="/tag.html">
+                  OLAP
+                </a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a class="article-tag-list-link" href="/tag.html">
+                  数据仓库
+                </a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a class="article-tag-list-link" href="/tag.html">
+                  数据立方体
+                </a>
+              </li>
+            
+          </ul>
+        </footer>
+        <div class="article-entry" itemprop="articleBody">
+          <div class="article-abstract"><p>在进行数据挖掘以前，我们需要做一些事情，这会帮助我们更好的进行数据挖掘。我们要做的事情主要是把原始数据整合到一起，去出冗余的数据不需要的数据，只留下对分析最有用的数据。然后就可以对这些数据进行数据挖掘了。</p>
+</div>
+<p>但是，有一个问题。这些即将被分析的数据放在哪？如果原来用100个数据库服务器存放原始的数据，那提取出来的数据量也不小，放在哪呢？答案很显然，是数据仓库。</p>
+<h1 id="-data-warehouse-">数据仓库（Data warehouse）是何物</h1>
+<p>什么是数据仓库？和数据库有什么区别呢？</p>
+<p>我们的原始数据类型可能有很多，有放在数据库中的，也有放在文件中的。我们需要把这些各式各样的数据源整合起来，存储整合后数据的地方就是数据仓库。</p>
+<p>这并不是说数据仓库里面什么都可以放，我们在存放之前还是要把数据“整理”一下，用数据仓库所能接受的格式去存放。所以，从一定程度上来说数据仓库和数据库很像，都是同特定的格式存放数据。</p>
+<p>但是也有不同之处。</p>
+<blockquote>
+<p>数据仓库是一个面向主题的、集成的、随时间而变化的、不容易丢失的数据集合，支持管理部门的决策过程。——W.H.Inmon</p>
+</blockquote>
+<ol>
+<li>面相主题：数据仓库围绕一个主题，如顾客、产品等，不像普通的数据库那样什么都存。数据仓库里只放和主题相关的。</li>
+<li>集成的：我们可能把数据放在好各种地方，数据仓库则集成我们存放的数据。</li>
+<li>随时间而变化的：普通的数据库只存放当前的数据，老数据都归档了。而数据仓库存放很长一段时间的历史数据。</li>
+<li>不容易丢失：数据仓库不像普通的数据库那样要考虑事务处理、并发什么的。因为，数据仓库是只读的。</li>
+</ol>
+<p>所以，可以把数据仓库看成一种特殊的数据库，这种数据库围绕一个主题存放数据，数据来自各种数据源。为了提供决策支持，数据仓库存放了很长一段时间的历史数据，同时这些数据是只读的。</p>
+<p>听上去挺好的，我们能不能不使用数据仓库？直接在原始数据上进行分析？</p>
+<p>理论上应该是可行的，但是这样并不好。试想一下，我们的数据库服务器在提供日常事务处理的时候就已经很忙了，再去不停的和它交互，进行数据分析，不把它累死了？而且，数据库一般只存放近期的数据，老数据会归档，对于归档的数据我们没法去分析了。如果使用的数据源类型特别多，比如有关系型的数据库、非关系型、XML等，我们就需要针对每一种格式写分析的程序。即便是同一种类型是数据库，不同厂家的（如Oracle、MS）也有一些不同。</p>
+<p>所以，我们还是希望能够使用数据仓库。</p>
+<h1 id="-vs-">数据仓库 vs. 数据库</h1>
+<p>回忆一下使用MySQL的情况，我们需要在机器上装一个MySQL，启动MySQL服务后就可以使用MySQL-client进行数据的增删改查了。数据库帮我们考虑了事务处理的问题和并发的问题，大大方便了用户的操作。</p>
+<p>但是，当数据量很大的时候，操作MySQL就不太方便了，满脑子都是各种表，各种外键，有点晕了。这时候想写出一个SQL语句都很困难，各种select太复杂了。</p>
+<p>数据仓库致力于为决策者提供更好的服务，提供多种“视角”（维度）来满足用户的查询。用户可以使用一种DMQL（Data mining query language）来查询数据。</p>
+<p>DMQL为什么比SQL好？</p>
+<p>以前在使用SQL的时候首先想到的是表（Table），面向的是数据表。而DMQL使用了一种全新的概念——多维数据模型，面向的是方体（Cube）。其实很好理解，SQL的时候数据是二维的，所以是表。DMQL需要提供多种视角的查询，所以是多维度的，即方体（立体的东西）。</p>
+<p>OLTP（联机事务处理）就是我们经常使用的数据库的增删改查。对于数据仓库，OLTP不好使了，所以就搞出了个OLAP（联机分析处理）。</p>
+<p>面向的对象变了，原来的select、where等语句就不管用了。数据仓库提供了一系列新的操作来代替原来的增删改查。新的操作主要有：上卷（Roll-up）、下钻（Drill-down）、切片（Slice）、切块（Dice）、转轴（Pivot）。</p>
+<p>上卷操作是根据概念分层对某个维进行上卷，向上汇总，数据会缩小。相反的操作是下钻。而切片是指固定某个维的值，切块是固定某个维的值为若干个。转轴是把维度进行交换。具体可以看下图示例。</p>
+<p><img src="/drafts/categories/data-mining-tutorial/images/OLAP操作.jpg" alt=""></p>
+<h1 id="-">多维数据模型——数据立方体</h1>
+<p>数据库使用的是二维数据模型，也就是表。对于数据仓库，使用的是多维的数据模型，也就是一种立体的结构，即数据立方体。</p>
+<p>原来使用数据库的时候，我们使用E-R图来描述表与表的关系。对于数据仓库，因为一个方体实质上是多个表的组合，所以，我们需要一种方式来描述方体（仅仅是描述方体，不是描述方体与方体的关系），实质上描述的就是组成这个方体的表的关系。目前，有三种模式来描述数据立方体：星形模式、雪花模式、事实星座模式，如下图。</p>
+<p><img src="/drafts/categories/data-mining-tutorial/images/数据立方体模式.jpg" alt=""></p>
+<p>这种描述不是瞎描述，是有原则的。需要一个事实表（Fact table）和多个维表（Dimensional table）。事实表里存放了维表的key，可以通过key和维表联系起来。当然，维表也可以通过key和维表联系。其实就相当于数据库里的外键。</p>
+<p>为什么会有三种模式？可以看到，每一种模式都是上一种模式的加强。比如雪花模式比星形模式多了与维表联系的维表。为什么会多？因为我们把星形中不规范的表（有冗余）进行了规范化，把冗余的字段整合起来，放到一个新的表中存放，也就是维表。</p>
+<p>我们也发现，事实表中不仅仅有一个和维表联系的key，还有其它的字段。因为事实表不能只去和维表联系，还需要有自己的东西，这个东西就的事实（Fact），可以理解为数值字段，需要计算的字段。还有一个概念是度量（Measure），这个就是对事实的进一步封装，比如max()，sum()等，即求最大，求和等，所以度量是一个函数。</p>
+<p>上面只是解释描述数据立方体的方式，纠结什么是数据立方体呢？</p>
+<p>来看一下3-D方体，如下图。</p>
+<p><img src="/drafts/categories/data-mining-tutorial/images/3D方体.jpg" alt=""></p>
+<p>为什么叫3-D呢，因为有三个维度。所以，如果有两个维度，就是2-D方体。如果最大就三个维度，3-D方体又可以叫做基本方体（Base cuboid）。但是，如何知道最大有几个维度呢？这就需要方体的格了，如下图。</p>
+<p><img src="/drafts/categories/data-mining-tutorial/images/方体的格.jpg" alt=""></p>
+<p>所以，所谓的N-D方体（Cuboid）就是从不同视角看待某个主题的结果。</p>
+<h1 id="-">补充</h1>
+<h2 id="-">概念分层</h2>
+<p>数据立方体第一种模式的示例中，对于维表location可以进行以下概念分层。</p>
+<p><img src="/drafts/categories/data-mining-tutorial/images/概念分层.jpg" alt=""></p>
+<p>分层就是把大的概念具体化，可以通过树的形式描述。关键问题是为什么要分层呢，不分层不行吗？</p>
+<p>概念分层主要是为了数据汇总，通过把小的概念映射到它所属于的大的概念。</p>
+<h2 id="dmql">DMQL</h2>
+<p>DMQL语法如下：</p>
+<pre><code>    // 立方体定义(事实表)
+    define cube&lt;cube_name&gt; [&lt;dimension_list&gt;]: &lt;measure_list&gt;
+
+    // 维定义(维表)
+    define dimension&lt;dimension_name&gt; as(&lt;attribute_or_subdimension_list&gt;)
+
+    // 特殊案例（共享维表的定义）
+    // 第一次作为维表定义
+    cube definition
+    // 然后
+    define dimension&lt;dimension_name&gt; as&lt;dimension_name_first_time&gt; in cube&lt;cube_name_first_time&gt;
+</code></pre><h2 id="-">数据仓库架构</h2>
+<p>我们知道数据库不仅仅可以放数据，也提供了用户交互的接口，进行事务处理，还包括备份还原等各种功能。</p>
+<p>所以，数据仓库也提供全套服务，不仅仅存放数据，架构如下。</p>
+<p><img src="/drafts/categories/data-mining-tutorial/images/数据仓库架构.jpg" alt=""></p>
+<h2 id="-">再看方体</h2>
+<p>数据库里查询出来的是表的某些行（或指定字段的行）。数据仓库查询出来的是方体。</p>
+<p>数据量很大的时候，数据库查询会很慢。同样，数据量太了了，数据仓库查询也会慢。</p>
+<p>尽管如此，不能否定数据仓库提供的数据观察的新的视角。</p>
+<p>为了提供查询速度，我们可以提前将方体查询出来并存储起来，也就是缓存结果，高端一点的名字叫做方体物化。</p>
+<p>DMQL中一条方体计算的示例语句：</p>
+<pre><code>    define cube sales[item, city, year]: sum(sales_in_dollars)compute cube sales
+</code></pre><p>什么是方体的物化？其实就是方体的计算。我们是把所有的情况都计算了（完全物化）、还是只计算部分情况（部分物化）、还是不提前计算（不物化）？这是一个问题，都物化了肯定会占用大量的存储空间，可能造成维灾难（Curse of dimensionality）。就是因为随着计算维度的增加，所需要的存储空间会爆炸性增长，如果再有概念分层，需要的空间会更大。</p>
+<p>这个问题其实就是OLAP实现的问题。因为对于用户来讲，他们永远只是输入一些DMQL语句。语句的执行需要OLAP引擎执行，所以我们希望有一个好的OLAP引擎。</p>
+<p>所以就有了一些OLAP引擎：MOLAP、ROLAP、HOLAP。它们各有优劣，详情请参看<a href="http://www.cognoschina.net/home/space.php?uid=1166&do=blog&id=2876">这里</a>。</p>
+<h2 id="-olap-olam">从OLAP到OLAM</h2>
+<p>数据仓库费了很大的力气去整合各个数据源，提取相关的数据，提供OLAP，用户可以使用DMQL进行查询。真是劳苦功高啊！</p>
+<p>能不能让数据仓库再累一点，继续封装，提供一个OLAM引擎，可以直接面向用户提供数据挖掘的分析功能呢？只需要再添加一个联机分析挖掘模块即可，如下图。</p>
+<p><img src="/drafts/categories/data-mining-tutorial/images/数据仓库加入OLAM.jpg" alt=""></p>
+<p><code>-- EOF --</code></p>
+
+        </div>
+      </div>
+    </article>
+    <div class="ds-thread"></div>
+  </section>
+</div>
+        <footer id="footer">
+          <div class="outer">
+            <div id="footer-info" class="inner">
+              © 2015 zhangxiaoyang.me
+              <br>
+              Powered by
+              <a href="https://github.com/zhangxiaoyang/fow" target="_blank">
+                Fow
+              </a>
+            </div>
+          </div>
+        </footer>
+      </div>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.min.js" type="text/javascript"></script>
+      <script src="/themes/default/js/jquery.scrollUp.min.js" type="text/javascript"></script>
+      <script src="/themes/default/js/jquery.transform.js" type="text/javascript"></script>
+      <script src="/themes/default/js/menu.js" type="text/javascript"></script>
+      <script src="/themes/default/js/script.js" type="text/javascript"></script>
+      <script src="/themes/default/js/scrollUp.js" type="text/javascript"></script>
+      <script src="/themes/default/js/prettify.js" type="text/javascript"></script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+<script type="text/javascript">
+$(window).load(function(){
+  $('pre').addClass('prettyprint linenums');
+  prettyPrint();
+});
+</script>
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],        
+    inlineMath: [ ['$','$'], ['\\(','\\)'] ],
+    displayMath: [ ['$$','$$'], ['\\[','\\]'] ]
+  }
+});
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<script type="text/javascript">
+  $('.article-entry img').click(function() {
+    window.open($(this).attr('src'), '_blank');
+  });
+</script>
+
+<script type="text/javascript">
+  var duoshuoQuery = {short_name:'zhangxiaoyang'};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = 'http://static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+    || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+</script>
+
+    </div>
+  </body>
+</html>
+

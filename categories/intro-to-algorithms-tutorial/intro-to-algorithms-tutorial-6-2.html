@@ -1,0 +1,250 @@
+<!doctype html>
+<html>
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="description" content="爱美工的程序员"/>
+    <meta name="keywords" content="学习，思考，想法"/>
+    <meta name="author" content="zhangxiaoyang"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+    <title>zhangxiaoyang.me</title>
+    <link rel="shortcut icon" href="/favicon.ico"/>
+    <link rel="stylesheet" type="text/css" href="/themes/default/css/style.css"/>
+    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.css"/>
+    <link rel="stylesheet" type="text/css" href="/themes/default/css/scrollUp.css"/>
+<link rel="stylesheet" type="text/css" href="/themes/default/css/prettify-solarized-dark.css"/>
+
+  </head>
+  <body>
+    <div id="container">
+      <div id="wrap">
+        <header id="header">
+          <div id="banner" style="background: url(http://ww1.sinaimg.cn/large/659dc7b4jw1epck11njxej20sg0lcdi1.jpg) no-repeat center center; background-size: cover;">
+          </div>
+          <div id="header-outer" class="outer">
+            <div id="header-title" class="inner">
+              <div class="logo">
+                <img src="http://ww1.sinaimg.cn/mw690/659dc7b4gw1eh4vx1nf09j205k05kdfx.jpg" alt="Profile Picture">
+              </div>
+              <div id="title">
+                爱美工的程序员
+              </div>
+              <ul class="my-navigation">
+                
+                <li>
+                <a href="/index.html" class="index" title="index">
+                  <i class="fa fa-home" style="color: #3369e8;"> </i>
+                  </a>
+                </li>
+                
+                <li>
+                <a href="/category.html" class="category" title="category">
+                  <i class="fa fa-th-large" style="color: #3369e8;"> </i>
+                  </a>
+                </li>
+                
+                <li>
+                <a href="/about.html" class="about" title="about">
+                  <i class="fa fa-lightbulb-o" style="color: #3369e8;"> </i>
+                  </a>
+                </li>
+                
+              </ul>
+            </div>
+          </div>
+          <div id="header-inner" class="">
+            <nav id="title-nav" style="display: none;">
+              <span id="title-nav-items">
+                
+                  <a href="/index.html" class="index">
+                    <i class="fa fa-home"></i>
+                  </a>
+                
+                  <a href="/category.html" class="category">
+                    <i class="fa fa-th-large"></i>
+                  </a>
+                
+                  <a href="/about.html" class="about">
+                    <i class="fa fa-lightbulb-o"></i>
+                  </a>
+                
+              </span>
+            </nav>
+            <nav id="sub-nav">
+              <a id="nav-search-btn" class="nav-icon" title="Search">
+              </a>
+            </nav>
+            <div id="search-form-wrap">
+              <form action="http://www.baidu.com/baidu" method="get" accept-charset="utf-8"
+              class="search-form">
+                <input type="search" name="word" maxlength="20" class="search-form-input"
+                placeholder="搜索">
+                <input type="submit" value="" class="search-form-submit">
+                <input name="tn" type="hidden" value="bds">
+                <input name="cl" type="hidden" value="3">
+                <input name="ct" type="hidden" value="2097152">
+                <input type="hidden" name="si" value="zhangxiaoyang.me">
+              </form>
+            </div>
+          </div>
+        </header>
+
+<div class="outer">
+  <section id="main">
+    <article id="intro-to-algorithms-tutorial/intro-to-algorithms-tutorial-6-2" class="article article-type-post"
+    itemscope="" itemprop="blogPost">
+      <div class="article-inner">
+        <header class="article-header">
+          <h1 itemprop="name">
+            <a class="article-title" href="/categories/intro-to-algorithms-tutorial/intro-to-algorithms-tutorial-6-2.html">
+              算法导论自学笔记(6-2)
+            </a>
+          </h1>
+        </header>
+        <footer class="article-footer">
+          <ul class="article-time-list">
+            <li class="article-time-list-item">
+              <a class="article-time-list-link" href="/archive.html">
+                2013-11-30 00:00:00
+              </a>
+            </li>
+          </ul>
+          <br/>
+          <ul class="article-category-list">
+            <li class="article-category-list-item">
+              <a class="article-category-list-link" href="/category.html">
+                算法导论自学笔记
+              </a>
+            </li>
+          </ul>
+          <br/>
+          <ul class="article-tag-list">
+            
+              <li class="article-tag-list-item">
+                <a class="article-tag-list-link" href="/tag.html">
+                  linear programming
+                </a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a class="article-tag-list-link" href="/tag.html">
+                  线性规划
+                </a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a class="article-tag-list-link" href="/tag.html">
+                  对偶
+                </a>
+              </li>
+            
+          </ul>
+        </footer>
+        <div class="article-entry" itemprop="articleBody">
+          <div class="article-abstract"><p>接上一节，继续我们的线性规划。</p>
+</div>
+<h1 id="-lp-duality-">对偶问题（LP Duality）</h1>
+<h2 id="-">对偶问题的提出——宅男示例升级版</h2>
+<p>考虑这样一个问题，一个宅男需要在家里宅一星期（7天），他只喜欢吃乐事薯片和香飘飘奶茶。他的女朋友是一个营养师，可以使用能量、蛋白质这些原材料制作出薯片和奶茶，是的，就这么神奇。所以，这个女生需要先去购买材料才能制作出食物。</p>
+<p>假设这个女生从一个原材料公司购买所需要的原材料，这个原材料公司该如何给能量、蛋白质定价来获得最大的收益？</p>
+<p>还要补充一下：</p>
+<ol>
+<li>这个女生从天猫搜索了一下薯片和奶茶的价位。她希望购买原材料所花费的钱不大于网上的报价（要不然还不如网购呢）</li>
+<li>这个女生要根据中国营养学会的推荐（每天需要摄入能量2400KJ，蛋白质75g）给男朋友制作可以满足七天营养需求的食物（可以求出一星期需要摄入能量16800KJ，蛋白质525g）</li>
+</ol>
+<p>直接引用上一节使用的图，如下。</p>
+<p><img src="/drafts/categories/intro-to-algorithms-tutorial/images/线性规划示例.jpg" alt=""></p>
+<p>对于这个问题，很容易给出线性规划模型（公式），如下。</p>
+<p>$$max \text{ } 16800y_1+525y_2$$</p>
+<p>$$668y_1+1.5y_2 \leq 6.8$$</p>
+<p>$$883y_1+1.2y_2 \leq 2.7$$</p>
+<p>$$y_1 \geq 0, y_2 \geq 0$$</p>
+<p>可以使用图解法解决，如下图。</p>
+<p><img src="/drafts/categories/intro-to-algorithms-tutorial/images/线性规划几何解法2.jpg" alt=""></p>
+<p>可以得出，y1=0，y2=2.25。也就是能量定价为0元，蛋白质定价为2.25元。所以，原材料公司收益：16800<em>0+525</em>2.25=1181.25元。</p>
+<p>回到上一节的“宅男”问题，求解出购买零食花费的最少的钱为1181.25元。</p>
+<p>惊奇的发现，这两个问题的结果是一样的。</p>
+<h2 id="-">对偶问题</h2>
+<p><img src="/drafts/categories/intro-to-algorithms-tutorial/images/原问题与对偶问题.jpg" alt=""></p>
+<p>可以使用以上的这些公式把原问题转换为对偶问题，当然，也可以把对偶问题转换为原问题。</p>
+<p>这里说对偶主要是后面要用到对偶单纯形法。对偶单纯法有什么好处呢？</p>
+<blockquote>
+<p>若保持对偶问题的解是基可行解，而原问题在非可行解的基础上，通过逐步迭代达到基可行解，这样也就得到了最优解。这种方法的优点是原问题的初始解不一定是基可行解，可从非基可行解开始迭代。</p>
+</blockquote>
+<p>所以，总结来说，单纯形法可以来解决符合标准形式的线性规划问题，对偶单纯形法可以弥补单纯形法的一些缺陷，同样可以帮助我们更好的解决线性规划问题。这是我的理解。</p>
+<p>对偶之所以有这些好处，主要在于对偶问题的优良性质，如下图。</p>
+<p><img src="/drafts/categories/intro-to-algorithms-tutorial/images/对偶问题的基本性质.jpg" alt=""></p>
+<p><code>-- EOF --</code></p>
+
+        </div>
+      </div>
+    </article>
+    <div class="ds-thread"></div>
+  </section>
+</div>
+        <footer id="footer">
+          <div class="outer">
+            <div id="footer-info" class="inner">
+              © 2015 zhangxiaoyang.me
+              <br>
+              Powered by
+              <a href="https://github.com/zhangxiaoyang/fow" target="_blank">
+                Fow
+              </a>
+            </div>
+          </div>
+        </footer>
+      </div>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.min.js" type="text/javascript"></script>
+      <script src="/themes/default/js/jquery.scrollUp.min.js" type="text/javascript"></script>
+      <script src="/themes/default/js/jquery.transform.js" type="text/javascript"></script>
+      <script src="/themes/default/js/menu.js" type="text/javascript"></script>
+      <script src="/themes/default/js/script.js" type="text/javascript"></script>
+      <script src="/themes/default/js/scrollUp.js" type="text/javascript"></script>
+      <script src="/themes/default/js/prettify.js" type="text/javascript"></script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+<script type="text/javascript">
+$(window).load(function(){
+  $('pre').addClass('prettyprint linenums');
+  prettyPrint();
+});
+</script>
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],        
+    inlineMath: [ ['$','$'], ['\\(','\\)'] ],
+    displayMath: [ ['$$','$$'], ['\\[','\\]'] ]
+  }
+});
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<script type="text/javascript">
+  $('.article-entry img').click(function() {
+    window.open($(this).attr('src'), '_blank');
+  });
+</script>
+
+<script type="text/javascript">
+  var duoshuoQuery = {short_name:'zhangxiaoyang'};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = 'http://static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+    || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+</script>
+
+    </div>
+  </body>
+</html>
+

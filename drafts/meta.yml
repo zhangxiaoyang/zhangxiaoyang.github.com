@@ -1,0 +1,184 @@
+- id: data-mining-tutorial/data-mining-tutorial-1
+  title: 数据挖掘自学笔记(1)
+  category: 数据挖掘自学笔记
+  tags:
+    - KDD
+  create_time: 2013-11-18 14:42:00
+  update_time: 2013-11-18 14:42:00
+- id: data-mining-tutorial/data-mining-tutorial-2
+  title: 数据挖掘自学笔记(2)
+  category: 数据挖掘自学笔记
+  tags:
+    - OLAP
+    - 数据仓库
+    - 数据立方体
+  create_time: 2013-11-18 16:03:25
+  update_time: 2013-11-18 16:03:25
+- id: data-mining-tutorial/data-mining-tutorial-3
+  title: 数据挖掘自学笔记(3)
+  category: 数据挖掘自学笔记
+  tags:
+    - 数据预处理
+  create_time: 2013-11-19 18:13:35
+  update_time: 2013-11-19 18:13:35
+- id: data-mining-tutorial/data-mining-tutorial-4
+  title: 数据挖掘自学笔记(4)
+  category: 数据挖掘自学笔记
+  tags:
+    - apriori
+    - FP-tree
+    - 关联规则
+  create_time: 2013-11-20 16:32:55
+  update_time: 2013-11-20 16:32:55
+- id: data-mining-tutorial/data-mining-tutorial-5-1
+  title: 数据挖掘自学笔记(5-1)
+  category: 数据挖掘自学笔记
+  tags:
+    - 决策树
+    - 分类
+  create_time: 2013-11-23 01:03:00
+  update_time: 2013-11-23 01:03:00
+- id: data-mining-tutorial/data-mining-tutorial-5-2
+  title: 数据挖掘自学笔记(5-2)
+  category: 数据挖掘自学笔记
+  tags:
+    - 贝叶斯
+    - 分类
+  create_time: 2013-11-23 21:53:00
+  update_time: 2013-11-23 21:53:00
+- id: data-mining-tutorial/data-mining-tutorial-5-3
+  title: 数据挖掘自学笔记(5-3)
+  category: 数据挖掘自学笔记
+  tags:
+    - back propagation
+    - 神经网络
+    - 分类
+  create_time: 2013-11-24 22:38:00
+  update_time: 2013-11-24 22:38:00
+- id: data-mining-tutorial/data-mining-tutorial-5-4
+  title: 数据挖掘自学笔记(5-4)
+  category: 数据挖掘自学笔记
+  tags:
+    - bagging
+    - boosting
+    - KNN
+    - 组合分类
+    - 分类
+  create_time: 2013-11-25 13:27:00
+  update_time: 2013-11-25 13:27:00
+- id: data-mining-tutorial/data-mining-tutorial-5-5
+  title: 数据挖掘自学笔记(5-5)
+  category: 数据挖掘自学笔记
+  tags:
+    - 回归分析
+    - 评估分类器
+    - 预测
+  create_time: 2013-11-26 01:28:00
+  update_time: 2013-11-26 01:28:00
+- id: data-mining-tutorial/data-mining-tutorial-6
+  title: 数据挖掘自学笔记(6)
+  category: 数据挖掘自学笔记
+  tags:
+    - 聚类
+  create_time: 2013-12-01 19:42:00
+  update_time: 2013-12-01 19:42:00
+- id: intro-to-algorithms-tutorial/intro-to-algorithms-tutorial-1
+  title: 算法导论自学笔记(1)
+  category: 算法导论自学笔记
+  tags:
+    - stable matching
+  create_time: 2013-11-05 14:08:00
+  update_time: 2013-11-05 14:08:00
+- id: intro-to-algorithms-tutorial/intro-to-algorithms-tutorial-2-1
+  title: 算法导论自学笔记(2-1)
+  category: 算法导论自学笔记
+  tags:
+    - 算法分析
+  create_time: 2013-11-07 01:17:00
+  update_time: 2013-11-07 01:17:00
+- id: intro-to-algorithms-tutorial/intro-to-algorithms-tutorial-2-2
+  title: 算法导论自学笔记(2-2)
+  category: 算法导论自学笔记
+  tags:
+    - 平摊分析
+  create_time: 2013-11-08 19:37:00
+  update_time: 2013-11-08 19:37:00
+- id: intro-to-algorithms-tutorial/intro-to-algorithms-tutorial-3
+  title: 算法导论自学笔记(3)
+  category: 算法导论自学笔记
+  tags:
+    - divide and conquer
+  create_time: 2013-11-14 15:21:00
+  update_time: 2013-11-14 15:21:00
+- id: intro-to-algorithms-tutorial/intro-to-algorithms-tutorial-4
+  title: 算法导论自学笔记(4)
+  category: 算法导论自学笔记
+  tags:
+    - dynamic programming
+    - 动态规划
+  create_time: 2013-11-15 14:26:00
+  update_time: 2013-11-15 14:26:00
+- id: intro-to-algorithms-tutorial/intro-to-algorithms-tutorial-5
+  title: 算法导论自学笔记(5)
+  category: 算法导论自学笔记
+  tags:
+    - greedy
+    - 贪心
+  create_time: 2013-11-17 16:02:00
+  update_time: 2013-11-17 16:02:00
+- id: intro-to-algorithms-tutorial/intro-to-algorithms-tutorial-6-1
+  title: 算法导论自学笔记(6-1)
+  category: 算法导论自学笔记
+  tags:
+    - linear programming
+    - 线性规划
+    - 单纯形
+  create_time: 2013-11-27 13:42:00
+  update_time: 2013-11-27 13:42:00
+- id: intro-to-algorithms-tutorial/intro-to-algorithms-tutorial-6-2
+  title: 算法导论自学笔记(6-2)
+  category: 算法导论自学笔记
+  tags:
+    - linear programming
+    - 线性规划
+    - 对偶
+  create_time: 2013-11-29 16:00:00
+  update_time: 2013-11-29 16:00:00
+- id: intro-to-algorithms-tutorial/intro-to-algorithms-tutorial-7
+  title: 算法导论自学笔记(7)
+  category: 算法导论自学笔记
+  tags:
+    - Ford-Fulkerson
+    - 网络流
+  create_time: 2013-12-30 21:17:54
+  update_time: 2013-12-30 21:17:54
+- id: intro-to-algorithms-tutorial/intro-to-algorithms-tutorial-8
+  title: 算法导论自学笔记(8)
+  category: 算法导论自学笔记
+  tags:
+    - NP
+    - NPC
+    - NPH
+  create_time: 2014-01-10 20:57:44
+  update_time: 2014-01-10 20:57:44
+- id: intro-to-algorithms-tutorial/intro-to-algorithms-tutorial-9
+  title: 算法导论自学笔记(9)
+  category: 算法导论自学笔记
+  tags:
+    - 近似算法
+  create_time: 2014-01-12 15:51:11
+  update_time: 2014-01-12 15:51:11
+- id: summary/comb-math
+  title: 组合数学总结
+  category: 总结
+  tags:
+    - 组合数学
+  create_time: 2013-11-14 13:03:52
+  update_time: 2013-11-14 13:03:52
+- id: summary/network-attack-and-prevention
+  title: 网络攻防总结
+  category: 总结
+  tags:
+    - 网络功防
+  create_time: 2013-11-22 14:37:00
+  update_time: 2013-11-22 14:37:00

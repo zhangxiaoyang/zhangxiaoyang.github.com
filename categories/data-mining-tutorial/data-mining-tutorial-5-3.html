@@ -1,0 +1,269 @@
+<!doctype html>
+<html>
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="description" content="爱美工的程序员"/>
+    <meta name="keywords" content="学习，思考，想法"/>
+    <meta name="author" content="zhangxiaoyang"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+    <title>zhangxiaoyang.me</title>
+    <link rel="shortcut icon" href="/favicon.ico"/>
+    <link rel="stylesheet" type="text/css" href="/themes/default/css/style.css"/>
+    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.css"/>
+    <link rel="stylesheet" type="text/css" href="/themes/default/css/scrollUp.css"/>
+<link rel="stylesheet" type="text/css" href="/themes/default/css/prettify-solarized-dark.css"/>
+
+  </head>
+  <body>
+    <div id="container">
+      <div id="wrap">
+        <header id="header">
+          <div id="banner" style="background: url(http://ww1.sinaimg.cn/large/659dc7b4jw1epck11njxej20sg0lcdi1.jpg) no-repeat center center; background-size: cover;">
+          </div>
+          <div id="header-outer" class="outer">
+            <div id="header-title" class="inner">
+              <div class="logo">
+                <img src="http://ww1.sinaimg.cn/mw690/659dc7b4gw1eh4vx1nf09j205k05kdfx.jpg" alt="Profile Picture">
+              </div>
+              <div id="title">
+                爱美工的程序员
+              </div>
+              <ul class="my-navigation">
+                
+                <li>
+                <a href="/index.html" class="index" title="index">
+                  <i class="fa fa-home" style="color: #3369e8;"> </i>
+                  </a>
+                </li>
+                
+                <li>
+                <a href="/category.html" class="category" title="category">
+                  <i class="fa fa-th-large" style="color: #3369e8;"> </i>
+                  </a>
+                </li>
+                
+                <li>
+                <a href="/about.html" class="about" title="about">
+                  <i class="fa fa-lightbulb-o" style="color: #3369e8;"> </i>
+                  </a>
+                </li>
+                
+              </ul>
+            </div>
+          </div>
+          <div id="header-inner" class="">
+            <nav id="title-nav" style="display: none;">
+              <span id="title-nav-items">
+                
+                  <a href="/index.html" class="index">
+                    <i class="fa fa-home"></i>
+                  </a>
+                
+                  <a href="/category.html" class="category">
+                    <i class="fa fa-th-large"></i>
+                  </a>
+                
+                  <a href="/about.html" class="about">
+                    <i class="fa fa-lightbulb-o"></i>
+                  </a>
+                
+              </span>
+            </nav>
+            <nav id="sub-nav">
+              <a id="nav-search-btn" class="nav-icon" title="Search">
+              </a>
+            </nav>
+            <div id="search-form-wrap">
+              <form action="http://www.baidu.com/baidu" method="get" accept-charset="utf-8"
+              class="search-form">
+                <input type="search" name="word" maxlength="20" class="search-form-input"
+                placeholder="搜索">
+                <input type="submit" value="" class="search-form-submit">
+                <input name="tn" type="hidden" value="bds">
+                <input name="cl" type="hidden" value="3">
+                <input name="ct" type="hidden" value="2097152">
+                <input type="hidden" name="si" value="zhangxiaoyang.me">
+              </form>
+            </div>
+          </div>
+        </header>
+
+<div class="outer">
+  <section id="main">
+    <article id="data-mining-tutorial/data-mining-tutorial-5-3" class="article article-type-post"
+    itemscope="" itemprop="blogPost">
+      <div class="article-inner">
+        <header class="article-header">
+          <h1 itemprop="name">
+            <a class="article-title" href="/categories/data-mining-tutorial/data-mining-tutorial-5-3.html">
+              数据挖掘自学笔记(5-3)
+            </a>
+          </h1>
+        </header>
+        <footer class="article-footer">
+          <ul class="article-time-list">
+            <li class="article-time-list-item">
+              <a class="article-time-list-link" href="/archive.html">
+                2013-11-25 06:38:00
+              </a>
+            </li>
+          </ul>
+          <br/>
+          <ul class="article-category-list">
+            <li class="article-category-list-item">
+              <a class="article-category-list-link" href="/category.html">
+                数据挖掘自学笔记
+              </a>
+            </li>
+          </ul>
+          <br/>
+          <ul class="article-tag-list">
+            
+              <li class="article-tag-list-item">
+                <a class="article-tag-list-link" href="/tag.html">
+                  back propagation
+                </a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a class="article-tag-list-link" href="/tag.html">
+                  神经网络
+                </a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a class="article-tag-list-link" href="/tag.html">
+                  分类
+                </a>
+              </li>
+            
+          </ul>
+        </footer>
+        <div class="article-entry" itemprop="articleBody">
+          <div class="article-abstract"><p>通过决策树和朴素贝叶斯分类器可以感觉到，分类的关键是有一个靠谱的分类器。朴素贝叶斯分类器以统计学为基础，而这一节要学习的神经网络以机器学习的相关理论为基础。数据挖掘真像是个“大杂烩”，每个领域都涉及一下。</p>
+</div>
+<h1 id="-">神经网络是何物</h1>
+<p>这里说的神经网络是指人工神经网络（ANN）。人工神经网络的思想来源于高中课本里讲到的神经网络。感觉好神奇，神经网络可以用于分类（当然，用处不仅仅是分类啦）。为什么以前上高中的时候没想过这些问题呢？学习的过程也是在扼杀自己的想象力和创造力啊，吐槽一下。</p>
+<p>先不想那么多，管它怎么分类呢。应该先了解一下人工神经网络，而了解的前提是温习一下高中的生物知识。</p>
+<p>回到五年前，正青春的时候，老师如是介绍：</p>
+<blockquote>
+<p>大约有$10^{11}$个相互连接的神经元帮助你进行阅读、呼吸、思考、完成各种动作等，部分神经网络的结构和功能是与生具有的，比如支配呼吸、哭、吮吸等本能动作的功能；而大多数的功能需要通过后天的学习才能获得。</p>
+</blockquote>
+<p>所以，神经网络是由神经元构成的，下图表示了两个连接的神经元。</p>
+<p><img src="/drafts/categories/data-mining-tutorial/images/神经元.jpg" alt=""></p>
+<p>一个神经元的感知（感受其它神经元传过来的信号）是通过树突完成的。感知使得细胞体内外有了电位差，当这个电位差达到一定的阈值以后，就会产生信号（脉冲）。这个信号经过轴突，到达各个神经末梢，作用于与其它神经元相连的突触。当然，一个神经元可能收到很多个信号，需要把这些信号累加起来作出反应（兴奋、抑制两种反应）。</p>
+<p>神经元通过这种方式构成了生物神经网络。尽管人们还不太清楚生物神经网络是如何运作的，但人们试图构造一些人工的神经元，进而构造人工神经网络。</p>
+<p>下图就是人工神经元模型，其中$p=[p_1,p_2,\dots,p_R]^T$表示神经元的输入，这是一个向量。根据生物神经元的工作原理可以知道，这个输入是其它神经元轴突的输出。$w=[w_1,w_2,\dots,w_R]$表示其它神经元与该神经元R个突触的连接强度，又叫做权值向量。权值向量的每个元素可以为正也可以为负，分别表示兴奋和抑制。</p>
+<p><img src="/drafts/categories/data-mining-tutorial/images/神经元模型.jpg" alt=""></p>
+<p>捋一捋，神经元的输入是一个向量，这个输入可能来自其它的神经元。可能有好多个神经元与当前的神经元相连，而每一个连接的权值可能不同，有正的也有负的。所以就有了一个问题，这么多条连接，每一条连接对当前神经元的刺激都不一样，这个神经元是该喜（兴奋）呢还是该悲（抑制）呢？</p>
+<p>所以就有了一个加权求和，$\sum_{i=1}^{R}w_i p_i$。我们通过这个累加值来判断当前神经元是否被激活，所以这个加权累加值又叫做激活值。这个加权累加的结果为多少的时候是激活呢？我们使用$\theta$来表示一个阈值，当$\sum_{i=1}^{R}w_i p_i &gt; \theta$的时候，我们就说当前的神经元处于激活的状态。a就是当前神经元接受到各种信号后的输出。可以看到，神经元把多个值映射到一个值，所以这是一个函数，而这个函数$f$就叫做传输函数。</p>
+<p>所以，神经元的输出可以表示为：$a=f(\sum_{i=1}^{R}w_i p_i - \theta)$</p>
+<p>费了好大劲终于有了神经元（人工神经元）。我们可以使用神经元连接成我们想要的人工神经网络。人工神经网络的连接形式和拓扑结构有好多种，就不再费心讨论了。</p>
+<h1 id="-">神经网络与分类</h1>
+<p>把一些输入输出单元（神经元）连接起来就构成了一个神经网络，其中每个连接都与一个权重相关联。怎么用神经网络分类啊？</p>
+<p>可以这样做，假设我有了一个神经网络，把训练集的每一条事务记录输入到这个神经网络，神经元的输出计算公式可以得到最后一个神经元的输出。</p>
+<p>这样做会遇到一些问题。</p>
+<p>问题1：权重$w$和阈值$\theta$我们不知道啊！<br>解决1：没关系，我初始化为随机数（如随机数区间为[-0.5,0.5]）。</p>
+<p>问题2：这个函数$f$具体是什么啊，不知道啊！<br>解决2：这个下记录一些，一会再讨论。</p>
+<p>问题3：最终的输出是计算出来的，没有用到训练集标注好的类标号啊！<br>解决3：我们引入一个误差来修正这个问题，一会再讨论。</p>
+<p>对于这些有待商榷的问题，怎么解决呢？说好的神经网络分类呢？</p>
+<p>神经网络是可以分类的，没有骗小朋友！只是现在在样本训练（学习）阶段碰到了一下不知道怎么办的问题。比如$f$函数该设计成什么函数呢，误差怎么修正呢，有太多选择了！</p>
+<p>所以，神经网络需要结合一些特定的学习算法才能进行分类。不同的学习算法分类的结果是不一定相同的。</p>
+<p>所以，我们要学一种流行时尚的神经网络学习算法——BP算法。</p>
+<h1 id="bp-back-propagation-">BP（Back Propagation）算法</h1>
+<p>BP算法规定了神经网络学习的方式。BP算法说，你们不用管这管那的，按照我说的公式来算。</p>
+<p>输出值：$O_j = \frac{1}{1+e^{-I_j}}, I_j=\sum_{i}^{}w_{ij}O_i+\theta_j$</p>
+<p>输出单元的误差：$Err_j=O_j(1-O_j)(T_j-O_j)$</p>
+<p>隐藏层单元的误差：$Err_j=O_j(1-O_j)\sum_{k}^{}Err_k w_{jk}$</p>
+<p>修正误差后的权值：$w_{ij}=w_{ij}+(l)Err_j O_i$</p>
+<p>修正后的阈值：$\theta_j=\theta_j (l)Err_j$</p>
+<p>其中，$w_{ij}$表示第i个单元到第j个单元连接的权值，$I_i$表示第i个单元的输入，$O_i$表示第i个单元的输出，$\theta_i$表示第i个单元的阈值，$T_i$表示标注的类标号，l表示学习率（通常选择0.0到1.0之间的常熟值）。</p>
+<p>还需要补充一下，所谓的输出单元指的是最后一个输出类标号的单元，隐藏单元指的是除去训练集输入单元和类标号输出单元剩下的所有单元。</p>
+<p>这样还是很抽象，应该通过一个例子来说明一下，努力寻找例子中...</p>
+<p>还有一个疑问，算法什么时候结束呢？</p>
+<ol>
+<li>经过不断的修正，权值小于指定值时终止</li>
+<li>经过不断的修正，误差小于指定值时终止</li>
+<li>训练集的单条记录可能会被用到多次（第一轮训练完了可能会有第二轮），当超过指定轮数时终止</li>
+</ol>
+<p>所以，可以看到，使用BP算法的神经网络分类器就是在不停的修正权值和阈值。权值、阈值的改变会导致输入的改变，输入的改变会导致输出的改变，输出的改变会导致误差的改变，误差的改变会导致权值、阈值的改变...</p>
+<p>直到某一项指标达到了算法终止的条件。当某个指标小于“指定值”的时候算法会结束。这个“指定值”定多少合适呢？还有学习率该取多少呢？神经网络需要多少个神经元呢，分几个层次呢？最最最大的疑问，学习得到的结果该怎么理解呢？</p>
+<p>里面太多经验性的东西了，经常用“通常，我们取值...”这句话。对于学习结果的提取，业界有各种规则提取算法。这里目前只折腾出如何使用BP算法进行学习。</p>
+<p>有人做了测试，使用决策树、朴素贝叶斯、神经网络进行网页分类。朴素贝叶斯胜出，详细见<a href="http://ijcsi.org/papers/4-1-16-23.pdf">Naive Bayes vs. Decision Trees vs. Neural Networks in the Classification of Training Web Pages</a>。</p>
+<p>其实BP算法挺牛的，本来神经网络只能进行线性的分类（感知器），BP算法的提出可以使得非线性分类成为了可能，感谢BP吧！</p>
+<p>最后，推荐一本神经网络书《人工神经网络导论》，搜了一些资料，这本书给我的启发很大。</p>
+<p><code>-- EOF --</code></p>
+
+        </div>
+      </div>
+    </article>
+    <div class="ds-thread"></div>
+  </section>
+</div>
+        <footer id="footer">
+          <div class="outer">
+            <div id="footer-info" class="inner">
+              © 2015 zhangxiaoyang.me
+              <br>
+              Powered by
+              <a href="https://github.com/zhangxiaoyang/fow" target="_blank">
+                Fow
+              </a>
+            </div>
+          </div>
+        </footer>
+      </div>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.min.js" type="text/javascript"></script>
+      <script src="/themes/default/js/jquery.scrollUp.min.js" type="text/javascript"></script>
+      <script src="/themes/default/js/jquery.transform.js" type="text/javascript"></script>
+      <script src="/themes/default/js/menu.js" type="text/javascript"></script>
+      <script src="/themes/default/js/script.js" type="text/javascript"></script>
+      <script src="/themes/default/js/scrollUp.js" type="text/javascript"></script>
+      <script src="/themes/default/js/prettify.js" type="text/javascript"></script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+<script type="text/javascript">
+$(window).load(function(){
+  $('pre').addClass('prettyprint linenums');
+  prettyPrint();
+});
+</script>
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],        
+    inlineMath: [ ['$','$'], ['\\(','\\)'] ],
+    displayMath: [ ['$$','$$'], ['\\[','\\]'] ]
+  }
+});
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<script type="text/javascript">
+  $('.article-entry img').click(function() {
+    window.open($(this).attr('src'), '_blank');
+  });
+</script>
+
+<script type="text/javascript">
+  var duoshuoQuery = {short_name:'zhangxiaoyang'};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = 'http://static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+    || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+</script>
+
+    </div>
+  </body>
+</html>
+

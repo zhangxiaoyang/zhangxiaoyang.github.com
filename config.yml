@@ -1,0 +1,24 @@
+title: zhangxiaoyang.me
+subtitle: 爱美工的程序员
+meta: 
+  description: 爱美工的程序员
+  keywords: 学习，思考，想法
+  author: zhangxiaoyang
+profile:
+  avatar: http://ww1.sinaimg.cn/mw690/659dc7b4gw1eh4vx1nf09j205k05kdfx.jpg
+  duoshuo: zhangxiaoyang
+navigation:
+  - name: index
+    icon: fa-home
+    color: 3369e8
+  - name: category
+    icon: fa-th-large
+    color: 3369e8
+  - name: about
+    icon: fa-lightbulb-o
+    color: 3369e8
+site:
+  url: zhangxiaoyang.me
+  theme: default
+  banner: http://ww1.sinaimg.cn/large/659dc7b4jw1epck11njxej20sg0lcdi1.jpg
+  copyright: © 2015 zhangxiaoyang.me

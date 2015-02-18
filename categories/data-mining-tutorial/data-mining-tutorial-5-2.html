@@ -1,0 +1,263 @@
+<!doctype html>
+<html>
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="description" content="爱美工的程序员"/>
+    <meta name="keywords" content="学习，思考，想法"/>
+    <meta name="author" content="zhangxiaoyang"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+    <title>zhangxiaoyang.me</title>
+    <link rel="shortcut icon" href="/favicon.ico"/>
+    <link rel="stylesheet" type="text/css" href="/themes/default/css/style.css"/>
+    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.css"/>
+    <link rel="stylesheet" type="text/css" href="/themes/default/css/scrollUp.css"/>
+<link rel="stylesheet" type="text/css" href="/themes/default/css/prettify-solarized-dark.css"/>
+
+  </head>
+  <body>
+    <div id="container">
+      <div id="wrap">
+        <header id="header">
+          <div id="banner" style="background: url(http://ww1.sinaimg.cn/large/659dc7b4jw1epck11njxej20sg0lcdi1.jpg) no-repeat center center; background-size: cover;">
+          </div>
+          <div id="header-outer" class="outer">
+            <div id="header-title" class="inner">
+              <div class="logo">
+                <img src="http://ww1.sinaimg.cn/mw690/659dc7b4gw1eh4vx1nf09j205k05kdfx.jpg" alt="Profile Picture">
+              </div>
+              <div id="title">
+                爱美工的程序员
+              </div>
+              <ul class="my-navigation">
+                
+                <li>
+                <a href="/index.html" class="index" title="index">
+                  <i class="fa fa-home" style="color: #3369e8;"> </i>
+                  </a>
+                </li>
+                
+                <li>
+                <a href="/category.html" class="category" title="category">
+                  <i class="fa fa-th-large" style="color: #3369e8;"> </i>
+                  </a>
+                </li>
+                
+                <li>
+                <a href="/about.html" class="about" title="about">
+                  <i class="fa fa-lightbulb-o" style="color: #3369e8;"> </i>
+                  </a>
+                </li>
+                
+              </ul>
+            </div>
+          </div>
+          <div id="header-inner" class="">
+            <nav id="title-nav" style="display: none;">
+              <span id="title-nav-items">
+                
+                  <a href="/index.html" class="index">
+                    <i class="fa fa-home"></i>
+                  </a>
+                
+                  <a href="/category.html" class="category">
+                    <i class="fa fa-th-large"></i>
+                  </a>
+                
+                  <a href="/about.html" class="about">
+                    <i class="fa fa-lightbulb-o"></i>
+                  </a>
+                
+              </span>
+            </nav>
+            <nav id="sub-nav">
+              <a id="nav-search-btn" class="nav-icon" title="Search">
+              </a>
+            </nav>
+            <div id="search-form-wrap">
+              <form action="http://www.baidu.com/baidu" method="get" accept-charset="utf-8"
+              class="search-form">
+                <input type="search" name="word" maxlength="20" class="search-form-input"
+                placeholder="搜索">
+                <input type="submit" value="" class="search-form-submit">
+                <input name="tn" type="hidden" value="bds">
+                <input name="cl" type="hidden" value="3">
+                <input name="ct" type="hidden" value="2097152">
+                <input type="hidden" name="si" value="zhangxiaoyang.me">
+              </form>
+            </div>
+          </div>
+        </header>
+
+<div class="outer">
+  <section id="main">
+    <article id="data-mining-tutorial/data-mining-tutorial-5-2" class="article article-type-post"
+    itemscope="" itemprop="blogPost">
+      <div class="article-inner">
+        <header class="article-header">
+          <h1 itemprop="name">
+            <a class="article-title" href="/categories/data-mining-tutorial/data-mining-tutorial-5-2.html">
+              数据挖掘自学笔记(5-2)
+            </a>
+          </h1>
+        </header>
+        <footer class="article-footer">
+          <ul class="article-time-list">
+            <li class="article-time-list-item">
+              <a class="article-time-list-link" href="/archive.html">
+                2013-11-24 05:53:00
+              </a>
+            </li>
+          </ul>
+          <br/>
+          <ul class="article-category-list">
+            <li class="article-category-list-item">
+              <a class="article-category-list-link" href="/category.html">
+                数据挖掘自学笔记
+              </a>
+            </li>
+          </ul>
+          <br/>
+          <ul class="article-tag-list">
+            
+              <li class="article-tag-list-item">
+                <a class="article-tag-list-link" href="/tag.html">
+                  贝叶斯
+                </a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a class="article-tag-list-link" href="/tag.html">
+                  分类
+                </a>
+              </li>
+            
+          </ul>
+        </footer>
+        <div class="article-entry" itemprop="articleBody">
+          <div class="article-abstract"><p>感觉贝叶斯已经被神话了，每次看这个算法都得仰视，而且看过之后都不明白。贝叶斯的应用实在是广泛，这里被迫自己学习它是因为可以用它来分类。</p>
+</div>
+<p>但是，对于我这样的数学小白，需要花好长的时间来和它做朋友+_+</p>
+<h1 id="-">重温概率</h1>
+<p>我们考虑这种情况：有两个部门，分别为A、B。部门A有50人，其中45人的年薪为24万，5人的年薪为9万；部门B有50人，其中45人的年薪为9万，5人的年薪为24万，可以看到差距相当的，如下图。</p>
+<p><img src="/drafts/categories/data-mining-tutorial/images/概率示例.jpg" alt=""></p>
+<p>有一天，在路上碰到一个小伙伴，但是不知道他是哪个单位的。作为一个妹子，肯定更希望优先认识年薪24万的小伙吧！</p>
+<p>妹子灵机一动，算了一下碰到24w小伙的概率：P(24w)=(45+5)/(50+50)=50%。50%！所以不可以瞎碰，碰到的是好是坏概率都一样！</p>
+<p>妹子想了想，还是找人介绍对象吧，那究竟是介绍部门A的对象还是部门B的对象呢？妹子肯定想要24万的啦，于是计算了两个条件概率。</p>
+<p>$$P(A|24w)=P(A)\frac{P(24w|A)}{P(24w)}=0.5 \times \frac{45/50}{(45+5)/(50+50)}=0.9$$</p>
+<p>$$P(B|24w)=P(B)\frac{P(24w|B)}{P(24w)}=0.5 \times \frac{5/50}{(45+5)/(50+50)}=0.1$$</p>
+<p>所以，如果已经确定要找24w的小伙，去部门A找概率更大。而上面这个公式就是贝叶斯定理。贝叶斯定理把两个条件概率有机的结合到了一起。</p>
+<p>$$P(H|X)=P(H) \times \frac{P(X|H)}{P(X)}$$</p>
+<p>其中，P(H)为先验概率，因为不需要试验等任何操作，根据现在的情况一下子就能算出来所以叫做“先验”，即先于试验。P(H|X)为后验概率，是因为只有知道了一些信息，试验后对P(H)的估计，所以叫“后验”。$\frac{P(X|H)}{P(X)}$为可能性函数，这是个调整因子。</p>
+<p>可以这样理解，后验概率是在事件X发生后对先验概率的调整，通过调整因子来调整。</p>
+<h1 id="-naive-bayesian-classification-">朴素贝叶斯分类（Naive Bayesian Classification）</h1>
+<p>什么是朴素贝叶斯分类器呢？首先，这是一个分类器，和决策树一样，需要用训练集进行训练，得到模型，然后对新的数据进行分类，当然，也需要使用测试集对模型进行测试。本质也是一个分离器。至于“贝叶斯”是因为基于贝叶斯定理进行分类。“朴素”就是说思想“很傻很天真”，很朴素。比如，去俺学校食堂吃饭，看到一菜里有若干肉片，基本猜出来这份菜得4.8RMB以上。为什么这么猜呢？因为大部分有肉的菜都是这个价，有可能猜错了，但是大部分情况下都猜得对，这就是贝叶斯的基本思想。</p>
+<blockquote>
+<p>贝叶斯分类利用统计学中的贝叶斯定理，来预测类成员的概率，即给定一个样本，计算该样本属于一个特定的类的概率。</p>
+</blockquote>
+<p>在构造贝叶斯分类器之前要说明一下这个分类方法的前提假设：假设每个属性之间都是相互独立的，并且每个属性对非类问题产生的影响都是一样的。</p>
+<p>好的，下面我们来构造朴素贝叶斯分类器。</p>
+<p>假设把待分类的$x=\lbrace a_1, a_2, \dots , a_m \rbrace$，x为待分类项，$a_i$为x的属性，一共有m个属性，属性之间互不相关。</p>
+<p>通过训练集可以知道，我们当前已经有的分类$c=\lbrace c_1, c_2, \dots, c_n \rbrace$，$c_i$为分类标号，一共有n个分类。</p>
+<p>我们通过求$P(c_i|x), 1 \leq i \leq m$，得到后验概率，即x发生后（取出一条记录，发现这条记录是x），$P(c_i)$的修正后的概率。</p>
+<p>我们把每一个后验概率都求出来，比一比大小，找到最大的$P(c_k|x)$即可，这就是x所属于的类（最有可能属于的类）。</p>
+<p>如何求解$P(c_i|x)$呢？这里就是使用贝叶斯定理的地方。</p>
+<p>显然，$P(c_i|x)=P(c_i) \times \frac{P(x|c_i)}{P(x)}$。</p>
+<p>我们发现，对于一个待分类项，P(x)是常熟，$P(c_i)$好求，就是用第i个类的元素个数除以所有的元素个数（训练集中）。</p>
+<p>唯独$P(x|c_i)$需要寻思寻思。根据假设，每一个属性是不相关的，所以可以得到：$P(x|c_i)=P(a_1|c_i) \times P(a_2|c_i) \times \dots P(a_m|c_i)$。而对于$P(a_i|x)$的求解则很容易，就是第i个分类中某个属性满足某种条件的概率（很绕口，看后面的例子）。</p>
+<p>至此，我们就可以得到最大的$P(c_k|x)$，而第k个类就是x所属的类。</p>
+<p>还是使用之前决策树中的例子，如下图。</p>
+<p><img src="/drafts/categories/data-mining-tutorial/images/事务记录2.jpg" alt=""></p>
+<p>现在有了一个新的项，{Name:杨紫, 女神:Yes, 有对象:No, 好追求:No}，下面尝试把这个项划分到某个类（Class=Yes或Class=No）。</p>
+<p>为了便于书写，新的项目简化为{Name:YZ, a:Yes, b:No, b:No}，Class=Yes简化为Y，Class=No简化为N。</p>
+<p>$$P(Y|YZ)=P(Y) \times \frac{P(YZ|Y)}{P(YZ)}=\frac{1}{2P(YZ) \times P(a=Yes|Y)P(b=No|Y)P(c=No|Y)}=\frac{1}{8P(YZ)}$$</p>
+<p>但是，在计算$$P(Class=No|YZ)$$时得到了0。这是因为Class=No类里没有“有对象=No”的项。</p>
+<p>根据计算结果，我们把这条记录划分到Class=No类。</p>
+<p>会不会两个类的计算结果都是0呢？{Name:test, 女神:No, 有对象:Yes, 好追求:Yes}就是这样一条特例。</p>
+<p>对于这个问题，维基百科的说明：</p>
+<blockquote>
+<p>如果一个给定的类和特征值在训练集中没有一起出现过，那么基于频率的估计下该概率将为0。这将是一个问题。因为与其他概率相乘时将会把其他概率的信息统统去除。所以常常要求要对每个小类样本的概率估计进行修正，以保证不会出现有为0的概率出现。</p>
+</blockquote>
+<h1 id="-">补充&amp;总结</h1>
+<p>不管是贝叶斯分类器还是决策树分类器，都需要对分类的结果进行评价。对于评价，并不直接使用训练集作为测试集，这样测出的结果不足以说明问题。</p>
+<p>感觉决策树是费老大劲鼓捣一棵树，有了树就等于有了分类器，以后的分类就靠它了。</p>
+<p>而朴素贝叶斯分类器，是费老大劲计算各种概率，分类的根据概率来分。</p>
+<p>感谢以下博文：</p>
+<ol>
+<li><a href="http://www.ruanyifeng.com/blog/2011/08/bayesian_inference_part_one.html">http://www.ruanyifeng.com/blog/2011/08/bayesian_inference_part_one.html</a></li>
+<li><a href="http://www.cnblogs.com/leoo2sk/archive/2010/09/17/naive-bayesian-classifier.html">http://www.cnblogs.com/leoo2sk/archive/2010/09/17/naive-bayesian-classifier.html</a></li>
+</ol>
+<p><code>-- EOF --</code></p>
+
+        </div>
+      </div>
+    </article>
+    <div class="ds-thread"></div>
+  </section>
+</div>
+        <footer id="footer">
+          <div class="outer">
+            <div id="footer-info" class="inner">
+              © 2015 zhangxiaoyang.me
+              <br>
+              Powered by
+              <a href="https://github.com/zhangxiaoyang/fow" target="_blank">
+                Fow
+              </a>
+            </div>
+          </div>
+        </footer>
+      </div>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.min.js" type="text/javascript"></script>
+      <script src="/themes/default/js/jquery.scrollUp.min.js" type="text/javascript"></script>
+      <script src="/themes/default/js/jquery.transform.js" type="text/javascript"></script>
+      <script src="/themes/default/js/menu.js" type="text/javascript"></script>
+      <script src="/themes/default/js/script.js" type="text/javascript"></script>
+      <script src="/themes/default/js/scrollUp.js" type="text/javascript"></script>
+      <script src="/themes/default/js/prettify.js" type="text/javascript"></script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+<script type="text/javascript">
+$(window).load(function(){
+  $('pre').addClass('prettyprint linenums');
+  prettyPrint();
+});
+</script>
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],        
+    inlineMath: [ ['$','$'], ['\\(','\\)'] ],
+    displayMath: [ ['$$','$$'], ['\\[','\\]'] ]
+  }
+});
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<script type="text/javascript">
+  $('.article-entry img').click(function() {
+    window.open($(this).attr('src'), '_blank');
+  });
+</script>
+
+<script type="text/javascript">
+  var duoshuoQuery = {short_name:'zhangxiaoyang'};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = 'http://static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+    || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+</script>
+
+    </div>
+  </body>
+</html>
+
