@@ -26,3 +26,5 @@ P2P资源分享平台
 基于位置的云端通讯录
 - [douban2ucas](http://douban2ucas.sinaapp.com/)
 关联豆瓣与中国科学院大学图书馆
+- [洗刷刷](https://chrome.google.com/webstore/detail/%E6%B4%97%E5%88%B7%E5%88%B7/fagehamoecjopoonolnaahffmafnadao)
+中国科学院大学刷课助手(Chrome插件)
