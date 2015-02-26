@@ -1,13 +1,9 @@
 About
 =====
 
-对未知充满好奇，酷爱coding
-
-偶尔用用[weibo](http://weibo.com/u/1704839092/)，代码放在[github](https://github.com/zhangxiaoyang/)
-
-爱美工，爱折腾，爱创新
-
-理想很疯狂、内心很小众的普通公民
+- 对未知充满好奇，酷爱coding
+- 偶尔用用[weibo](http://weibo.com/u/1704839092/)，代码放在[github](https://github.com/zhangxiaoyang/)
+- 爱美工，爱折腾的北漂大学生
 
 Links
 =====
@@ -28,3 +24,5 @@ P2P资源分享平台
 关联豆瓣与中国科学院大学图书馆
 - [洗刷刷](https://chrome.google.com/webstore/detail/%E6%B4%97%E5%88%B7%E5%88%B7/fagehamoecjopoonolnaahffmafnadao)
 中国科学院大学刷课助手(Chrome插件)
+
+<div class="ds-thread"></div>
