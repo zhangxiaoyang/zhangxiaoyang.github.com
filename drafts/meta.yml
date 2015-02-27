@@ -182,3 +182,10 @@
     - 网络功防
   create_time: 2013-11-22 14:37:00
   update_time: 2013-11-22 14:37:00
+- id: hadoop-kingdom/hadoop-kingdom-1
+  title: Hadoop王国(1)——机器之心
+  category: Hadoop王国
+  tags:
+    - hadoop
+  create_time: 2015-02-27 13:12:31
+  update_time: 2015-02-27 13:12:31

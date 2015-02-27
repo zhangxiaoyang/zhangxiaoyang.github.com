@@ -1,0 +1,248 @@
+<!doctype html>
+<html>
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="description" content="爱美工的程序员"/>
+    <meta name="keywords" content="学习，思考，想法"/>
+    <meta name="author" content="zhangxiaoyang"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+    <title>zhangxiaoyang.me</title>
+    <link rel="shortcut icon" href="/favicon.ico"/>
+    <link rel="stylesheet" type="text/css" href="/themes/default/css/style.css"/>
+    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.css"/>
+    <link rel="stylesheet" type="text/css" href="/themes/default/css/scrollUp.css"/>
+<link rel="stylesheet" type="text/css" href="/themes/default/css/prettify-solarized-dark.css"/>
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?661930a9db32b395d0caee1a2c022527";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+  </head>
+  <body>
+    <div id="container">
+      <div id="wrap">
+        <header id="header">
+          <div id="banner" style="background: url(http://ww3.sinaimg.cn/large/005X3nNxjw1epeyfkp54aj30sg0fr0tj.jpg) no-repeat center center; background-size: cover;">
+          </div>
+          <div id="header-outer" class="outer">
+            <div id="header-title" class="inner">
+              <div class="logo">
+                <img src="http://ww1.sinaimg.cn/mw690/659dc7b4gw1eh4vx1nf09j205k05kdfx.jpg" alt="Profile Picture">
+              </div>
+              <div id="title">
+                爱美工的程序员
+              </div>
+              <ul class="my-navigation">
+                
+                <li>
+                <a href="/index.html" class="index" title="index">
+                  <i class="fa fa-home" style="color: #3369e8;"> </i>
+                  </a>
+                </li>
+                
+                <li>
+                <a href="/category.html" class="category" title="category">
+                  <i class="fa fa-th-large" style="color: #3369e8;"> </i>
+                  </a>
+                </li>
+                
+                <li>
+                <a href="/about.html" class="about" title="about">
+                  <i class="fa fa-lightbulb-o" style="color: #3369e8;"> </i>
+                  </a>
+                </li>
+                
+              </ul>
+            </div>
+          </div>
+          <div id="header-inner" class="">
+            <nav id="title-nav" style="display: none;">
+              <span id="title-nav-items">
+                
+                  <a href="/index.html" class="index">
+                    <i class="fa fa-home"></i>
+                  </a>
+                
+                  <a href="/category.html" class="category">
+                    <i class="fa fa-th-large"></i>
+                  </a>
+                
+                  <a href="/about.html" class="about">
+                    <i class="fa fa-lightbulb-o"></i>
+                  </a>
+                
+              </span>
+            </nav>
+            <nav id="sub-nav">
+              <a id="nav-search-btn" class="nav-icon" title="Search">
+              </a>
+            </nav>
+            <div id="search-form-wrap">
+              <form action="http://www.baidu.com/baidu" method="get" accept-charset="utf-8"
+              class="search-form">
+                <input type="search" name="word" maxlength="20" class="search-form-input"
+                placeholder="搜索">
+                <input type="submit" value="" class="search-form-submit">
+                <input name="tn" type="hidden" value="bds">
+                <input name="cl" type="hidden" value="3">
+                <input name="ct" type="hidden" value="2097152">
+                <input type="hidden" name="si" value="zhangxiaoyang.me">
+              </form>
+            </div>
+          </div>
+        </header>
+
+<div class="outer">
+  <section id="main">
+    <article id="hadoop-kingdom/hadoop-kingdom-1" class="article article-type-post"
+    itemscope="" itemprop="blogPost">
+      <div class="article-inner">
+        <header class="article-header">
+          <h1 itemprop="name">
+            <a class="article-title" href="/categories/hadoop-kingdom/hadoop-kingdom-1.html">
+              Hadoop王国(1)——机器之心
+            </a>
+          </h1>
+        </header>
+        <footer class="article-footer">
+          <ul class="article-time-list">
+            <li class="article-time-list-item">
+              <a class="article-time-list-link" href="/archive.html">
+                2015-02-27 21:12:31
+              </a>
+            </li>
+          </ul>
+          <br/>
+          <ul class="article-category-list">
+            <li class="article-category-list-item">
+              <a class="article-category-list-link" href="/category.html">
+                Hadoop王国
+              </a>
+            </li>
+          </ul>
+          <br/>
+          <ul class="article-tag-list">
+            
+              <li class="article-tag-list-item">
+                <a class="article-tag-list-link" href="/tag.html">
+                  hadoop
+                </a>
+              </li>
+            
+          </ul>
+        </footer>
+        <div class="article-entry" itemprop="articleBody">
+          <div class="article-abstract"><p>不管机器执行什么程序，归根结底其实只做了四件事：输入、计算、输出、存储。这就是所谓的IPOS（Input Processing Output Storage）循环，我把其中的计算和存储称为“机器之心”。</p>
+</div>
+<h1 id="-">单机之心</h1>
+<p>冯·诺依曼给计算机画了一张结构图，影响至今。</p>
+<p><img src="/drafts/categories/hadoop-kingdom/images/冯诺依曼结构.jpg" alt=""></p>
+<p>所以，一台计算机往往有这么几部分：</p>
+<ul>
+<li>CPU</li>
+<li>内存、硬盘</li>
+<li>键盘</li>
+<li>显示器</li>
+</ul>
+<p>要把这些冰冷的金属器件做成心脏，还需要施以魔法。比如，CPU的指令集、内存分配和管理、硬盘的文件系统等。如果想要充分发挥这堆器件的作用，还需要加一个的操作系统。</p>
+<h1 id="-">集群之心</h1>
+<p>如果有多台计算机（集群），想要综合它们的力量来实现一个超级机器。比如，把孙悟空和唐僧做成一个“唐小空”，既能打能斗，也能善能佛，岂不更秒！</p>
+<p><strong>假设</strong>我们已经成功了，已经能够用超多台渣机组合成超级计算机。它的计算能力超强，能够跑单台机器上跑不了的程序；它的存储空间极大，能够存下你想要的所有资源；它可伸缩，可以轻松的添加或删除渣机；它可靠，多台渣机都有数据备份。</p>
+<p>具体的实现方法是，给集群装上一套软件——Elephant（YY出来的软件）。</p>
+<p>有了它，计算机们便同心同德了。</p>
+<p><img src="/drafts/categories/hadoop-kingdom/images/葫芦娃.jpg" alt=""></p>
+<p>集群Elephant之心应该表现为，抽象多台渣机的计算能力为更强大的计算能力，抽象存储能力为更强大的存储能力。</p>
+<p><img src="/drafts/categories/hadoop-kingdom/images/Elephant核心.jpg" alt=""></p>
+<p>比如，Elephant提供了E编程模型，使用这个模型加上E语言，开发的程序（比如<code>main.e</code>），就可以直接跑在Elephant之上，也就是分布式程序！至于如何调度，不需要操心，只要按照E语言的规范来写就可以！</p>
+<p>比如，Elephant提供了E-DFS，即E分布式文件系统。</p>
+<p>比如，Elephant还提供了命令行接口。</p>
+<pre><code>elephant put 1.txt /                              # 把本地计算机的1.txt放到E-DFS的/路径下
+elephant run main.e efs:///1.txt efs:///out.txt   # 执行分布式程序main.e，输入为E-DFS的/1.txt，输出为/out.txt
+elephant show                                     # 查看程序执行情况
+elephant kill main.e                              # 杀死正在执行的分布式程序main.e
+</code></pre><p>想想都有点小激动了有没有！</p>
+<h1 id="hadoop-">Hadoop之心</h1>
+<p>庆幸的是，Elephant真的存在。</p>
+<p>真的有一头大象，可以达到我们想要的效果——<a href="http://hadoop.apache.org/">Hadoop</a>。</p>
+<p><img src="/drafts/categories/hadoop-kingdom/images/hadoop-logo.jpg" alt=""></p>
+<p>前面提到的编程模型，便是MapReduce。分布式文件系统则是HDFS。这两架马车——计算、存储，为其生态提供了有力的支撑。</p>
+<p><code>-- EOF --</code></p>
+
+        </div>
+      </div>
+    </article>
+    <div class="ds-thread"></div>
+  </section>
+</div>
+        <footer id="footer">
+          <div class="outer">
+            <div id="footer-info" class="inner">
+              © 2015 zhangxiaoyang.me
+              <br>
+              Powered by
+              <a href="https://github.com/zhangxiaoyang/fow" target="_blank">
+                Fow
+              </a>
+            </div>
+          </div>
+        </footer>
+      </div>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.min.js" type="text/javascript"></script>
+      <script src="/themes/default/js/jquery.scrollUp.min.js" type="text/javascript"></script>
+      <script src="/themes/default/js/jquery.transform.js" type="text/javascript"></script>
+      <script src="/themes/default/js/menu.js" type="text/javascript"></script>
+      <script src="/themes/default/js/script.js" type="text/javascript"></script>
+      <script src="/themes/default/js/scrollUp.js" type="text/javascript"></script>
+      <script src="/themes/default/js/prettify.js" type="text/javascript"></script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+<script type="text/javascript">
+$(window).load(function(){
+  $('pre').addClass('prettyprint linenums');
+  prettyPrint();
+});
+</script>
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],        
+    inlineMath: [ ['$','$'], ['\\(','\\)'] ],
+    displayMath: [ ['$$','$$'], ['\\[','\\]'] ]
+  }
+});
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<script type="text/javascript">
+  $('.article-entry img').click(function() {
+    window.open($(this).attr('src'), '_blank');
+  });
+</script>
+
+<script type="text/javascript">
+  var duoshuoQuery = {short_name:'zhangxiaoyang'};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = 'http://static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+    || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+</script>
+
+    </div>
+  </body>
+</html>
+
