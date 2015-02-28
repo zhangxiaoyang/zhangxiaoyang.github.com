@@ -106,7 +106,7 @@ var _hmt = _hmt || [];
         <header class="article-header">
           <h1 itemprop="name">
             <a class="article-title" href="/categories/hadoop-kingdom/hadoop-kingdom-1.html">
-              Hadoop王国(1)——机器之心
+              Hadoop王国(1)——小金刚
             </a>
           </h1>
         </header>
@@ -138,49 +138,47 @@ var _hmt = _hmt || [];
           </ul>
         </footer>
         <div class="article-entry" itemprop="articleBody">
-          <div class="article-abstract"><p>不管机器（计算机）执行什么程序，归根结底其实只做了四件事：输入、计算、输出、存储。这就是所谓的IPOS（Input Processing Output Storage）循环，我把其中的计算和存储称为“机器之心”。</p>
+          <div class="article-abstract"><p>传说，有这般灵丹妙药，一经金属器件“服用”，便可使它们同心同德，组成“小金刚”。</p>
 </div>
-<h1 id="-">单机之心</h1>
-<p>冯·诺依曼给计算机画了一张结构图，影响至今。</p>
+<h1 id="-">计算机——金属器件“小金刚”</h1>
+<p>女娲有一本“造人宝典”，先造泥人，后施法，便有了人。</p>
+<p>冯·诺依曼有一张“造机宝图”，能够造出这“泥人”。</p>
 <p><img src="/drafts/categories/hadoop-kingdom/images/冯诺依曼结构.jpg" alt=""></p>
-<p>所以，一台计算机往往有这么几部分：</p>
-<ul>
-<li>CPU</li>
-<li>内存、硬盘</li>
-<li>键盘</li>
-<li>显示器</li>
-</ul>
-<p>要把这些冰冷的金属器件做成心脏，还需要施以魔法，即硬件与软件的配合。</p>
-<p>其中，计算应该包括：CPU这块电路板、CPU指令集；存储包括：磁盘（内存、外存）、内存的管理和外存的文件系统。</p>
-<p>在“单机之心”的支持与规范之下，便可开发上层应用。五彩斑斓的花样应用，只源这“单机之心”。</p>
-<h1 id="-">集群之心</h1>
-<h2 id="-elephant">“救世主”Elephant</h2>
-<p>如果有多台计算机（集群），想要综合它们的能力来实现一个超级计算机。比如，把孙悟空和唐僧做成一个“唐小空”，既能打能斗，也能善能佛，这样去西天取经岂不更好。</p>
-<p>所以，我们想要做一个能够覆盖多台计算机的超级心脏——“集群之心”。正是因为这“集群之心”，多台计算机才能够协作，集群才有意义。</p>
-<p><strong>假设</strong>我们已经成功实现了“集群之心”。</p>
-<p>具体的方法是在每台计算机上安装一个软件，安装完后这些计算机能够协作，这样就构成了一台超级计算机。它具有更强的计算能力，更大的存储空间，提供可伸缩可靠的服务。</p>
-<p>好吧，假设我们安装的这套软件叫作Elephant。</p>
-<p>这灵丹妙药般的Elephant，一经计算机执行，便会像葫芦兄弟组成葫芦小金刚一样，同心同德，力大无穷。</p>
+<p>给这“泥人”施的法，便是其心智——操作系统。</p>
+<p>从此，计算机不再是一堆金属的拼凑，而是有机的整体。有软有硬，有体肤有心智。</p>
+<h1 id="-">集群——计算机“小金刚”</h1>
+<h2 id="-elephant">灵丹妙药Elephant</h2>
+<p>如果把多台计算机（集群）组成一个“小金刚”，该如何造“泥人”，如何施法呢？</p>
+<ol>
+<li>揉成一个大泥团——网络</li>
+<li>施法——安装软件Elephant</li>
+</ol>
+<p>网络这一步很简单，只要插上网线，安装操作系统（目的是为了提供网络协议和应用开发接口的支持）。</p>
+<p>第二步是安装Elephant，这是跑在特定操作系统的一套软件，有了它，集群便有了心智，葫芦兄弟便成了葫芦小金刚。</p>
 <p><img src="/drafts/categories/hadoop-kingdom/images/葫芦娃.jpg" alt=""></p>
-<h2 id="elephant-">Elephant实战</h2>
-<p>经过Elephant的催化，集群有了自己的心脏，具有更高的计算能力和存储能力。</p>
-<p>如此强大的集群，不能只作展览品，应该也要用于实践，接口便是必须提供的。</p>
+<p>在服下Elephant这颗丹药后，集群有了自己的心智。从此，集群不再是一堆计算机的杂揉，而是有机的整体。有软有硬，有体肤有心智。</p>
+<h2 id="-">使用集群</h2>
+<p>如此强大的集群，我们该如何使用？</p>
+<p>回到金属器件“小金刚”，也就是计算机。我们使用的方法是与其心智——操作系统进行沟通。操作系统提供了用户接口和开发者接口，只需按照这两个接口来使用即可。比如，装个QQ，看个小电影；写个程序，调个API。</p>
+<p>所以，要想使用集群，就需要与它的心智沟通，也就是——Elephant。本质就是在调用Elephant提供的接口。</p>
+<h2 id="elephant-">Elephant接口调用</h2>
 <p><img src="/drafts/categories/hadoop-kingdom/images/Elephant核心.jpg" alt=""></p>
-<p>比如，Elephant提供了E编程模型，使用这个模型加上E语言，开发的程序（比如<code>main.e</code>），就可以直接跑在Elephant之上，也就是分布式程序！至于如何调度，不需要考虑，只要按照E语言的规范来写就可以！</p>
-<p>比如，Elephant提供了E-DFS，即E分布式文件系统。</p>
-<p>比如，Elephant还提供了命令行接口，直接与Elephant交互。</p>
+<p>Elephant提供了E编程模型，使用这个模型加上E语言，开发的程序（比如<code>main.e</code>），就可以直接跑在Elephant之上，也就是分布式程序！</p>
+<p>Elephant提供了E-DFS，即E分布式文件系统。</p>
+<p>Elephant还提供了命令行接口，直接与Elephant交互。</p>
 <pre><code>elephant put 1.txt /                              # 把本地计算机的1.txt放到E-DFS的/路径下
 elephant run main.e efs:///1.txt efs:///out.txt   # 执行分布式程序main.e，输入为E-DFS的/1.txt，输出为/out.txt
 elephant show                                     # 查看程序执行情况
 elephant kill main.e                              # 杀死正在执行的分布式程序main.e
 </code></pre><p>可以看到，我们所面对的不再是多台计算机，或者说，我们压根就不知道就几台计算机。我们面对的是集群，而与集群交互的便是Elephant。</p>
 <p>所以，我们在驯服Elephant，而Elephant在管理集群。</p>
-<p>想想都有点小激动了有没有！</p>
-<h1 id="hadoop-">Hadoop之心</h1>
-<p>尽管前面的Elephant只是YY出来的东西，但是值得庆幸的是，真的有一头大象，可以达到我们想要的效果——<a href="http://hadoop.apache.org/">Hadoop</a>。</p>
+<h1 id="-">梦醒</h1>
+<p>有一个坏消息，前面所说的Elephant纯属YY。</p>
+<p>有一个好消息，真的有一头大象，可以达到我们想要的效果——<a href="http://hadoop.apache.org/">Hadoop</a>。</p>
 <p><img src="/drafts/categories/hadoop-kingdom/images/hadoop-logo.jpg" alt=""></p>
-<p>前面提到的编程模型，便是MapReduce。分布式文件系统则是HDFS。这两架马车——计算、存储，为Hadoop的生态提供了有力的支撑。</p>
-<p>而Hadoop的王国里，还养着其它的奇珍异兽：Hive、HBase、Pig、Zookeeper等。</p>
+<p>没有什么E编程模型和E-DFS。前面提到的编程模型，便是MapReduce。分布式文件系统，则是HDFS。</p>
+<p>前者计算、后者存储，是Hadoop管理和支配集群的两架马车。</p>
+<p>Hadoop的王国，还有其它的精兵强将（如，Hive、Pig、HBase），它们一同丰富着Hadoop的生态环境。而此时的Hadoop已经不仅仅是一颗灵丹妙药，更是一片沃土，各种生物在此斗艳争芳。</p>
 <p><code>-- EOF --</code></p>
 
         </div>
