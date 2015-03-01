@@ -81,3 +81,5 @@ sbin/stop-dfs.sh
 2. <http://blog.csdn.net/hitwengqi/article/details/8008203>
 3. <http://hadoop.apache.org/docs/current/hadoop-project-dist/hadoop-common/SingleCluster.html>
 4. <https://github.com/zhangxiaoyang/hadoop-installer>
+
+`-- EOF --`
