@@ -189,3 +189,10 @@
     - hadoop
   create_time: 2015-02-27 13:12:31
   update_time: 2015-02-27 13:12:31
+- id: hadoop-kingdom/hadoop-kingdom-2
+  title: Hadoop王国(2)——初见金象
+  category: Hadoop王国
+  tags:
+    - hadoop
+  create_time: 2015-03-01 11:44:29
+  update_time: 2015-03-01 11:44:29

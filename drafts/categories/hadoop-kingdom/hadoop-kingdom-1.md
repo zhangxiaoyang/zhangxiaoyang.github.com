@@ -46,7 +46,7 @@
 Elephant接口调用
 ---
 
-![](Elephant核心.jpg)
+![](elephant核心.jpg)
 
 Elephant提供了E编程模型，使用这个模型加上E语言，开发的程序（比如`main.e`），就可以直接跑在Elephant之上，也就是分布式程序！
 

@@ -100,13 +100,13 @@ var _hmt = _hmt || [];
 
 <div class="outer">
   <section id="main">
-    <article id="hadoop-kingdom/hadoop-kingdom-1" class="article article-type-post"
+    <article id="hadoop-kingdom/hadoop-kingdom-2" class="article article-type-post"
     itemscope="" itemprop="blogPost">
       <div class="article-inner">
         <header class="article-header">
           <h1 itemprop="name">
-            <a class="article-title" href="/categories/hadoop-kingdom/hadoop-kingdom-1.html">
-              Hadoop王国(1)——梦游象国
+            <a class="article-title" href="/categories/hadoop-kingdom/hadoop-kingdom-2.html">
+              Hadoop王国(2)——初见金象
             </a>
           </h1>
         </header>
@@ -114,7 +114,7 @@ var _hmt = _hmt || [];
           <ul class="article-time-list">
             <li class="article-time-list-item">
               <a class="article-time-list-link" href="/archive.html">
-                2015-02-27 21:12:31
+                2015-03-01 19:44:29
               </a>
             </li>
           </ul>
@@ -138,48 +138,59 @@ var _hmt = _hmt || [];
           </ul>
         </footer>
         <div class="article-entry" itemprop="articleBody">
-          <div class="article-abstract"><p>传说，有这般灵丹妙药，一经金属器件“服用”，便可使它们同心同德，组成“小金刚”。</p>
+          <div class="article-abstract"><p>以前耕地用牛，现在用大象。</p>
 </div>
-<h1 id="-">计算机——金属器件“小金刚”</h1>
-<p>女娲有一本“造人宝典”，先造泥人，后施法，便有了人。</p>
-<p>冯·诺依曼有一张“造机宝图”，能够造出这“泥人”。</p>
-<p><img src="/drafts/categories/hadoop-kingdom/images/冯诺依曼结构.jpg" alt=""></p>
-<p>给这“泥人”施的法，便是其心智——操作系统。</p>
-<p>从此，计算机不再是一堆金属的拼凑，而是有机的整体。有软有硬，有体肤有心智。</p>
-<h1 id="-">集群——计算机“小金刚”</h1>
-<h2 id="-elephant">灵丹妙药Elephant</h2>
-<p>如果把多台计算机（集群）组成一个“小金刚”，该如何造“泥人”，如何施法呢？</p>
+<h1 id="hadoop-">Hadoop简介</h1>
+<h2 id="hadoop-">Hadoop之生</h2>
+<p>要想处理大数据，必须用“大机器”，传统的“牛拉车”已经不适用了。</p>
+<p><img src="/drafts/categories/hadoop-kingdom/images/老牛.jpg" alt=""></p>
+<p>如果我们没有大机器，怎么办？——把小机器们组成一个“大机器”。</p>
+<p>这组成之法便是金象——Hadoop，由Apache基金会开发，受启发自Google的MapReduce框架。</p>
+<p><img src="/drafts/categories/hadoop-kingdom/images/hadoop大象.jpg" alt=""></p>
+<h2 id="hadoop-">Hadoop之必杀技</h2>
+<blockquote>
+<p>The Apache™ Hadoop® project develops open-source software for reliable, scalable, distributed computing.</p>
+<p>The Apache Hadoop software library is a framework that allows for the distributed processing of large data sets across clusters of computers using simple programming models. It is designed to scale up from single servers to thousands of machines, each offering local computation and storage. Rather than rely on hardware to deliver high-availability, the library itself is designed to detect and handle failures at the application layer, so delivering a highly-available service on top of a cluster of computers, each of which may be prone to failures.</p>
+</blockquote>
+<p>简而言之，Hadoop是可靠、可扩展的分布式计算框架。</p>
+<p>就是说，Hadoop提供了一个编程模型——MapReduce，只要按照MapReduce的规范去编写程序，就可以直接丢给Hadoop执行。而具体的分布式执行过程
+数据的分布式存储都是透明的，开发者无需了解。</p>
+<p>而“可靠”的具体表现是，数据多机器备份，有机器Down掉或者硬盘挂了，都没事。“可扩展”是指，可以增删机器到Hadoop集群中。之所以说Hadoop是一个框架，是因为它是一个“筐子”，提供各种接口，可以开发上层应用，比如Hive。</p>
+<p><img src="/drafts/categories/hadoop-kingdom/images/hadoop生态.jpg" alt=""></p>
+<h1 id="hadoop-">Hadoop使用</h1>
+<p>从实践的角度来看，hadoop就是一个压缩包，解压以后经过一些配置，启动相关服务，就可以使用其提供的命令，比如<code>hadoop</code>、<code>hdfs</code>等。</p>
+<h2 id="-hadoop">安装Hadoop</h2>
+<p>Hadoop有三种模式：</p>
 <ol>
-<li>揉成一个大泥团——网络</li>
-<li>施法——安装软件Elephant</li>
+<li>单机模式
+完全在本地跑，不使用HDFS（分布式文件系统），也不加载Hadoop的任何守护进程，主要用于MapReduce的调试。</li>
+<li>伪分布式模式
+和完全分布式模式的执行过程一样，只不过守护进程都运行在一台机器之上，可以调试代码、查看内存使用情况、检查HDFS输入输出、与守护进程交互。</li>
+<li>完全分布式模式
+Hadoop的守护进程运行与集群之上。</li>
 </ol>
-<p>网络这一步很简单，只要插上网线，安装操作系统（目的是为了提供网络协议和应用开发接口的支持）。</p>
-<p>第二步是安装Elephant，这是跑在特定操作系统的一套软件，有了它，集群便有了心智，葫芦兄弟便成了葫芦小金刚。</p>
-<p><img src="/drafts/categories/hadoop-kingdom/images/葫芦娃.jpg" alt=""></p>
-<p>在服下Elephant这颗丹药后，集群有了自己的心智。从此，集群不再是一堆计算机的杂揉，而是有机的整体。有软有硬，有体肤有心智。</p>
-<h2 id="-">使用集群</h2>
-<p>如此强大的集群，我们该如何使用？</p>
-<p>回到金属器件“小金刚”，也就是计算机。我们使用的方法是与其心智——操作系统进行沟通。操作系统提供了用户接口和开发者接口，只需按照这两个接口来使用即可。比如，装个QQ，看个小电影；写个程序，调个API。</p>
-<p>所以，要想使用集群，就需要与它的心智沟通，也就是——Elephant。本质就是在调用Elephant提供的接口。</p>
-<h2 id="elephant-">Elephant接口调用</h2>
-<p><img src="/drafts/categories/hadoop-kingdom/images/elephant核心.jpg" alt=""></p>
-<p>Elephant提供了E编程模型，使用这个模型加上E语言，开发的程序（比如<code>main.e</code>），就可以直接跑在Elephant之上，也就是分布式程序！</p>
-<p>Elephant提供了E-DFS，即E分布式文件系统。</p>
-<p>Elephant还提供了命令行接口，直接与Elephant交互。</p>
-<pre><code>elephant put 1.txt /                              # 把本地计算机的1.txt放到E-DFS的/路径下
-elephant run main.e efs:///1.txt efs:///out.txt   # 执行分布式程序main.e，输入为E-DFS的/1.txt，输出为/out.txt
-elephant show                                     # 查看程序执行情况
-elephant kill main.e                              # 杀死正在执行的分布式程序main.e
-</code></pre><p>可以看到，我们所面对的不再是多台计算机，或者说，我们压根就不知道就几台计算机。我们面对的是集群，而与集群交互的便是Elephant。</p>
-<p>所以，我们在驯服Elephant，而Elephant在管理集群。</p>
-<h1 id="-">梦醒</h1>
-<p>有一个坏消息，前面所说的Elephant纯属YY。</p>
-<p>有一个好消息，真的有一头大象，可以达到我们想要的效果——<a href="http://hadoop.apache.org/">Hadoop</a>。</p>
-<p><img src="/drafts/categories/hadoop-kingdom/images/hadoop-logo.jpg" alt=""></p>
-<p>没有什么E编程模型和E-DFS。前面提到的编程模型，便是MapReduce。分布式文件系统，则是HDFS。</p>
-<p>前者计算、后者存储，是Hadoop管理和支配集群的两架马车。</p>
-<p>Hadoop的王国，还有其它的精兵强将（如，Hive、Pig、HBase），它们一同丰富着Hadoop的生态环境。而此时的Hadoop已经不仅仅是一颗灵丹妙药，更是一片沃土，各种生物在此斗艳争芳。</p>
-<p><code>-- EOF --</code></p>
+<p>守护进程是一种后台进程，Hadoop的守护进程主要的作用是保护这个“筐子”，发现问题并及时处理。</p>
+<p>可以按照Hadoop的<a href="http://hadoop.apache.org/docs/current/hadoop-project-dist/hadoop-common/SingleCluster.html">官方文档</a>来安装、配置。</p>
+<p>自己用的话，伪分布式模式就足够了。为了方便大家安装Hadoop，写了个<a href="https://github.com/zhangxiaoyang/hadoop-installer">小脚本</a>，可以选择安装单机模式或伪分布式模式。</p>
+<h2 id="hadoop-">Hadoop测试</h2>
+<p>伪分布式的一个测试样例：</p>
+<pre><code>cd hadoop-2.*/
+mkdir input
+cp etc/hadoop/*.xml input
+
+bin/hdfs namenode -format
+sbin/start-dfs.sh
+bin/hdfs dfs -put input /
+bin/hadoop jar share/hadoop/mapreduce/hadoop-mapreduce-examples-2.6.0.jar grep /input /output &#39;dfs[a-z.]+&#39;
+bin/hdfs dfs -cat output/*
+sbin/stop-dfs.sh
+</code></pre><p>参考链接：</p>
+<ol>
+<li><a href="http://blog.fens.me/hadoop-family-roadmap/">http://blog.fens.me/hadoop-family-roadmap/</a></li>
+<li><a href="http://blog.csdn.net/hitwengqi/article/details/8008203">http://blog.csdn.net/hitwengqi/article/details/8008203</a></li>
+<li><a href="http://hadoop.apache.org/docs/current/hadoop-project-dist/hadoop-common/SingleCluster.html">http://hadoop.apache.org/docs/current/hadoop-project-dist/hadoop-common/SingleCluster.html</a></li>
+<li><a href="https://github.com/zhangxiaoyang/hadoop-installer">https://github.com/zhangxiaoyang/hadoop-installer</a></li>
+</ol>
 
         </div>
       </div>
