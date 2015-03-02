@@ -196,3 +196,10 @@
     - hadoop
   create_time: 2015-03-01 11:44:29
   update_time: 2015-03-01 11:44:29
+- id: hadoop-kingdom/hadoop-kingdom-3
+  title: Hadoop王国(3)——暮光之城
+  category: Hadoop王国
+  tags:
+    - eclipse
+  create_time: 2015-03-02 20:26:06
+  update_time: 2015-03-02 20:26:06
