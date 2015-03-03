@@ -153,8 +153,7 @@ var _hmt = _hmt || [];
 <p>The Apache Hadoop software library is a framework that allows for the distributed processing of large data sets across clusters of computers using simple programming models. It is designed to scale up from single servers to thousands of machines, each offering local computation and storage. Rather than rely on hardware to deliver high-availability, the library itself is designed to detect and handle failures at the application layer, so delivering a highly-available service on top of a cluster of computers, each of which may be prone to failures.</p>
 </blockquote>
 <p>简而言之，Hadoop是可靠、可扩展的分布式计算框架。</p>
-<p>就是说，Hadoop提供了一个编程模型——MapReduce，只要按照MapReduce的规范去编写程序，就可以直接丢给Hadoop执行。而具体的分布式执行过程
-数据的分布式存储都是透明的，开发者无需了解。</p>
+<p>就是说，Hadoop提供了一个编程模型——MapReduce，只要按照MapReduce的规范去编写程序，就可以直接丢给Hadoop执行。而具体的分布式执行过程、数据的分布式存储都是透明的，开发者无需了解。</p>
 <p>而“可靠”的具体表现是，数据多机器备份，有机器Down掉或者硬盘挂了，都没事。“可扩展”是指，可以增删机器到Hadoop集群中。之所以说Hadoop是一个框架，是因为它是一个“筐子”，提供各种接口，可以开发上层应用，比如Hive。</p>
 <p><img src="/drafts/categories/hadoop-kingdom/images/hadoop生态.jpg" alt=""></p>
 <h1 id="hadoop-">Hadoop使用</h1>
