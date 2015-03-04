@@ -159,6 +159,9 @@ var _hmt = _hmt || [];
 <p>Apache Hive is a data warehouse infrastructure built on top of Hadoop for providing data summarization, query, and analysis.</p>
 </blockquote>
 <p><img src="/drafts/categories/hadoop-kingdom/images/hive-logo.jpg" alt=""></p>
+<h2 id="hive-">Hive安装与配置</h2>
+<p>写了一个小脚本<a href="https://github.com/zhangxiaoyang/hadoop-installer/tree/master/scripts">hive-installer</a>，可以用它来一键安装。</p>
+<p>运行Hive之前要确保Hadoop平台已准备好（<code>start-dfs.sh</code>，已经格式化过的HDFS，参考<a href="https://github.com/zhangxiaoyang/hadoop-installer">这里</a>）。</p>
 <h2 id="hive-">Hive之小试牛刀</h2>
 <p>数据分析的手段有很多，其中一种是使用数据库。</p>
 <p>我们经常这样做：把数据导入数据库中，使用SQL语句做一些分析处理：</p>
@@ -197,6 +200,7 @@ insert overwrite directory &#39;/DIR&#39; select count(*) from user;
 <ol>
 <li><a href="https://cwiki.apache.org/confluence/display/Hive/GettingStarted">https://cwiki.apache.org/confluence/display/Hive/GettingStarted</a></li>
 <li><a href="http://grouplens.org/datasets/movielens/">http://grouplens.org/datasets/movielens/</a></li>
+<li><a href="https://github.com/zhangxiaoyang/hadoop-installer">https://github.com/zhangxiaoyang/hadoop-installer</a></li>
 </ol>
 <p><code>-- EOF --</code></p>
 

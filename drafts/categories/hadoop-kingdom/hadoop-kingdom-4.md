@@ -21,6 +21,13 @@ Hive的源于Facebook的日志分析需求，现在属于Apache的顶级项目�
 
 ![](hive-logo.jpg)
 
+Hive安装与配置
+---
+
+写了一个小脚本[hive-installer](https://github.com/zhangxiaoyang/hadoop-installer/tree/master/scripts)，可以用它来一键安装。
+
+运行Hive之前要确保Hadoop平台已准备好（`start-dfs.sh`，已经格式化过的HDFS，参考[这里](https://github.com/zhangxiaoyang/hadoop-installer)）。
+
 Hive之小试牛刀
 ---
 
@@ -104,5 +111,6 @@ insert overwrite directory '/DIR' select count(*) from user;
 
 1. <https://cwiki.apache.org/confluence/display/Hive/GettingStarted>
 2. <http://grouplens.org/datasets/movielens/>
+3. <https://github.com/zhangxiaoyang/hadoop-installer>
 
 `-- EOF --`
