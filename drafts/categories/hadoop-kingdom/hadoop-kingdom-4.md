@@ -5,6 +5,7 @@ Hadoop已经不仅仅是一颗灵丹妙药，更是一片沃土，各种生物�
 
 Hive简介
 ===
+
 Hive之生
 ---
 
@@ -66,7 +67,7 @@ load data local inpath '/home/USERNAME/u.user' overwrite into table user;
 load data local inpath '/FILE' overwrite into table user;
 ```
 
-第三步，尽情的执行HiveQL语句吧。
+第三步，尽情的执行HiveQL语句吧：
 
 ```
 select count(*) from user;

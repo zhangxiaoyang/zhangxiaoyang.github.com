@@ -211,3 +211,10 @@
     - hive
   create_time: 2015-03-04 11:05:14
   update_time: 2015-03-04 11:05:14
+- id: hadoop-kingdom/hadoop-kingdom-5
+  title: Hadoop王国(4)——飞天神猪
+  category: Hadoop王国
+  tags:
+    - pig
+  create_time: 2015-03-04 16:29:30
+  update_time: 2015-03-04 16:29:30
