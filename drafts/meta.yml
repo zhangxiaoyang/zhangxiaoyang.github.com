@@ -204,3 +204,10 @@
     - mapreduce
   create_time: 2015-03-02 20:26:06
   update_time: 2015-03-02 20:26:06
+- id: hadoop-kingdom/hadoop-kingdom-4
+  title: Hadoop王国(3)——蜂起云涌
+  category: Hadoop王国
+  tags:
+    - hive
+  create_time: 2015-03-04 11:05:14
+  update_time: 2015-03-04 11:05:14
