@@ -176,7 +176,11 @@ fields terminated by &#39;|&#39;;
 </code></pre><p>可见，Hive通过指定分隔符（这里是“|”），来模拟出一张表。所以，Hive输入的文件应该是结构化的。</p>
 <p>第二步，把文件导入到表中：</p>
 <p>（<code>u.user</code>到<a href="http://files.grouplens.org/datasets/movielens/ml-100k.zip">此处</a>下载。)</p>
-<pre><code>load data local inpath &#39;/home/USERNAME/u.user&#39; overwrite into table user;
+<pre><code># 加载本地文件
+load data local inpath &#39;/home/USERNAME/u.user&#39; overwrite into table user;
+
+# 加载HDFS文件
+load data local inpath &#39;/FILE&#39; overwrite into table user;
 </code></pre><p>第三步，尽情的执行HiveQL语句吧。</p>
 <pre><code>select count(*) from user;
 </code></pre><h2 id="hive-">Hive之技能补充</h2>
@@ -190,8 +194,9 @@ insert overwrite local directory &#39;/home/USERNAME/LOCAL_DIR&#39; select count
 
 # 导出到HDFS
 insert overwrite directory &#39;/DIR&#39; select count(*) from user;
-</code></pre><h1 id="-">数据仓库</h1>
-<p>数据仓库和数据库，是两个经常被提及的概念。Hive虽然使用了数据库里的一些概念，但它本身却是一个数据仓库的架构。</p>
+</code></pre><p>当然，HiveQL内建的函数毕竟有限，所以，提供了UDF（User-Defined Functions）定制自己的函数。</p>
+<h1 id="-">数据仓库</h1>
+<p>数据仓库和数据库，是两个经常被提及的概念。Hive虽然模仿了SQL，但它本身却是一个数据仓库的架构。</p>
 <p>个人认为，区分两者主要看事务。数据库是进行事务操作的，比如增删改查。而数据仓库里往往放的是比较干净且内容不太会发生变化的数据，主要用于查询分析。</p>
 <p>所以，Hive是一个数据仓库的基础架构，算是Hadoop之上的一个App。</p>
 <p>为啥要起名为Hive（蜂巢）？看了下面这张图就能感受到Hive设计者的想象力了。</p>
@@ -200,6 +205,7 @@ insert overwrite directory &#39;/DIR&#39; select count(*) from user;
 <ol>
 <li><a href="https://cwiki.apache.org/confluence/display/Hive/GettingStarted">https://cwiki.apache.org/confluence/display/Hive/GettingStarted</a></li>
 <li><a href="http://grouplens.org/datasets/movielens/">http://grouplens.org/datasets/movielens/</a></li>
+<li><a href="https://cwiki.apache.org/confluence/display/Hive/LanguageManual+UDF">https://cwiki.apache.org/confluence/display/Hive/LanguageManual+UDF</a></li>
 <li><a href="https://github.com/zhangxiaoyang/hadoop-installer">https://github.com/zhangxiaoyang/hadoop-installer</a></li>
 </ol>
 <p><code>-- EOF --</code></p>
