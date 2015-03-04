@@ -5,7 +5,6 @@ Hadoop已经不仅仅是一颗灵丹妙药，更是一片沃土，各种生物�
 
 Hive简介
 ===
-
 Hive之生
 ---
 
@@ -60,7 +59,11 @@ fields terminated by '|';
 （`u.user`到[此处](http://files.grouplens.org/datasets/movielens/ml-100k.zip)下载。)
 
 ```
+# 加载本地文件
 load data local inpath '/home/USERNAME/u.user' overwrite into table user;
+
+# 加载HDFS文件
+load data local inpath '/FILE' overwrite into table user;
 ```
 
 第三步，尽情的执行HiveQL语句吧。
@@ -94,10 +97,12 @@ insert overwrite local directory '/home/USERNAME/LOCAL_DIR' select count(*) from
 insert overwrite directory '/DIR' select count(*) from user;
 ```
 
+当然，HiveQL内建的函数毕竟有限，所以，提供了UDF（User-Defined Functions）定制自己的函数。
+
 数据仓库
 ===
 
-数据仓库和数据库，是两个经常被提及的概念。Hive虽然使用了数据库里的一些概念，但它本身却是一个数据仓库的架构。
+数据仓库和数据库，是两个经常被提及的概念。Hive虽然模仿了SQL，但它本身却是一个数据仓库的架构。
 
 个人认为，区分两者主要看事务。数据库是进行事务操作的，比如增删改查。而数据仓库里往往放的是比较干净且内容不太会发生变化的数据，主要用于查询分析。
 
@@ -111,6 +116,7 @@ insert overwrite directory '/DIR' select count(*) from user;
 
 1. <https://cwiki.apache.org/confluence/display/Hive/GettingStarted>
 2. <http://grouplens.org/datasets/movielens/>
-3. <https://github.com/zhangxiaoyang/hadoop-installer>
+3. <https://cwiki.apache.org/confluence/display/Hive/LanguageManual+UDF>
+4. <https://github.com/zhangxiaoyang/hadoop-installer>
 
 `-- EOF --`
