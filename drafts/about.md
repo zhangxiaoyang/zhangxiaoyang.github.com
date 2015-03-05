@@ -1,21 +1,28 @@
+这个博客是如何搭建的？
+===
+
+- [Fow](https://github.com/zhangxiaoyang/fow)
+
 About
 =====
 
 - 对未知充满好奇，酷爱coding
 - 偶尔用用[weibo](http://weibo.com/u/1704839092/)，代码放在[github](https://github.com/zhangxiaoyang/)
-- 爱美工，爱折腾的北漂大学生
+- 爱美工的程序员
 
 Links
 =====
 
 - [维斯有条河](http://vince67.github.io/)
 要帅气有帅气要沧桑有沧桑的优秀学弟
+- [Laike9m](http://laike9m.com/)
+两个字，帅！
 
 Apps
 ====
 
 - [Fow](https://github.com/zhangxiaoyang/fow)
-基于目录生成静态博客
+基于分类生成静态博客，可部署到GitHub Pages
 - [Friendsbt](http://friendsbt.com/)
 P2P资源分享平台
 - [Zhaoxinwo](http://zhaoxinwo.com/)
