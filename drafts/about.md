@@ -1,7 +1,11 @@
-这个博客是如何搭建的？
-===
-
-- [Fow](https://github.com/zhangxiaoyang/fow)
+<div class="article-abstract">
+    <p>
+    这个博客是如何搭建的？
+    </p>
+    <p>
+    静态博客生成器：<a href="https://github.com/zhangxiaoyang/fow" target="_blank">Fow</a>
+    </p>
+</div>
 
 About
 =====
