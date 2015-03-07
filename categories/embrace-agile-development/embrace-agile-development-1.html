@@ -109,13 +109,13 @@ var _hmt = _hmt || [];
 
 <div class="outer">
   <section id="main">
-    <article id="hadoop-kingdom/hadoop-kingdom-5" class="article article-type-post"
+    <article id="embrace-agile-development/embrace-agile-development-1" class="article article-type-post"
     itemscope="" itemprop="blogPost">
       <div class="article-inner">
         <header class="article-header">
           <h1 itemprop="name">
-            <a class="article-title" href="/categories/hadoop-kingdom/hadoop-kingdom-5.html">
-              Hadoop王国(5)——飞天神猪
+            <a class="article-title" href="/categories/embrace-agile-development/embrace-agile-development-1.html">
+              拥抱敏捷开发(1)——敏捷开发碎碎念
             </a>
           </h1>
         </header>
@@ -123,7 +123,7 @@ var _hmt = _hmt || [];
           <ul class="article-time-list">
             <li class="article-time-list-item">
               <a class="article-time-list-link" href="/archive.html">
-                2015-03-04 16:29:30
+                2015-03-07 21:29:06
               </a>
             </li>
           </ul>
@@ -131,7 +131,7 @@ var _hmt = _hmt || [];
           <ul class="article-category-list">
             <li class="article-category-list-item">
               <a class="article-category-list-link" href="/category.html">
-                Hadoop王国
+                拥抱敏捷开发
               </a>
             </li>
           </ul>
@@ -140,75 +140,14 @@ var _hmt = _hmt || [];
             
               <li class="article-tag-list-item">
                 <a class="article-tag-list-link" href="/tag.html">
-                  pig
+                  敏捷开发
                 </a>
               </li>
             
           </ul>
         </footer>
         <div class="article-entry" itemprop="articleBody">
-          <div class="article-abstract"><p>Hadoop之上有一只灵兽——飞天猪（Pig）。</p>
-</div>
-<h1 id="pig-">Pig简介</h1>
-<h2 id="pig-">Pig之生</h2>
-<p>Pig和Hive一样，都是Hadoop之上的一个App，都可以把它们可以识别的语言转换MapReduce程序执行，Pig可以识别的语言称为Pig Latin。</p>
-<p>Pig源于Yahoo!，同样是Apache的顶级项目。</p>
-<blockquote>
-<p>Apache Pig is a platform for analyzing large data sets that consists of a high-level language for expressing data analysis programs, coupled with infrastructure for evaluating these programs. The salient property of Pig programs is that their structure is amenable to substantial parallelization, which in turns enables them to handle very large data sets.</p>
-</blockquote>
-<p><img src="/drafts/categories/hadoop-kingdom/images/pig-logo.jpg" alt=""></p>
-<h2 id="pig-">Pig安装与配置</h2>
-<p>写了一个小脚本<a href="https://github.com/zhangxiaoyang/hadoop-installer/tree/master/scripts">pig-installer</a>，可以用它来一键安装。</p>
-<p>运行Pig之前要确保Hadoop平台已准备好（<code>start-dfs.sh</code>，已经格式化过的HDFS，参考<a href="https://github.com/zhangxiaoyang/hadoop-installer">这里</a>）。</p>
-<h2 id="pig-">Pig之小试牛刀</h2>
-<p>第一步，加载文件：
-（需要先把<code>u.user</code>放到HDFS根目录。<code>u.user</code>到<a href="http://files.grouplens.org/datasets/movielens/ml-100k.zip">此处</a>下载。)</p>
-<pre><code>grunt&gt; A = load &#39;/u.user&#39; using PigStorage(&#39;|&#39;) as
-(
-    id:int,
-    age:int,
-    gender:chararray,
-    occupation:chararray,
-    zipcode:chararray
-)
-</code></pre><p>可以看到，Pig和Hive很像，都是通过指定分隔符的方式来区分字段。</p>
-<p>第二步，尽情的执行Pig Latin语句吧：</p>
-<pre><code>B = foreach A generate id;
-</code></pre><p>第三步，导出数据：</p>
-<pre><code>store B into &#39;/DIR&#39;;
-</code></pre><h2 id="pig-">Pig补充</h2>
-<p>Pig有两种模式：本地模式、MapReduce模式。</p>
-<p>执行<code>pig</code>默认进入MapReduce模式，所以脚本的路径均指HDFS的路径。</p>
-<p>可以通过<code>pig -x local</code>进入本地模式，则路径指本地路径。</p>
-<p>同样可以让Pig执行一个脚本文件：</p>
-<pre><code>pig -f test.pig
-</code></pre><h2 id="pig-hive-">Pig、Hive分不清</h2>
-<p>Pig和Hive是功能很相似的两个工具，网上有很多人在讨论它俩的区别。</p>
-<p>在<a href="http://stackoverflow.com/questions/10279942/what-is-the-difference-between-apache-pig-and-apache-hive">这里</a>找到一个很不错的解释。</p>
-<p>原文如下：</p>
-<blockquote>
-<p>Apache Pig and Hive are two projects that layer on top of Hadoop, and provide a higher-level language for using Hadoop&#39;s MapReduce library. Apache Pig provides a scripting language for describing operations like reading, filtering, transforming, joining, and writing data -- exactly the operations that MapReduce was originally designed for. Rather than expressing these operations in thousands of lines of Java code that uses MapReduce directly, Pig lets users express them in a language not unlike a bash or perl script. Pig is excellent for prototyping and rapidly developing MapReduce-based jobs, as opposed to coding MapReduce jobs in Java itself.</p>
-<p>If Pig is &quot;scripting for Hadoop&quot;, then Hive is &quot;SQL queries for Hadoop&quot;. Apache Hive offers an even more specific and higher-level language, for querying data by running Hadoop jobs, rather than directly scripting step-by-step the operation of several MapReduce jobs on Hadoop. The language is, by design, extremely SQL-like. Hive is still intended as a tool for long-running batch-oriented queries over massive data; it&#39;s not &quot;real-time&quot; in any sense. Hive is an excellent tool for analysts and business development types who are accustomed to SQL-like queries and Business Intelligence systems; it will let them easily leverage your shiny new Hadoop cluster to perform ad-hoc queries or generate report data across data stored in storage systems mentioned above.</p>
-</blockquote>
-<p>我的理解是，Pig是对Hadoop写脚本，而Hive是对Hadoop做查询。写脚本是要有编程基础的，但也更灵活。做查询似乎对编程的要求要低一些，但也不够灵活。尽管Pig和Hive都提供了UDF扩展，但似乎也是少数人触碰的吧。</p>
-<p>由于是来自Facebook和Yahoo!两个不同的公司，功能肯定会有重合，一点也不奇怪。就像支付宝、百付宝、微信支付，唉。</p>
-<h1 id="pig-">Pig会飞</h1>
-<p>在Pig的官网上有对Pig哲学的解释，大抵是说看似笨笨的Pig其实是充满智慧的！</p>
-<ul>
-<li>Pig可以吃任何东西（处理任何数据）——有容乃大</li>
-<li>Pig会出现在任何地方（对数据并行处理，不依赖并行处理框架）——自力更生</li>
-<li>Pig是家禽（容易被使用，被优化）——亲和力</li>
-<li>Pig会飞（可以飞快的处理数据，并持续提高性能）——上进心</li>
-</ul>
-<p>参考链接：</p>
-<ol>
-<li><a href="http://pig.apache.org/docs/r0.14.0/start.html">http://pig.apache.org/docs/r0.14.0/start.html</a></li>
-<li><a href="http://stackoverflow.com/questions/10279942/what-is-the-difference-between-apache-pig-and-apache-hive">http://stackoverflow.com/questions/10279942/what-is-the-difference-between-apache-pig-and-apache-hive</a></li>
-<li><a href="http://pig.apache.org/philosophy.html">http://pig.apache.org/philosophy.html</a></li>
-<li><a href="https://github.com/zhangxiaoyang/hadoop-installer">https://github.com/zhangxiaoyang/hadoop-installer</a></li>
-</ol>
-<p><code>-- EOF --</code></p>
-
+          
         </div>
       </div>
     </article>

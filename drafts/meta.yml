@@ -205,16 +205,23 @@
   create_time: 2015-03-02 20:26:06
   update_time: 2015-03-02 20:26:06
 - id: hadoop-kingdom/hadoop-kingdom-4
-  title: Hadoop王国(3)——蜂起云涌
+  title: Hadoop王国(4)——蜂起云涌
   category: Hadoop王国
   tags:
     - hive
   create_time: 2015-03-04 11:05:14
   update_time: 2015-03-04 11:05:14
 - id: hadoop-kingdom/hadoop-kingdom-5
-  title: Hadoop王国(4)——飞天神猪
+  title: Hadoop王国(5)——飞天神猪
   category: Hadoop王国
   tags:
     - pig
   create_time: 2015-03-04 16:29:30
   update_time: 2015-03-04 16:29:30
+- id: embrace-agile-development/embrace-agile-development-1
+  title: 拥抱敏捷开发(1)——敏捷开发碎碎念
+  category: 拥抱敏捷开发
+  tags:
+    - 敏捷开发
+  create_time: 2015-03-07 21:29:06
+  update_time: 2015-03-07 21:29:06
