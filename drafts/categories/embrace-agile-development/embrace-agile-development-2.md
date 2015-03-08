@@ -41,6 +41,8 @@ TDD可以保证系统能正确的运行，但是却无法保证是按照用户�
 - 在与生产环境一致的环境中测试
 - 人人都能看到现在的持续集成情况
 
+参考链接：
+
 1. <http://www.ltesting.net/ceshi/ruanjianzhiliangbaozheng/zlmx/mjkf/2012/0224/204194.html>
 2. <http://www.cnblogs.com/CloudTeng/archive/2012/02/25/2367565.html>
 3. <http://weavora.com/blog/2014/02/20/guide-continuous-integration-teamcity-behat/>

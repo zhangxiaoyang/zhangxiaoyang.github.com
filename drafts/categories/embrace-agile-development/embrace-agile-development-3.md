@@ -66,6 +66,8 @@ File pattern填写`pyflakes.log`，Parser选择`PyLint`
 - Report Violations
 cpd填写`output.xml`，pylint填写`pylint.log`
 
+参考链接：
+
 1. <http://www.ibm.com/developerworks/cn/java/j-lo-jenkins/>
 2. <http://www.wallix.org/2011/06/29/how-to-use-jenkins-for-python-development/>
 3. <http://www.hustlzp.com/post/2014/08/jenkins>
