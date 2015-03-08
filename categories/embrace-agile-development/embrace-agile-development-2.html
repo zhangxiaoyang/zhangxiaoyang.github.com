@@ -109,13 +109,13 @@ var _hmt = _hmt || [];
 
 <div class="outer">
   <section id="main">
-    <article id="embrace-agile-development/embrace-agile-development-1" class="article article-type-post"
+    <article id="embrace-agile-development/embrace-agile-development-2" class="article article-type-post"
     itemscope="" itemprop="blogPost">
       <div class="article-inner">
         <header class="article-header">
           <h1 itemprop="name">
-            <a class="article-title" href="/categories/embrace-agile-development/embrace-agile-development-1.html">
-              拥抱敏捷开发(1)——为变而生
+            <a class="article-title" href="/categories/embrace-agile-development/embrace-agile-development-2.html">
+              拥抱敏捷开发(2)——更加敏捷
             </a>
           </h1>
         </header>
@@ -123,7 +123,7 @@ var _hmt = _hmt || [];
           <ul class="article-time-list">
             <li class="article-time-list-item">
               <a class="article-time-list-link" href="/archive.html">
-                2015-03-07 21:29:06
+                2015-03-08 15:05:10
               </a>
             </li>
           </ul>
@@ -140,50 +140,59 @@ var _hmt = _hmt || [];
             
               <li class="article-tag-list-item">
                 <a class="article-tag-list-link" href="/tag.html">
-                  敏捷开发
+                  BDD
+                </a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a class="article-tag-list-link" href="/tag.html">
+                  TDD
+                </a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a class="article-tag-list-link" href="/tag.html">
+                  持续集成
                 </a>
               </li>
             
           </ul>
         </footer>
         <div class="article-entry" itemprop="articleBody">
-          <div class="article-abstract"><p>拥抱敏捷，拥抱变化。</p>
+          <div class="article-abstract"><p>在敏捷开发的“洗脑”之下，有很多种实践的方法。不论哪种方法，测试都是敏捷的基础。</p>
 </div>
-<p>软件开发的最终目的是交付符合需求的软件。为了能提高软件开发的效率，有人提出一些方法，比如，瀑布式开发、螺旋式开发、敏捷开发等等。</p>
-<p>当然，边做边改也是一种开发模式，但是对比较大的项目来说，肯定是不适用的。</p>
-<p>在这里不讨论这些模式孰优孰劣，应用场景不同，表现则不同。</p>
-<h1 id="-">敏捷开发</h1>
-<h2 id="-">为变而生</h2>
-<p>软件的开发过程中，需求会变，用户会变，整个世界都在变！</p>
-<p><img src="/drafts/categories/embrace-agile-development/images/拷贝不走样.jpg" alt=""></p>
-<p>鉴于此，有人提出了敏捷开发的模式，在业界也已经成为了一种推荐模式。</p>
-<h2 id="-">唯快不破</h2>
-<p>敏捷开发的主要思想就是要“敏捷”，敏捷的开发软件，敏捷的对变化做出反应。拥抱敏捷，就是在拥抱变化。</p>
-<h2 id="-">敏捷神功</h2>
-<p>管理软件开发过程和软件开发中的人是两大难题，《人月神话》和《人件》都分别进行了讨论。</p>
-<p>敏捷开发也针对这两点提供了解决方案。</p>
-<p><strong>“人月”</strong></p>
+<h1 id="tdd-bdd">TDD与BDD</h1>
+<blockquote>
+<p>测试可以及时的验证代码的正确性，系统功能的健全与否，及时的反馈，及时的叫停。</p>
+</blockquote>
+<p>所以，测试是保证敏捷的基础。采用大量的自动化测试，能够保证够快、够敏捷的保证软件质量。正是如此，才有了“代码即文档”的说法，测试代码成为了功能代码的文档。</p>
+<p>TDD（Test-driven developmenet），即测试驱动开发，是敏捷开发中非常强调的。TDD倡导先编写测试，再完成功能的设计。其中的好处是，系统实现的代码都可以被测试覆盖到。</p>
+<p>TDD可以保证系统能正确的运行，但是却无法保证是按照用户预期的方式运行。所以，就有了BDD（Behavior-driven developmenet）的概念，其目的就是把大家的理解一致化，这样最终开发出来的软件应该是符合用户预期的。</p>
+<p><img src="/drafts/categories/embrace-agile-development/images/tdd-bdd.jpg" alt=""></p>
+<h1 id="-">持续集成</h1>
+<p>有了TDD和BDD的保驾护航，软件开发“敏捷”了很多，能够及时的像用户的预期靠拢，并产出符合预期的软件。</p>
+<p>但是，开发人员依然做着很多不“敏捷”的事情——频繁部署。假如我们像软件添加了很小的一个功能，我们需要做很多事情：拉取代码、修改代码、添加测试代码、构建程序（编译、链接等）、运行测试、提交代码（如果有冲突，还需要解决冲突）。</p>
+<p>所以，为了再敏捷一些，有人提出了持续集成（CI，Continuous Integration）。</p>
+<p><img src="/drafts/categories/embrace-agile-development/images/ci配图.jpg" alt=""></p>
+<p>有了持续集成，多次添加小功能不必做重复的事情，让频繁部署成为易事。</p>
+<p>可以把持续集成理解成一个Cron的定时任务，但它能做的远不止如此。</p>
+<p>要想达到持续集成的效果，我们需要做以下事情：</p>
 <ul>
-<li>需求拆分，把大的需求拆分成小的需求，及时获得用户反馈，减少对需求的理解偏差。</li>
-<li>提升软件开发的弹性，加入代码审查，让代码有弹性。</li>
-<li>加入持续构建，使软件具备快速交付的能力。</li>
-<li>加入自动测试，覆盖到人力测试无法满足的场景，使软件随时都可交付。</li>
+<li>维护一个单一的代码库</li>
+<li>自动化构建的过程</li>
+<li>自动化测试的过程</li>
+<li>自动化部署</li>
+<li>每次提交都触发构建</li>
+<li>像主线提交代码</li>
+<li>在与生产环境一致的环境中测试</li>
+<li><p>人人都能看到现在的持续集成情况</p>
+</li>
+<li><p><a href="http://www.ltesting.net/ceshi/ruanjianzhiliangbaozheng/zlmx/mjkf/2012/0224/204194.html">http://www.ltesting.net/ceshi/ruanjianzhiliangbaozheng/zlmx/mjkf/2012/0224/204194.html</a></p>
+</li>
+<li><a href="http://www.cnblogs.com/CloudTeng/archive/2012/02/25/2367565.html">http://www.cnblogs.com/CloudTeng/archive/2012/02/25/2367565.html</a></li>
+<li><a href="http://weavora.com/blog/2014/02/20/guide-continuous-integration-teamcity-behat/">http://weavora.com/blog/2014/02/20/guide-continuous-integration-teamcity-behat/</a></li>
+<li><a href="http://www.cnblogs.com/CloudTeng/archive/2012/02/25/2367565.html">http://www.cnblogs.com/CloudTeng/archive/2012/02/25/2367565.html</a></li>
 </ul>
-<p><strong>“人件”</strong></p>
-<ul>
-<li>让每个人都参与到软件产品中来，成为软件开发的主人，激发每个人的潜能。</li>
-<li>鼓励团队的交流，在交流中提升自己。</li>
-</ul>
-<p>综合“人月”和“人件”，加快软件的开发，从而达到敏捷。</p>
-<h1 id="-">敏捷价值观</h1>
-<p>总之，敏捷开发是为了迅速的适应变化。选择了敏捷，也就等于相信了敏捷，接受了敏捷的“洗脑”。</p>
-<p>条条大路通罗马，我们在此选择“敏捷之路”。</p>
-<ol>
-<li><a href="http://wiki.mbalib.com/wiki/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91%E6%A8%A1%E5%9E%8B">http://wiki.mbalib.com/wiki/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91%E6%A8%A1%E5%9E%8B</a></li>
-<li><a href="http://802796.blog.51cto.com/8476804/1361878">http://802796.blog.51cto.com/8476804/1361878</a></li>
-<li><a href="http://www.cnblogs.com/jetlian/p/4213663.html">http://www.cnblogs.com/jetlian/p/4213663.html</a></li>
-<li><a href="http://bbs.chinaunix.net/thread-142180-1-1.html">http://bbs.chinaunix.net/thread-142180-1-1.html</a></li>
-</ol>
 <p><code>-- EOF --</code></p>
 
         </div>

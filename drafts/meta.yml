@@ -225,3 +225,20 @@
     - 敏捷开发
   create_time: 2015-03-07 21:29:06
   update_time: 2015-03-07 21:29:06
+- id: embrace-agile-development/embrace-agile-development-2
+  title: 拥抱敏捷开发(2)——更加敏捷
+  category: 拥抱敏捷开发
+  tags:
+    - BDD
+    - TDD
+    - 持续集成
+  create_time: 2015-03-08 15:05:10
+  update_time: 2015-03-08 15:05:10
+- id: embrace-agile-development/embrace-agile-development-3
+  title: 拥抱敏捷开发(3)——CI Server
+  category: 拥抱敏捷开发
+  tags:
+    - jenkins
+    - python
+  create_time: 2015-03-08 16:02:36
+  update_time: 2015-03-08 16:02:36

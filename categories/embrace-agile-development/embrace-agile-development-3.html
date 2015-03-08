@@ -109,13 +109,13 @@ var _hmt = _hmt || [];
 
 <div class="outer">
   <section id="main">
-    <article id="embrace-agile-development/embrace-agile-development-1" class="article article-type-post"
+    <article id="embrace-agile-development/embrace-agile-development-3" class="article article-type-post"
     itemscope="" itemprop="blogPost">
       <div class="article-inner">
         <header class="article-header">
           <h1 itemprop="name">
-            <a class="article-title" href="/categories/embrace-agile-development/embrace-agile-development-1.html">
-              拥抱敏捷开发(1)——为变而生
+            <a class="article-title" href="/categories/embrace-agile-development/embrace-agile-development-3.html">
+              拥抱敏捷开发(3)——CI Server
             </a>
           </h1>
         </header>
@@ -123,7 +123,7 @@ var _hmt = _hmt || [];
           <ul class="article-time-list">
             <li class="article-time-list-item">
               <a class="article-time-list-link" href="/archive.html">
-                2015-03-07 21:29:06
+                2015-03-08 16:02:36
               </a>
             </li>
           </ul>
@@ -140,50 +140,76 @@ var _hmt = _hmt || [];
             
               <li class="article-tag-list-item">
                 <a class="article-tag-list-link" href="/tag.html">
-                  敏捷开发
+                  jenkins
+                </a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a class="article-tag-list-link" href="/tag.html">
+                  python
                 </a>
               </li>
             
           </ul>
         </footer>
         <div class="article-entry" itemprop="articleBody">
-          <div class="article-abstract"><p>拥抱敏捷，拥抱变化。</p>
+          <div class="article-abstract"><p>对于一个实际的Python项目，如何发挥敏捷开发的作用？</p>
 </div>
-<p>软件开发的最终目的是交付符合需求的软件。为了能提高软件开发的效率，有人提出一些方法，比如，瀑布式开发、螺旋式开发、敏捷开发等等。</p>
-<p>当然，边做边改也是一种开发模式，但是对比较大的项目来说，肯定是不适用的。</p>
-<p>在这里不讨论这些模式孰优孰劣，应用场景不同，表现则不同。</p>
-<h1 id="-">敏捷开发</h1>
-<h2 id="-">为变而生</h2>
-<p>软件的开发过程中，需求会变，用户会变，整个世界都在变！</p>
-<p><img src="/drafts/categories/embrace-agile-development/images/拷贝不走样.jpg" alt=""></p>
-<p>鉴于此，有人提出了敏捷开发的模式，在业界也已经成为了一种推荐模式。</p>
-<h2 id="-">唯快不破</h2>
-<p>敏捷开发的主要思想就是要“敏捷”，敏捷的开发软件，敏捷的对变化做出反应。拥抱敏捷，就是在拥抱变化。</p>
-<h2 id="-">敏捷神功</h2>
-<p>管理软件开发过程和软件开发中的人是两大难题，《人月神话》和《人件》都分别进行了讨论。</p>
-<p>敏捷开发也针对这两点提供了解决方案。</p>
-<p><strong>“人月”</strong></p>
+<p>要想进行敏捷的开发，对了对人的管理以外，我们还需要管理整个软件开发过程。使用持续集成系统可以帮助我们做到这一点。</p>
+<p><a href="http://jenkins-ci.org/">Jenkins</a>是一个开源的持续集成系统，支持插件扩展，非常易于上手。</p>
+<p><img src="/drafts/categories/embrace-agile-development/images/jenkins-logo.png" alt=""></p>
+<h1 id="-python-jenkins">在Python项目中使用Jenkins</h1>
+<h2 id="-jenkins-">安装Jenkins插件</h2>
+<p>为了能够从Git仓库拉取代码，我们需要安装以下Jenkins插件：</p>
 <ul>
-<li>需求拆分，把大的需求拆分成小的需求，及时获得用户反馈，减少对需求的理解偏差。</li>
-<li>提升软件开发的弹性，加入代码审查，让代码有弹性。</li>
-<li>加入持续构建，使软件具备快速交付的能力。</li>
-<li>加入自动测试，覆盖到人力测试无法满足的场景，使软件随时都可交付。</li>
+<li>GIT plugin
+必装</li>
+<li>GitHub API Plugin
+连接GitHub</li>
+<li>GitBucket Plugin
+连接Bitbucket</li>
 </ul>
-<p><strong>“人件”</strong></p>
+<p>为了能够使用代码测试、评估的结果，需要以下Jenkins插件：</p>
 <ul>
-<li>让每个人都参与到软件产品中来，成为软件开发的主人，激发每个人的潜能。</li>
-<li>鼓励团队的交流，在交流中提升自己。</li>
+<li>xUnit plugin</li>
+<li>SLOCCount Plug-in</li>
+<li>Violations plugin</li>
+<li>Warnings Plug-in</li>
+<li>Cobertura Plugin</li>
 </ul>
-<p>综合“人月”和“人件”，加快软件的开发，从而达到敏捷。</p>
-<h1 id="-">敏捷价值观</h1>
-<p>总之，敏捷开发是为了迅速的适应变化。选择了敏捷，也就等于相信了敏捷，接受了敏捷的“洗脑”。</p>
-<p>条条大路通罗马，我们在此选择“敏捷之路”。</p>
-<ol>
-<li><a href="http://wiki.mbalib.com/wiki/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91%E6%A8%A1%E5%9E%8B">http://wiki.mbalib.com/wiki/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91%E6%A8%A1%E5%9E%8B</a></li>
-<li><a href="http://802796.blog.51cto.com/8476804/1361878">http://802796.blog.51cto.com/8476804/1361878</a></li>
-<li><a href="http://www.cnblogs.com/jetlian/p/4213663.html">http://www.cnblogs.com/jetlian/p/4213663.html</a></li>
-<li><a href="http://bbs.chinaunix.net/thread-142180-1-1.html">http://bbs.chinaunix.net/thread-142180-1-1.html</a></li>
-</ol>
+<h2 id="-python-">安装Python库</h2>
+<p>执行代码测试、评估，需要以下Python库：</p>
+<ul>
+<li>nose</li>
+<li>clonedigger</li>
+<li>pylint</li>
+<li>pyflakes</li>
+<li>coverage</li>
+</ul>
+<h2 id="-jenkins">测试、评估结果导入到Jenkins</h2>
+<p>在Jenkins中新建一个项目，其<code>Execute shell</code>填写如下：</p>
+<pre><code>#!/usr/bin/env bash
+echo `pwd`
+bash -x jenkins-for-python.sh
+</code></pre><p>其中，<code>jenkins-for-python.sh</code>需要放在版本库的根目录。内容可以参考<a href="https://github.com/zhangxiaoyang/jenkins-test-repo">此处</a>。</p>
+<p>其中主要的功能是，批处理执行各种测试、各种生成评估报告。其中，生成的文件名要和Jenkins项目中的构建后操作的配置一致。</p>
+<ul>
+<li>Scan for compiler warnings
+File pattern填写<code>pyflakes.log</code>，Parser选择<code>PyLint</code></li>
+<li>Publish Cobertura Coverage Report
+填写<code>coverage.xml</code></li>
+<li>Publish JUnit test result report
+填写<code>nosetests.xml</code></li>
+<li>Publish SLOCCount analysis results
+填写<code>sloccount.sc</code></li>
+<li><p>Report Violations
+cpd填写<code>output.xml</code>，pylint填写<code>pylint.log</code></p>
+</li>
+<li><p><a href="http://www.ibm.com/developerworks/cn/java/j-lo-jenkins/">http://www.ibm.com/developerworks/cn/java/j-lo-jenkins/</a></p>
+</li>
+<li><a href="http://www.wallix.org/2011/06/29/how-to-use-jenkins-for-python-development/">http://www.wallix.org/2011/06/29/how-to-use-jenkins-for-python-development/</a></li>
+<li><a href="http://www.hustlzp.com/post/2014/08/jenkins">http://www.hustlzp.com/post/2014/08/jenkins</a></li>
+</ul>
 <p><code>-- EOF --</code></p>
 
         </div>
