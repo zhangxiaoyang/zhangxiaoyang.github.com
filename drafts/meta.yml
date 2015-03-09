@@ -235,7 +235,7 @@
   create_time: 2015-03-08 15:05:10
   update_time: 2015-03-08 15:05:10
 - id: embrace-agile-development/embrace-agile-development-3
-  title: 拥抱敏捷开发(3)——CI Server
+  title: 拥抱敏捷开发(3)——持续集成
   category: 拥抱敏捷开发
   tags:
     - jenkins

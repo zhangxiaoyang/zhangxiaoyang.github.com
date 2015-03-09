@@ -115,7 +115,7 @@ var _hmt = _hmt || [];
         <header class="article-header">
           <h1 itemprop="name">
             <a class="article-title" href="/categories/embrace-agile-development/embrace-agile-development-3.html">
-              拥抱敏捷开发(3)——CI Server
+              拥抱敏捷开发(3)——持续集成
             </a>
           </h1>
         </header>
@@ -155,7 +155,7 @@ var _hmt = _hmt || [];
         <div class="article-entry" itemprop="articleBody">
           <div class="article-abstract"><p>对于一个实际的Python项目，如何发挥敏捷开发的作用？</p>
 </div>
-<p>要想进行敏捷的开发，对了对人的管理以外，我们还需要管理整个软件开发过程。使用持续集成系统可以帮助我们做到这一点。</p>
+<p>要想进行敏捷的开发，除了要管理好人，也要管理好整个软件开发过程。持续集成不仅仅可以使开发者更加敏捷，也起到了规范的作用。比如，可以把代码审查、覆盖率检测等加入到自动构建的脚本中去，强制开发者写测试等等。</p>
 <p><a href="http://jenkins-ci.org/">Jenkins</a>是一个开源的持续集成系统，支持插件扩展，非常易于上手。</p>
 <p><img src="/drafts/categories/embrace-agile-development/images/jenkins-logo.png" alt=""></p>
 <h1 id="-python-jenkins">在Python项目中使用Jenkins</h1>
@@ -205,6 +205,10 @@ File pattern填写<code>pyflakes.log</code>，Parser选择<code>PyLint</code></l
 <li>Report Violations
 cpd填写<code>output.xml</code>，pylint填写<code>pylint.log</code></li>
 </ul>
+<h2 id="-">还可以做更多</h2>
+<p>还可以配置接收邮件，使得开发者能够了解到构建的情况。</p>
+<p>还可以与其它项目管理平台连接，如<code>redmine</code>。</p>
+<p>好了，万事俱备，只欠一个好的Leader和团队了。</p>
 <p>参考链接：</p>
 <ol>
 <li><a href="http://www.ibm.com/developerworks/cn/java/j-lo-jenkins/">http://www.ibm.com/developerworks/cn/java/j-lo-jenkins/</a></li>
