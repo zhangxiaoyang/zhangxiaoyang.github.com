@@ -171,20 +171,30 @@ var _hmt = _hmt || [];
 </ul>
 <p>为了能够使用代码测试、评估的结果，需要以下Jenkins插件：</p>
 <ul>
-<li>xUnit plugin</li>
-<li>SLOCCount Plug-in</li>
-<li>Violations plugin</li>
-<li>Warnings Plug-in</li>
-<li>Cobertura Plugin</li>
+<li>xUnit plugin
+调用nose结果</li>
+<li>SLOCCount Plug-in
+调用sloccount结果</li>
+<li>Violations plugin
+调用clonedigger、pylint结果</li>
+<li>Warnings Plug-in
+调用pyflakes结果</li>
+<li>Cobertura Plugin
+调用coverage结果</li>
 </ul>
 <h2 id="-python-">安装Python库</h2>
 <p>执行代码测试、评估，需要以下Python库：</p>
 <ul>
-<li>nose</li>
-<li>clonedigger</li>
-<li>pylint</li>
-<li>pyflakes</li>
-<li>coverage</li>
+<li>nose
+单元测试</li>
+<li>clonedigger
+重复代码检测</li>
+<li>pylint
+代码分析</li>
+<li>pyflakes
+代码分析</li>
+<li>coverage
+覆盖率计算</li>
 </ul>
 <h2 id="-jenkins">测试、评估结果导入到Jenkins</h2>
 <p>在Jenkins中新建一个项目，其<code>Execute shell</code>填写如下：</p>
@@ -205,6 +215,7 @@ File pattern填写<code>pyflakes.log</code>，Parser选择<code>PyLint</code></l
 <li>Report Violations
 cpd填写<code>output.xml</code>，pylint填写<code>pylint.log</code></li>
 </ul>
+<p>通过上面的配置，就可以把命令行的输出文件与jenkins连接起来了。可以在jenkins的管理界面看这些赏心悦目的图表，而非黑黑的命令行。</p>
 <h2 id="-">还可以做更多</h2>
 <p>还可以配置接收邮件，使得开发者能够了解到构建的情况。</p>
 <p>还可以与其它项目管理平台连接，如<code>redmine</code>。</p>

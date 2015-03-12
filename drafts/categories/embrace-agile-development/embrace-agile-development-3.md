@@ -24,10 +24,15 @@
 
 为了能够使用代码测试、评估的结果，需要以下Jenkins插件：
 - xUnit plugin
+调用nose结果
 - SLOCCount Plug-in
+调用sloccount结果
 - Violations plugin
+调用clonedigger、pylint结果
 - Warnings Plug-in
+调用pyflakes结果
 - Cobertura Plugin
+调用coverage结果
 
 安装Python库
 ---
@@ -35,10 +40,15 @@
 执行代码测试、评估，需要以下Python库：
 
 - nose
+单元测试
 - clonedigger
+重复代码检测
 - pylint
+代码分析
 - pyflakes
+代码分析
 - coverage
+覆盖率计算
 
 测试、评估结果导入到Jenkins
 ---
@@ -65,6 +75,8 @@ File pattern填写`pyflakes.log`，Parser选择`PyLint`
 填写`sloccount.sc`
 - Report Violations
 cpd填写`output.xml`，pylint填写`pylint.log`
+
+通过上面的配置，就可以把命令行的输出文件与jenkins连接起来了。可以在jenkins的管理界面看这些赏心悦目的图表，而非黑黑的命令行。
 
 还可以做更多
 ---
