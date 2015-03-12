@@ -242,3 +242,11 @@
     - python
   create_time: 2015-03-08 16:02:36
   update_time: 2015-03-08 16:02:36
+- id: embrace-agile-development/embrace-agile-development-4
+  title: 拥抱敏捷开发(4)——本地构建
+  category: 拥抱敏捷开发
+  tags:
+    - python
+    - 测试
+  create_time: 2015-03-12 22:27:58
+  update_time: 2015-03-12 22:27:58
