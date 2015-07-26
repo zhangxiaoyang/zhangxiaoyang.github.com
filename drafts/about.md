@@ -18,6 +18,8 @@ Links
 要帅气有帅气要沧桑有沧桑的优秀学弟
 - [Laike9m](http://laike9m.com/)
 两个字，帅！
+- [刘学博](http://lufo.me)
+最流行的[知乎民间 API](https://github.com/egrcc/zhihu-python)作者之一
 
 Apps
 ====
