@@ -34,5 +34,7 @@ P2P资源分享平台
 关联豆瓣与中国科学院大学图书馆
 - [洗刷刷](https://chrome.google.com/webstore/detail/%E6%B4%97%E5%88%B7%E5%88%B7/fagehamoecjopoonolnaahffmafnadao)
 中国科学院大学刷课助手(Chrome插件)
+- [每日不吐不快](http://app.mi.com/detail/85052?ref=search)
+高bigger吐槽，期待你的神回复
 
 <div class="ds-thread"></div>
