@@ -7,9 +7,12 @@
 About
 =====
 
-- 对未知充满好奇，酷爱coding
-- 偶尔用用[weibo](http://weibo.com/u/1704839092/)，代码放在[github](https://github.com/zhangxiaoyang/)
-- 爱美工的程序员
+```
+从今天起，做一个幸福的人
+Coding、美工，周游世界
+从今天起，关心产品和用户体验
+我没有一所房子，却也能面朝大海，春暖花开
+```
 
 Links
 =====
@@ -20,14 +23,20 @@ Links
 两个字，帅！
 - [刘学博](http://lufo.me)
 最流行的[知乎民间 API](https://github.com/egrcc/zhihu-python)作者之一
+- [Wangyb.net](http://wangyb.net/)
+优秀师弟，ACMer
 
 Apps
 ====
 
 - [Fow](https://github.com/zhangxiaoyang/fow)
 基于分类生成静态博客，可部署到GitHub Pages
+- [goDataAccess](https://github.com/zhangxiaoyang/goDataAccess)
+Golang编写的数据接入框架
 - [Friendsbt](http://friendsbt.com/)
 P2P资源分享平台
+- [校园星空](http://www.校园星空.com/)
+让每个大学生都理所应当地发光
 - [Zhaoxinwo](http://zhaoxinwo.com/)
 基于豆瓣租房小组数据的搜房App
 - [Lbscontacts](http://lbscontacts.sinaapp.com/)
