@@ -1,8 +1,9 @@
 /* Image style */
 #scrollUp {
-    background-image: url("../images/top.png");
-    bottom: 20px;
-    right: 20px;
-    width: 38px;    /* Width of image */
-    height: 38px;   /* Height of image */
+    background-image: url("../images/qrcode.jpg");
+    bottom: 0;
+    right: 0;
+    width: 120px;
+    height: 120px;
+    background-size: cover;
 }
