@@ -250,3 +250,18 @@
     - 测试
   create_time: 2015-03-12 22:27:58
   update_time: 2015-03-12 22:27:58
+- id: weixin/20160511
+  title: “字节序”是个什么鬼？
+  category: 微信备份
+  tags:
+    - 大端
+    - 小端
+  create_time: 2016-05-11 20:36:00
+  update_time: 2016-05-11 20:36:00
+- id: weixin/20160521
+  title: 枕边的函数“氏”
+  category: 微信备份
+  tags:
+    - 函数式编程
+  create_time: 2016-05-21 23:02:00
+  update_time: 2016-05-21 23:02:00
