@@ -260,7 +260,7 @@ var _hmt = _hmt || [];
 <p>经过努力的观察分析，我们发现：时间复杂度主要是由划分造成的，即把小于参照胡萝卜的数放到左边，大于它的数放到右边，主要考虑其中比较的时间，也就是比较的次数。（难道还有两个元素不进行比较的情况？当然有了，划分在两侧的元素，就没有比较的可能了。所以，要想比较，就必须在某次的划分中分到一起，并且其中一个元素为主元，也就是参照胡萝卜。）</p>
 <p>而这里，我们是通过计算两个数比较的概率来得到最终的平均情况下的时间复杂度。如果知道了任意两个数比较的概率，将其求和就是最终的期望，也就是时间复杂度。</p>
 <p>设要比较的两个元素为$z_i$、$z_j$。它们要想比较，必须某次划分的时候在同一个区间，且其中一个为主元。</p>
-<p>所以，这两个元素进行比较的概率为：$Pr\lbrace z_i,z_j \rbrace=Pr\lbrace z_i\ or\ z_j\ is\ the\ pivot\rbrace=Pr\lbrace z_i\ is\ the\ pivot\rbrace + Pr\lbrace z_j\ is\ the\ pivot\rbrace = \frac{1}{j-i+1}+\frac{1}{j-i+1}=\frac{2}{j-i+1}$</p>
+<p>所以，这两个元素进行比较的概率为：$Pr\lbrace z_i,z_j \rbrace=Pr\lbrace z_i or z_j is the pivot\rbrace=Pr\lbrace z_i is the pivot\rbrace + Pr\lbrace z_j is the pivot\rbrace = \frac{1}{j-i+1}+\frac{1}{j-i+1}=\frac{2}{j-i+1}$</p>
 <p>费这么大劲，终于可以得到最终的答案了：$E(Comparison)=\sum_{i=1}^{n-1}\sum_{j=i+1}^{n}\frac{2}{j-i+1} \approx 1.39nlog_2 n = O(nlog_2 n)$</p>
 <p><strong>平摊分析</strong>见下一小节~</p>
 <p><code>-- EOF --</code></p>
