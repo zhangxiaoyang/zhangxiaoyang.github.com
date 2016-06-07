@@ -25,6 +25,8 @@ Links
 最流行的[知乎民间 API](https://github.com/egrcc/zhihu-python)作者之一
 - [Wangyb.net](http://wangyb.net/)
 优秀师弟，ACMer
+- [橘子园](http://www.sfg.name)
+手工帝，美工超棒的程序员
 
 Apps
 ====
@@ -35,9 +37,9 @@ Apps
 Golang编写的数据接入框架
 - [Friendsbt](http://friendsbt.com/)
 P2P资源分享平台
-- [校园星空](http://www.校园星空.com/)
+- [发射猫](http://www.sendcats.com/)
 让每个大学生都理所应当地发光
-- [Zhaoxinwo](http://zhaoxinwo.com/)
+- [Zhaoxinwo](https://github.com/zhaoxinwo/zufang)
 基于豆瓣租房小组数据的搜房App
 - [Lbscontacts](http://lbscontacts.sinaapp.com/)
 基于位置的云端通讯录
