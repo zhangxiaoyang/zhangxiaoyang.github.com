@@ -279,3 +279,10 @@
     - 爬虫
   create_time: 2016-06-06 23:03:00
   update_time: 2016-06-06 23:03:00
+- id: weixin/20160608
+  title: 可爱的爬虫（二）——下载器wget
+  category: 微信备份
+  tags:
+    - 爬虫
+  create_time: 2016-06-08 13:01:00
+  update_time: 2016-06-08 13:01:00
