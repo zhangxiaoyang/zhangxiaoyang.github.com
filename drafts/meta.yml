@@ -286,3 +286,10 @@
     - 爬虫
   create_time: 2016-06-08 13:01:00
   update_time: 2016-06-08 13:01:00
+- id: weixin/20160610
+  title: 写作的最佳姿势
+  category: 微信备份
+  tags:
+    - markdown
+  create_time: 2016-06-10 16:55:00
+  update_time: 2016-06-10 16:55:00
