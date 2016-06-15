@@ -284,6 +284,7 @@
   category: 微信备份
   tags:
     - 爬虫
+    - wget
   create_time: 2016-06-08 13:01:00
   update_time: 2016-06-08 13:01:00
 - id: weixin/20160610
@@ -293,3 +294,11 @@
     - markdown
   create_time: 2016-06-10 16:55:00
   update_time: 2016-06-10 16:55:00
+- id: weixin/20160615
+  title: 可爱的爬虫（三）——调试器curl
+  category: 微信备份
+  tags:
+    - 爬虫
+    - curl
+  create_time: 2016-06-15 21:46:00
+  update_time: 2016-06-15 21:46:00
