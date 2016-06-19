@@ -302,3 +302,10 @@
     - curl
   create_time: 2016-06-15 21:46:00
   update_time: 2016-06-15 21:46:00
+- id: weixin/20160619
+  title: 找寻微信撤回的图片
+  category: 微信备份
+  tags:
+    - 微信撤回
+  create_time: 2016-06-19 12:50:00
+  update_time: 2016-06-19 12:50:00
