@@ -246,7 +246,7 @@ int main ()
 </tbody>
 </table>
 <p>这里不得不提一下UTF-8啊，明明人家是单个字节的，不存在什么字节序的问题。微软为了统一UTF-X，硬生生给他的头部也加了几个字符！是的，这几个字符就是BOM（Byte Order Mark），这就是Windows下的UTF-8。</p>
-<p>相信很多人都被UTF-8的BOM给坑过，多了这个BOM的UTF-8文件，会导致很多问题啊。比如，写的Shell脚本，内容为<code>#!/usr/bin/env bash</code>，在UTF-8有BOM和UTF-8无BOM的编码下，对应的16进制为： <img src="/drafts/categories/weixin/images/UTF-8 BOM.png" alt=""></p>
+<p>相信很多人都被UTF-8的BOM给坑过，多了这个BOM的UTF-8文件，会导致很多问题啊。比如，写的Shell脚本，内容为<code>#!/usr/bin/env bash</code>，在UTF-8有BOM和UTF-8无BOM的编码下，对应的16进制为： <img src="/drafts/categories/weixin/images/UTF-8-BOM.png" alt=""></p>
 <p>所以，有BOM的话，Shell解释器就报错啦。原因在于，解释器希望遇到<code>#!/usr/bin/env bash</code>，而使用UTF-8有BOM进行编码的内容会多了3个字节的<code>EF BB BF</code>。</p>
 <p>对于UTF-8和UTF-8无BOM两种编码格式，我们更多的使用UTF-8无BOM。</p>
 <p><img src="/drafts/categories/weixin/images/notepad++.png" alt=""></p>
