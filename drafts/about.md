@@ -7,6 +7,15 @@
 About
 =====
 
+<div id="weixin-qrcode" style="width: 100%; left: 0; position: fixed; text-align: center; z-index: 9999; top: 35%; display: none;">
+  <img src="themes/default/images/qrcode.jpg" onclick="$(this).parent().hide(); event.stopPropagation();">
+</div>
+<div>
+  <a href="https://github.com/zhangxiaoyang">GitHub</a> / 
+  <a href="#" id="weixin" onclick="$('#weixin-qrcode').show()">Weixin</a> / 
+  <a href="https://zhuanlan.zhihu.com/zhangxiaoyang">Zhihu</a>
+</div>
+
 ```
 从今天起，做一个幸福的人
 Coding、美工，周游世界
