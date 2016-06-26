@@ -160,7 +160,7 @@ var _hmt = _hmt || [];
 <p>因为当时刚好PC和手机同时登陆了微信，所以先从PC这里入手。</p>
 <h3 id="2-1-pc-">2.1 PC端</h3>
 <p>经过一番调研，把储存的位置锁定到了<code>[X]:\Users\[USER]\Documents\WeChat Files\[WECHAT_USER]\Data</code>。里面有一堆以<code>.dat</code>为后缀的文件，他们大小不一，其中最新的一个文件100多KB，我猜这应该就是要找的图片。</p>
-<p>于是把后缀改为<code>.jpg</code>试试看，结果失败。果断给Notepad++装上HEX-Editor插件，秒变UltroEdit啊！为了找到图片的加密方法，随便找了一张图，发送过来，并到微信储存图片的位置找到最新的<code>.dat</code>文件，Notepad++打开是这样的（加密后的图片）：</p>
+<p>于是把后缀改为<code>.jpg</code>试试看，结果失败。果断给Notepad++装上HEX-Editor插件，秒变UltraEdit啊！为了找到图片的加密方法，随便找了一张图，发送过来，并到微信储存图片的位置找到最新的<code>.dat</code>文件，Notepad++打开是这样的（加密后的图片）：</p>
 <p><img src="/drafts/categories/weixin/images/weixin-hex-encode.png" alt=""></p>
 <p>在微信的客户端里右键另存为，把图片储存到本地，Notepad++打开是这样的（原始图片）：</p>
 <p><img src="/drafts/categories/weixin/images/weixin-hex-decode.png" alt=""></p>

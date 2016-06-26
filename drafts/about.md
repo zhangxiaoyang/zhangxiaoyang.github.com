@@ -7,8 +7,8 @@
 About
 =====
 
-<div id="weixin-qrcode" style="width: 100%; left: 0; position: fixed; text-align: center; z-index: 9999; top: 35%; display: none;">
-  <img src="themes/default/images/qrcode.jpg" onclick="$(this).parent().hide(); event.stopPropagation();">
+<div id="weixin-qrcode" style="width: 100%; left: 0; position: fixed; z-index: 9999; top: 35%; display: none;">
+  <div style="background: url(themes/default/images/qrcode.jpg); width: 258px; height: 258px; margin: auto;" onclick="$(this).parent().hide();"></div>
 </div>
 <div>
   <a href="https://github.com/zhangxiaoyang">GitHub</a> / 
