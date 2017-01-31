@@ -8,19 +8,19 @@ profile:
   avatar: https://avatars3.githubusercontent.com/u/2735163?v=3&s=460
   duoshuo: zhangxiaoyang
 navigation:
-  - name: index
+  - name: Home
     link: /index.html
     icon: fa-home
     color: 3369e8
-  - name: category
+  - name: Category
     link: /category.html
     icon: fa-th-large
     color: 3369e8
-  - name: about
+  - name: About
     link: /about.html
     icon: fa-user
     color: 3369e8
-  - name: rss
+  - name: RSS
     link: http://feed43.com/1561137748688244.xml
     icon: fa-rss
     color: 3369e8
