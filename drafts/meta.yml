@@ -323,3 +323,10 @@
     - docker
   create_time: 2016-07-11 21:52:00
   update_time: 2016-07-11 21:52:00
+- id: weixin/20170131
+  title: 鹅厂求生记
+  category: 微信备份
+  tags:
+    - 思考
+  create_time: 2017-01-31 10:53:37
+  update_time: 2017-01-31 10:53:37
