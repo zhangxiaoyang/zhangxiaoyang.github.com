@@ -9,13 +9,20 @@ profile:
   duoshuo: zhangxiaoyang
 navigation:
   - name: index
+    link: /index.html
     icon: fa-home
     color: 3369e8
   - name: category
+    link: /category.html
     icon: fa-th-large
     color: 3369e8
   - name: about
-    icon: fa-lightbulb-o
+    link: /about.html
+    icon: fa-user
+    color: 3369e8
+  - name: rss
+    link: http://feed43.com/1561137748688244.xml
+    icon: fa-rss
     color: 3369e8
 site:
   url: zhangxiaoyang.me
