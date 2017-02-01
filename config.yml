@@ -6,7 +6,7 @@ meta:
   author: zhangxiaoyang
 profile:
   avatar: https://avatars3.githubusercontent.com/u/2735163?v=3&s=460
-  duoshuo: zhangxiaoyang
+  disqus: zhangxiaoyang-me
 navigation:
   - name: Home
     link: /index.html
@@ -28,4 +28,4 @@ site:
   url: zhangxiaoyang.me
   theme: default
   banner: http://ww3.sinaimg.cn/large/005X3nNxjw1epeyfkp54aj30sg0fr0tj.jpg
-  copyright: © 2015 zhangxiaoyang.me
+  copyright: © 2017 zhangxiaoyang.me
