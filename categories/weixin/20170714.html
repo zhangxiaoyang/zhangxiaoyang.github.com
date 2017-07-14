@@ -256,8 +256,8 @@ person1.say(); // lucy
 <p>所谓的定义，其实就是new一块内存空间。在C++里，函数不能定义在函数里边，所以函数不能new一个函数。</p>
 <p>而JS不同，函数里是可以new一个函数。</p>
 <pre><code class="lang-javascript">var a = function() {
-  var b = function() ｛
-  ｝
+  var b = function() {
+  }
 }
 </code></pre>
 <p>所以，如果我们使用第一种方法new出N个person实例，则会new出N个函数<code>this.say = function() {...}</code>。在内存里申请N块区域，存储相同的函数，我们是有多豪啊！</p>
