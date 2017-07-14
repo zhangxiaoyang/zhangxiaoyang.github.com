@@ -338,3 +338,11 @@
     - UTF-8
   create_time: 2017-04-09 21:01:00
   update_time: 2017-04-09 21:01:00
+- id: weixin/20170714
+  title: JavaScript之忧
+  category: 微信备份
+  tags:
+    - JavaScript
+    - prototype
+  create_time: 2017-07-14 20:43:00
+  update_time: 2017-07-14 20:43:00
