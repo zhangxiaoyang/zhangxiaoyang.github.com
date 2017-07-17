@@ -274,7 +274,7 @@ var person1 = new Person(&#39;lucy&#39;);
 person1.say(); // lucy
 </code></pre>
 <p>答案是，<code>__proto__</code>的值会屏蔽掉<code>prototype</code>的值。</p>
-<h3 id="3-3-">3.3 原型链</h3>
+<h3 id="3-5-">3.5 原型链</h3>
 <p>果然，object+function满足了我们的所有期待。</p>
 <p>一个值得讨论的问题是，new得到的object，是如何找到生成它的函数的。即，person1是如何知道是Person生成了它，而不是Animal。</p>
 <p>可以肯定的是，person1一定携带某个信息，这个信息将person1链接到Person，这便是<code>__proto__</code>。</p>
