@@ -1,0 +1,328 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="/res/preview.xsl"?>
+<rss version="2.0">
+  <channel>
+    <title>zhangxiaoyang.me</title>
+    <link>http://zhangxiaoyang.me</link>
+    <description>爱美工的程序员</description>
+    <lastBuildDate>2017-07-14 20:43:00</lastBuildDate>
+    <generator>Fow (http://github.com/zhangxiaoyang/fow)</generator>
+    
+    <item>
+        <pubDate>2017-07-14 20:43:00</pubDate>
+        <title>JavaScript之忧</title>
+        <link>http://zhangxiaoyang.me/categories/weixin/20170714.html></link>
+        <description>JavaScript prototype 
+    </item>
+    
+    <item>
+        <pubDate>2017-04-09 21:01:00</pubDate>
+        <title>字符编码那些事儿</title>
+        <link>http://zhangxiaoyang.me/categories/weixin/20170409.html></link>
+        <description>UNICODE UTF-8 
+    </item>
+    
+    <item>
+        <pubDate>2017-01-31 18:53:37</pubDate>
+        <title>新鹅求生记</title>
+        <link>http://zhangxiaoyang.me/categories/weixin/20170131.html></link>
+        <description>思考 
+    </item>
+    
+    <item>
+        <pubDate>2016-07-11 21:52:00</pubDate>
+        <title>在Windows里使用Docker</title>
+        <link>http://zhangxiaoyang.me/categories/weixin/20160711.html></link>
+        <description>docker 
+    </item>
+    
+    <item>
+        <pubDate>2016-06-29 23:14:00</pubDate>
+        <title>找寻微信撤回的图片（续）</title>
+        <link>http://zhangxiaoyang.me/categories/weixin/20160629.html></link>
+        <description>微信撤回 
+    </item>
+    
+    <item>
+        <pubDate>2016-06-19 12:50:00</pubDate>
+        <title>找寻微信撤回的图片</title>
+        <link>http://zhangxiaoyang.me/categories/weixin/20160619.html></link>
+        <description>微信撤回 
+    </item>
+    
+    <item>
+        <pubDate>2016-06-15 21:46:00</pubDate>
+        <title>可爱的爬虫（三）——调试器curl</title>
+        <link>http://zhangxiaoyang.me/categories/weixin/20160615.html></link>
+        <description>爬虫 curl 
+    </item>
+    
+    <item>
+        <pubDate>2016-06-10 16:55:00</pubDate>
+        <title>写作的最佳姿势</title>
+        <link>http://zhangxiaoyang.me/categories/weixin/20160610.html></link>
+        <description>markdown 
+    </item>
+    
+    <item>
+        <pubDate>2016-06-08 13:01:00</pubDate>
+        <title>可爱的爬虫（二）——下载器wget</title>
+        <link>http://zhangxiaoyang.me/categories/weixin/20160608.html></link>
+        <description>爬虫 wget 
+    </item>
+    
+    <item>
+        <pubDate>2016-06-06 23:03:00</pubDate>
+        <title>可爱的爬虫（一）</title>
+        <link>http://zhangxiaoyang.me/categories/weixin/20160606.html></link>
+        <description>爬虫 
+    </item>
+    
+    <item>
+        <pubDate>2016-05-25 21:46:00</pubDate>
+        <title>寻址野史</title>
+        <link>http://zhangxiaoyang.me/categories/weixin/20160525.html></link>
+        <description>寻址方式 
+    </item>
+    
+    <item>
+        <pubDate>2016-05-21 23:02:00</pubDate>
+        <title>枕边的函数“氏”</title>
+        <link>http://zhangxiaoyang.me/categories/weixin/20160521.html></link>
+        <description>函数式编程 
+    </item>
+    
+    <item>
+        <pubDate>2016-05-11 20:36:00</pubDate>
+        <title>“字节序”是个什么鬼？</title>
+        <link>http://zhangxiaoyang.me/categories/weixin/20160511.html></link>
+        <description>大端 小端 
+    </item>
+    
+    <item>
+        <pubDate>2015-03-12 22:27:58</pubDate>
+        <title>拥抱敏捷开发(4)——本地构建</title>
+        <link>http://zhangxiaoyang.me/categories/embrace-agile-development/embrace-agile-development-4.html></link>
+        <description>python 测试 
+    </item>
+    
+    <item>
+        <pubDate>2015-03-08 16:02:36</pubDate>
+        <title>拥抱敏捷开发(3)——持续集成</title>
+        <link>http://zhangxiaoyang.me/categories/embrace-agile-development/embrace-agile-development-3.html></link>
+        <description>jenkins python 
+    </item>
+    
+    <item>
+        <pubDate>2015-03-08 15:05:10</pubDate>
+        <title>拥抱敏捷开发(2)——更加敏捷</title>
+        <link>http://zhangxiaoyang.me/categories/embrace-agile-development/embrace-agile-development-2.html></link>
+        <description>BDD TDD 持续集成 
+    </item>
+    
+    <item>
+        <pubDate>2015-03-07 21:29:06</pubDate>
+        <title>拥抱敏捷开发(1)——为变而生</title>
+        <link>http://zhangxiaoyang.me/categories/embrace-agile-development/embrace-agile-development-1.html></link>
+        <description>敏捷开发 
+    </item>
+    
+    <item>
+        <pubDate>2015-03-04 16:29:30</pubDate>
+        <title>Hadoop王国(5)——飞天神猪</title>
+        <link>http://zhangxiaoyang.me/categories/hadoop-kingdom/hadoop-kingdom-5.html></link>
+        <description>pig 
+    </item>
+    
+    <item>
+        <pubDate>2015-03-04 11:05:14</pubDate>
+        <title>Hadoop王国(4)——蜂起云涌</title>
+        <link>http://zhangxiaoyang.me/categories/hadoop-kingdom/hadoop-kingdom-4.html></link>
+        <description>hive 
+    </item>
+    
+    <item>
+        <pubDate>2015-03-02 20:26:06</pubDate>
+        <title>Hadoop王国(3)——暮光之城</title>
+        <link>http://zhangxiaoyang.me/categories/hadoop-kingdom/hadoop-kingdom-3.html></link>
+        <description>eclipse mapreduce 
+    </item>
+    
+    <item>
+        <pubDate>2015-03-01 11:44:29</pubDate>
+        <title>Hadoop王国(2)——初见金象</title>
+        <link>http://zhangxiaoyang.me/categories/hadoop-kingdom/hadoop-kingdom-2.html></link>
+        <description>hadoop 
+    </item>
+    
+    <item>
+        <pubDate>2015-02-27 13:12:31</pubDate>
+        <title>Hadoop王国(1)——梦游象国</title>
+        <link>http://zhangxiaoyang.me/categories/hadoop-kingdom/hadoop-kingdom-1.html></link>
+        <description>hadoop 
+    </item>
+    
+    <item>
+        <pubDate>2014-01-12 15:51:11</pubDate>
+        <title>算法导论自学笔记(9)</title>
+        <link>http://zhangxiaoyang.me/categories/intro-to-algorithms-tutorial/intro-to-algorithms-tutorial-9.html></link>
+        <description>近似算法 
+    </item>
+    
+    <item>
+        <pubDate>2014-01-10 20:57:44</pubDate>
+        <title>算法导论自学笔记(8)</title>
+        <link>http://zhangxiaoyang.me/categories/intro-to-algorithms-tutorial/intro-to-algorithms-tutorial-8.html></link>
+        <description>NP NPC NPH 
+    </item>
+    
+    <item>
+        <pubDate>2013-12-30 21:17:54</pubDate>
+        <title>算法导论自学笔记(7)</title>
+        <link>http://zhangxiaoyang.me/categories/intro-to-algorithms-tutorial/intro-to-algorithms-tutorial-7.html></link>
+        <description>Ford-Fulkerson 网络流 
+    </item>
+    
+    <item>
+        <pubDate>2013-12-01 19:42:00</pubDate>
+        <title>数据挖掘自学笔记(6)</title>
+        <link>http://zhangxiaoyang.me/categories/data-mining-tutorial/data-mining-tutorial-6.html></link>
+        <description>聚类 
+    </item>
+    
+    <item>
+        <pubDate>2013-11-29 16:00:00</pubDate>
+        <title>算法导论自学笔记(6-2)</title>
+        <link>http://zhangxiaoyang.me/categories/intro-to-algorithms-tutorial/intro-to-algorithms-tutorial-6-2.html></link>
+        <description>linear programming 线性规划 对偶 
+    </item>
+    
+    <item>
+        <pubDate>2013-11-27 13:42:00</pubDate>
+        <title>算法导论自学笔记(6-1)</title>
+        <link>http://zhangxiaoyang.me/categories/intro-to-algorithms-tutorial/intro-to-algorithms-tutorial-6-1.html></link>
+        <description>linear programming 线性规划 单纯形 
+    </item>
+    
+    <item>
+        <pubDate>2013-11-26 01:28:00</pubDate>
+        <title>数据挖掘自学笔记(5-5)</title>
+        <link>http://zhangxiaoyang.me/categories/data-mining-tutorial/data-mining-tutorial-5-5.html></link>
+        <description>回归分析 评估分类器 预测 
+    </item>
+    
+    <item>
+        <pubDate>2013-11-25 13:27:00</pubDate>
+        <title>数据挖掘自学笔记(5-4)</title>
+        <link>http://zhangxiaoyang.me/categories/data-mining-tutorial/data-mining-tutorial-5-4.html></link>
+        <description>bagging boosting KNN 组合分类 分类 
+    </item>
+    
+    <item>
+        <pubDate>2013-11-24 22:38:00</pubDate>
+        <title>数据挖掘自学笔记(5-3)</title>
+        <link>http://zhangxiaoyang.me/categories/data-mining-tutorial/data-mining-tutorial-5-3.html></link>
+        <description>back propagation 神经网络 分类 
+    </item>
+    
+    <item>
+        <pubDate>2013-11-23 21:53:00</pubDate>
+        <title>数据挖掘自学笔记(5-2)</title>
+        <link>http://zhangxiaoyang.me/categories/data-mining-tutorial/data-mining-tutorial-5-2.html></link>
+        <description>贝叶斯 分类 
+    </item>
+    
+    <item>
+        <pubDate>2013-11-23 01:03:00</pubDate>
+        <title>数据挖掘自学笔记(5-1)</title>
+        <link>http://zhangxiaoyang.me/categories/data-mining-tutorial/data-mining-tutorial-5-1.html></link>
+        <description>决策树 分类 
+    </item>
+    
+    <item>
+        <pubDate>2013-11-22 14:37:00</pubDate>
+        <title>网络攻防总结</title>
+        <link>http://zhangxiaoyang.me/categories/summary/network-attack-and-prevention.html></link>
+        <description>网络功防 
+    </item>
+    
+    <item>
+        <pubDate>2013-11-20 16:32:55</pubDate>
+        <title>数据挖掘自学笔记(4)</title>
+        <link>http://zhangxiaoyang.me/categories/data-mining-tutorial/data-mining-tutorial-4.html></link>
+        <description>apriori FP-tree 关联规则 
+    </item>
+    
+    <item>
+        <pubDate>2013-11-19 18:13:35</pubDate>
+        <title>数据挖掘自学笔记(3)</title>
+        <link>http://zhangxiaoyang.me/categories/data-mining-tutorial/data-mining-tutorial-3.html></link>
+        <description>数据预处理 
+    </item>
+    
+    <item>
+        <pubDate>2013-11-18 16:03:25</pubDate>
+        <title>数据挖掘自学笔记(2)</title>
+        <link>http://zhangxiaoyang.me/categories/data-mining-tutorial/data-mining-tutorial-2.html></link>
+        <description>OLAP 数据仓库 数据立方体 
+    </item>
+    
+    <item>
+        <pubDate>2013-11-18 14:42:00</pubDate>
+        <title>数据挖掘自学笔记(1)</title>
+        <link>http://zhangxiaoyang.me/categories/data-mining-tutorial/data-mining-tutorial-1.html></link>
+        <description>KDD 
+    </item>
+    
+    <item>
+        <pubDate>2013-11-17 16:02:00</pubDate>
+        <title>算法导论自学笔记(5)</title>
+        <link>http://zhangxiaoyang.me/categories/intro-to-algorithms-tutorial/intro-to-algorithms-tutorial-5.html></link>
+        <description>greedy 贪心 
+    </item>
+    
+    <item>
+        <pubDate>2013-11-15 14:26:00</pubDate>
+        <title>算法导论自学笔记(4)</title>
+        <link>http://zhangxiaoyang.me/categories/intro-to-algorithms-tutorial/intro-to-algorithms-tutorial-4.html></link>
+        <description>dynamic programming 动态规划 
+    </item>
+    
+    <item>
+        <pubDate>2013-11-14 15:21:00</pubDate>
+        <title>算法导论自学笔记(3)</title>
+        <link>http://zhangxiaoyang.me/categories/intro-to-algorithms-tutorial/intro-to-algorithms-tutorial-3.html></link>
+        <description>divide and conquer 
+    </item>
+    
+    <item>
+        <pubDate>2013-11-14 13:03:52</pubDate>
+        <title>组合数学总结</title>
+        <link>http://zhangxiaoyang.me/categories/summary/comb-math.html></link>
+        <description>组合数学 
+    </item>
+    
+    <item>
+        <pubDate>2013-11-08 19:37:00</pubDate>
+        <title>算法导论自学笔记(2-2)</title>
+        <link>http://zhangxiaoyang.me/categories/intro-to-algorithms-tutorial/intro-to-algorithms-tutorial-2-2.html></link>
+        <description>平摊分析 
+    </item>
+    
+    <item>
+        <pubDate>2013-11-07 01:17:00</pubDate>
+        <title>算法导论自学笔记(2-1)</title>
+        <link>http://zhangxiaoyang.me/categories/intro-to-algorithms-tutorial/intro-to-algorithms-tutorial-2-1.html></link>
+        <description>算法分析 
+    </item>
+    
+    <item>
+        <pubDate>2013-11-05 14:08:00</pubDate>
+        <title>算法导论自学笔记(1)</title>
+        <link>http://zhangxiaoyang.me/categories/intro-to-algorithms-tutorial/intro-to-algorithms-tutorial-1.html></link>
+        <description>stable matching 
+    </item>
+    
+  </channel>
+</rss>
+
