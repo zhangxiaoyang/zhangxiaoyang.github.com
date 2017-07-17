@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="/res/preview.xsl"?>
 <rss version="2.0">
   <channel>
     <title><%= site.url %></title>
@@ -9,11 +8,11 @@
     <generator>Fow (http://github.com/zhangxiaoyang/fow)</generator>
     <% index.forEach(function(item) { %>
     <item>
-        <guid>http://<%= site.url %>/categories/<%= item.id %>.html></guid>
+        <guid>http://<%= site.url %>/categories/<%= item.id %>.html</guid>
         <pubDate><%= item.create_time %></pubDate>
         <title><%= item.title %></title>
-        <link>http://<%= site.url %>/categories/<%= item.id %>.html></link>
-        <description><% item.tags.forEach(function(tag) { %><%= tag %> <% }) %>
+        <link>http://<%= site.url %>/categories/<%= item.id %>.html</link>
+        <description><% item.tags.forEach(function(tag) { %><%= tag %> <% }) %></description>
     </item>
     <% }) %>
   </channel>
