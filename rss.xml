@@ -4,15 +4,23 @@
     <title>zhangxiaoyang.me</title>
     <link>http://zhangxiaoyang.me</link>
     <description>Yang的后花园，爱美工的程序员，zhangxiaoyang</description>
-    <lastBuildDate>2018-02-17 20:35:00</lastBuildDate>
+    <lastBuildDate>2018-04-21 17:37:00</lastBuildDate>
     <generator>Fow (http://github.com/zhangxiaoyang/fow)</generator>
     
     <item>
-        <guid>http://zhangxiaoyang.me/categories/weixin/20180217.html</guid>
-        <pubDate>2018-02-17 20:35:00</pubDate>
-        <title>程序员的迷思——上手就干</title>
-        <link>http://zhangxiaoyang.me/categories/weixin/20180217.html</link>
-        <description>思考 </description>
+        <guid>http://zhangxiaoyang.me/categories/weixin/20180421.html</guid>
+        <pubDate>2018-04-21 17:37:00</pubDate>
+        <title>良心推荐——机器学习的数学基础</title>
+        <link>http://zhangxiaoyang.me/categories/weixin/20180421.html</link>
+        <description>机器学习 数学 </description>
+    </item>
+    
+    <item>
+        <guid>http://zhangxiaoyang.me/categories/weixin/20180220.html</guid>
+        <pubDate>2018-02-20 22:46:00</pubDate>
+        <title>良心推荐——金字塔原理</title>
+        <link>http://zhangxiaoyang.me/categories/weixin/20180220.html</link>
+        <description>良心推荐 </description>
     </item>
     
     <item>
@@ -21,6 +29,14 @@
         <title>JavaScript之忧</title>
         <link>http://zhangxiaoyang.me/categories/weixin/20170714.html</link>
         <description>JavaScript prototype </description>
+    </item>
+    
+    <item>
+        <guid>http://zhangxiaoyang.me/categories/weixin/20180217.html</guid>
+        <pubDate>2018-02-17 20:35:00</pubDate>
+        <title>程序员的迷思——上手就干</title>
+        <link>http://zhangxiaoyang.me/categories/weixin/20180217.html</link>
+        <description>思考 </description>
     </item>
     
     <item>

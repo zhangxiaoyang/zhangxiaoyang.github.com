@@ -353,3 +353,18 @@
     - 思考
   create_time: 2018-02-17 20:35:00
   update_time: 2018-02-17 20:35:00
+- id: weixin/20180220
+  title: 良心推荐——金字塔原理
+  category: 微信备份
+  tags:
+    - 良心推荐
+  create_time: 2018-02-20 22:46:00
+  update_time: 2018-02-20 22:46:00
+- id: weixin/20180421
+  title: 良心推荐——机器学习的数学基础
+  category: 微信备份
+  tags:
+    - 机器学习
+    - 数学
+  create_time: 2018-04-21 17:37:00
+  update_time: 2018-04-21 17:37:00
