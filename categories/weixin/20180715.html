@@ -119,13 +119,13 @@ var _hmt = _hmt || [];
 
 <div class="outer">
   <section id="main">
-    <article id="data-mining-tutorial/data-mining-tutorial-3" class="article article-type-post"
+    <article id="weixin/20180715" class="article article-type-post"
     itemscope="" itemprop="blogPost">
       <div class="article-inner">
         <header class="article-header">
           <h1 itemprop="name">
-            <a class="article-title" href="/categories/data-mining-tutorial/data-mining-tutorial-3.html">
-              数据挖掘自学笔记(3)
+            <a class="article-title" href="/categories/weixin/20180715.html">
+              程序员的迷思——技术痛
             </a>
           </h1>
         </header>
@@ -141,7 +141,7 @@ var _hmt = _hmt || [];
           <ul class="article-category-list">
             <li class="article-category-list-item">
               <a class="article-category-list-link" href="/category.html">
-                数据挖掘自学笔记
+                微信备份
               </a>
             </li>
           </ul>
@@ -150,81 +150,93 @@ var _hmt = _hmt || [];
             
               <li class="article-tag-list-item">
                 <a class="article-tag-list-link" href="/tag.html">
-                  数据预处理
+                  技术债
+                </a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a class="article-tag-list-link" href="/tag.html">
+                  技术复杂度
                 </a>
               </li>
             
           </ul>
         </footer>
         <div class="article-entry" itemprop="articleBody">
-          <div class="article-abstract"><p>数据仓库的存在，给数据分析提供了很大的便利。但是，数据仓库只是一个存放数据的地方，具体放什么数据还是我们说了算。很显然，我们应该把一些与分析相关的数据放进去。是不是直接把这些数据放进去就可以了呢？</p>
+          <div class="article-abstract"><h1 id="-">程序员的迷思——技术痛![]</h1>
+<p><img src="/drafts/categories/weixin/images/messy-code.jpg" alt=""></p>
+<p>解放研发。</p>
 </div>
-<p>答案是否定的。谁能保证我们所谓的这些相关数据没有冲突、没有冗余、没有错误？现实情况更糟糕，我们的数据源常常是非常“Dirty”的，有各种各样的问题。“林子大了什么鸟都有”，所以，数据多了也会有各种各样的问题。</p>
-<p>我们希望把高质量的数据存入到数据仓库，这样分析出来的结果才能更靠谱。</p>
-<p>如何把普通的数据源变成高质量的数据？这就需要数据预处理。</p>
-<h1 id="-preprocessing-">数据预处理（Preprocessing）</h1>
-<p>数据预处理就是预先对数据进行处理，为后续的存储、分析做准备。现在的问题是如何处理呢？</p>
-<p>数据预处理需要完成的五项主要任务：</p>
+<h2 id="1-">1 引子</h2>
+<p>带着耳机踮着脚的日子一去不复返，金属与轻音乐成为屏蔽外界的手段。熟练的敲击，机械的ENTER，过去翘首着的今天。</p>
+<blockquote>
+<p>唯快不破，省去IDE，VIM里默念口诀，GyypA；</p>
+<p>唯快不破，跳出C++，Python中背诵技法，for line in sys.stdin；</p>
+<p>唯快不破，忘掉Coding，Copying组合重建，Ctrl-C Ctrl+V。</p>
+</blockquote>
+<p>快到停不下来，一起翻车。</p>
+<h2 id="2-">2 技术痛</h2>
+<p>信手拈来中，当下晴空万里。早有所料，人机合一的日子已然来到。</p>
+<p>人活在代码里，或者说，代码流淌在血肉中。我是代码，代码是我。剪不断理还乱，累觉不爱。撕心裂肺的痛，外面放射着万丈光芒——敏捷开发、拥抱变化。</p>
+<p>痛到麻木，心如止水，拼凑的逻辑不忍直视；痛到深处，远走高飞，留下的历史值得品味。</p>
+<p>研发被技术束缚，内心充满无奈，耐心与精力随之耗尽，这便是技术痛。</p>
+<h2 id="3-">3 认识痛</h2>
+<p>技术痛与技术债有不同，技术债是项目需要承担的；而技术痛是个人需要承受的。技术痛不像技术债那样可以轻易转移，更换环境可以延缓或改变痛苦的形式，但痛还会在那里。技术痛可以引发技术债，技术债亦可导致技术痛，处理不当容易恶性循环。</p>
+<p>认识到这一点，可以帮助我们从埋怨的情绪里走出来。理性思考，我们为何而痛，以及如何减缓痛苦。</p>
+<p>曾经研发是研发的产品，那时候外面的车轮声都与键盘合拍。现在，我们是技术的奴隶，似乎只能承接需求。拒绝意味着不专业，推脱等价于不负责。</p>
+<p>我们张开双臂，口中大喊，来吧。内心则排斥，在这场集体活动里，大家在轻歌艳舞，你我独享呵呵。</p>
+<p>综上，痛的来源主要有二：</p>
 <ol>
-<li>数据清理（Data cleaning）</li>
-<li>数据集成（Data integration）</li>
-<li>数据变换（Data transformation）</li>
-<li>数据归约（Data reducing）</li>
-<li>数据离散化（Data discretization）</li>
+<li>业务带来的痛苦，痛在对需求的理解，做也痛，不做也痛</li>
+<li>实现带来的痛苦，痛在对实现的把握，实现痛，实现之后更痛</li>
 </ol>
-<h2 id="-">数据清理</h2>
-<p>数据源中的数据可能会有这些问题：某些字段为空值，含有噪声数据（如输入不正确的值）。</p>
-<p>我们如何处理空值呢？</p>
+<h3 id="3-1-">3.1 业务痛</h3>
+<p>是不是权利空降，我们掌握需求大权，即可回到车轮声的年代。显然不是，那时我们会更加痛苦，Coding与价值，如何权衡？编码与产出，如何保证？</p>
+<p>但这给我们带来了启发，如果技术之外了解产品，思考未来，或许可以避免一些不必要的呵呵。</p>
+<p>这也早已写入一些公司的职业发展要求，技术不是边界，只是开始。</p>
+<blockquote>
+<p>阿里巴巴内部晋升的渠道有四步：</p>
 <ol>
-<li>忽略掉有空值的记录（这样做不太合适，如果很多记录都有空值呢）</li>
-<li>雇人去填写空值（耗费太多人力了）</li>
-<li>使用UNKNOWN等全局标识代替空值（一些算法不识别这样的符号）</li>
-<li>使用该属性的平均值填写空值（还凑合吧）</li>
-<li>使用当前记录所属类的平均值填写空值（更好些）</li>
-<li>使用贝叶斯、判定树来推断空值（计算有些复杂）</li>
+<li>晋升资格</li>
+<li>主管提名</li>
+<li>晋升委员会面试</li>
 </ol>
-<p>我们如何处理噪声呢？</p>
+<p>个人述职包含：自我介绍、<strong>技术突破</strong>、<strong>业务突破</strong>、述职总结、未来规划</p>
 <ol>
-<li>使用分箱（Bining）方法，按照箱的平均值、中值、边界平滑数据</li>
-<li>使用聚类方法，删除聚类以后孤立的点</li>
-<li>计算机与人工检查相结合</li>
-<li>使用回归函数来平滑数据</li>
+<li>晋升委员会投票</li>
 </ol>
-<p>分箱示例如下图。</p>
-<p><img src="/drafts/categories/data-mining-tutorial/images/分箱.jpg" alt=""></p>
-<p>聚类示例如下，红色代表孤立点，即噪声数据。</p>
-<p><img src="/drafts/categories/data-mining-tutorial/images/聚类.jpg" alt=""></p>
-<p>回归方法示例如下，红色的表示噪声，可以用回归函数平滑。</p>
-<p><img src="/drafts/categories/data-mining-tutorial/images/回归.jpg" alt=""></p>
-<h2 id="-">数据集成</h2>
-<p>我们需要把各种数据源的数据整合到一起，可能会遇到这样的问题：多个数据源对同一事情的描述不一致（可能是单位不同，也可能是数值不同）、同一个字段在各个数据源中的名称不同（如studentnum和stuid）、有冗余的数据、元数据不同。</p>
-<p>其中，数据冗余可以使用相关分析来检测：</p>
-<p>$$r_{A,b} = \frac{\sum (A-\bar{A})(B-\bar{B})}{(n-1)\sigma_A \sigma_B}$$</p>
-<h2 id="-">数据变换</h2>
-<p>数据变换是指用另一种形式的数据来代替现在的形式。为什么要变换，肯定是变换后的形式比现在的要好，方便分析，要不然干嘛要变换呀。</p>
-<p>数据清理过程中去噪声的过程（分箱、聚类、回归）是一种数据平滑的过程。平滑就是一种数据变换。</p>
-<p>数据变换还包括：聚集（数据立方体构建）、数据概化（沿概念分层向上构建）、规范化（把数据按比例缩放到小的区间）、属性构造（用新的属性代替现有的属性）。都是用一种新的形式代替当前的形式，方便分析和理解。</p>
-<p>其中，数据规范化主要包括最小最大规范化、z-score规范化、小数定标规范化。</p>
-<p>最小最大规范化，把v映射到new_minA和new_maxA之间：</p>
-<p>$$v_{new} = \frac{v - min_A}{max_A - min_A}(new\_max_A+new\_min_A)+new\_min_A$$</p>
-<p>z-score规范化，其中$\mu_A$为均值，$\sigma_A$为方差：</p>
-<p>$$v_{new} = \frac{v-\mu_A}{\sigma_A}$$</p>
-<p>小数定标规范化：</p>
-<p>$v_{new} = \frac{v}{10^j}$，其中j是使得$max(|v_{new}|) &lt; 1$成立的最小整数。</p>
-<p>数据变换是将数据按照比例缩放，使之能够落入一个小的区间。</p>
-<h2 id="-">数据规约</h2>
-<p>规约的意思就是变少变小。为什么要变少？因为数据量太大了，少一点会好分析写。当然，我们必须要保证规约所花费的时间要小于分析的时间。</p>
-<p>如何规约？对什么规约？</p>
-<ol>
-<li>数据立方体聚集（在不同级别对数据立方体汇总，方体变小了）</li>
-<li>维规约（删除不相关的属性或维，维数变少了）</li>
-<li>数据压缩（数据变少了）</li>
-<li>数值规约（使用函数代替数据点或者使用直方图、聚类、选样等方式，数据变少了）</li>
-<li>数据离散化（把属性划分到区间里，用区间代替属性，属性变少）</li>
-<li>概念分层（使用高层概念代替低层概念，属性变少）</li>
-</ol>
-<p>所以，数据规约是一种化繁为简的方式。这样做可能会丢失信息的细节，但并不一定会有不好的结果。因为我们从抽象的概念中得到的启发要远远大于一堆数据，因为数据不够直观。而且，数据规约一般会带来分析速度的提高。</p>
-<p><code>-- EOF --</code></p>
+</blockquote>
+<h3 id="3-2-">3.2 实现痛</h3>
+<p>业务可以有千千万，变化也是层出不穷。我们除了要考虑实现问题，更要思考设计问题。</p>
+<blockquote>
+<p>架构设计的主要目的是为了解决软件系统复杂度带来的问题。</p>
+<p>——李运华《从0开始学架构》</p>
+</blockquote>
+<p>当我们陷入实现细节不能自拔的时候，反问一下自己，除了解需求，有没有解复杂度。</p>
+<p>此时再品痛苦，实现带来的痛苦实质上是复杂度带来的。</p>
+<p>这个思路同样可以拿来思考“业务痛”，产品眼里的妙不可言，研发心里则为一团乱麻，这也是复杂度。</p>
+<p>因此，解痛就是解复杂度。</p>
+<h2 id="4-">4 解复杂度</h2>
+<p>解复杂度首先要定位复杂度的根源，可以通过时间花费来判断，或者干脆问问内心，做什么事情的时候最痛苦，且这个痛苦很高频。</p>
+<p>如果时间主要花在查Case，是否可以把一些常用的代码脚本化；更进步，是否可以提供一个平台，让产品查；再进一步，是否有更加智能的方式让查询和解决更高效。</p>
+<p>如果时间主要花在改代码上，是否可以对代码优化，使其易于阅读和理解，可维护。</p>
+<p>如果时间主要花在重复Coding上，是否可以把核心逻辑框架化，减少重复消耗，把精力花在优化框架上。</p>
+<p>如果时间主要花在测试和上线，同样的逻辑，释放研发，让研发做专业的事情。</p>
+<p>总之，解决的核心思路是使用中间层把研发释放出来。</p>
+<blockquote>
+<p>计算机科学领域的任何问题都可以通过增加一个间接的中间层来解决。</p>
+<p>——《代码之美》</p>
+</blockquote>
+<p>中间层不会是雨前的晴空，一次次的重复与痛苦，在下一次狂风暴雨后，会来到。</p>
+<p>可以肯定的是，手持一门技法可能会熬成婆，不设边界或许可以给予我们惊喜。</p>
+<h2 id="-">参考</h2>
+<ul>
+<li><a href="https://zhuanlan.zhihu.com/p/38314781">https://zhuanlan.zhihu.com/p/38314781</a></li>
+<li><a href="https://time.geekbang.org/column/intro/81">https://time.geekbang.org/column/intro/81</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Indirection">https://en.wikipedia.org/wiki/Indirection</a></li>
+<li><a href="https://book.douban.com/subject/3224524">https://book.douban.com/subject/3224524</a></li>
+<li><a href="https://book.douban.com/subject/4199741">https://book.douban.com/subject/4199741</a></li>
+</ul>
 
         </div>
         <div id="disqus_thread"></div>

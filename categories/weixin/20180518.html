@@ -119,13 +119,13 @@ var _hmt = _hmt || [];
 
 <div class="outer">
   <section id="main">
-    <article id="data-mining-tutorial/data-mining-tutorial-3" class="article article-type-post"
+    <article id="weixin/20180518" class="article article-type-post"
     itemscope="" itemprop="blogPost">
       <div class="article-inner">
         <header class="article-header">
           <h1 itemprop="name">
-            <a class="article-title" href="/categories/data-mining-tutorial/data-mining-tutorial-3.html">
-              数据挖掘自学笔记(3)
+            <a class="article-title" href="/categories/weixin/20180518.html">
+              找寻微信撤回的图片（再续）
             </a>
           </h1>
         </header>
@@ -141,7 +141,7 @@ var _hmt = _hmt || [];
           <ul class="article-category-list">
             <li class="article-category-list-item">
               <a class="article-category-list-link" href="/category.html">
-                数据挖掘自学笔记
+                微信备份
               </a>
             </li>
           </ul>
@@ -150,81 +150,57 @@ var _hmt = _hmt || [];
             
               <li class="article-tag-list-item">
                 <a class="article-tag-list-link" href="/tag.html">
-                  数据预处理
+                  微信撤回
                 </a>
               </li>
             
           </ul>
         </footer>
         <div class="article-entry" itemprop="articleBody">
-          <div class="article-abstract"><p>数据仓库的存在，给数据分析提供了很大的便利。但是，数据仓库只是一个存放数据的地方，具体放什么数据还是我们说了算。很显然，我们应该把一些与分析相关的数据放进去。是不是直接把这些数据放进去就可以了呢？</p>
+          <div class="article-abstract"><h1 id="-">找寻微信撤回的图片（再续）</h1>
+<p><img src="/drafts/categories/weixin/images/kenan.jpg" alt=""></p>
+<p>WechatImageDecoder支持PNG、GIF了。</p>
 </div>
-<p>答案是否定的。谁能保证我们所谓的这些相关数据没有冲突、没有冗余、没有错误？现实情况更糟糕，我们的数据源常常是非常“Dirty”的，有各种各样的问题。“林子大了什么鸟都有”，所以，数据多了也会有各种各样的问题。</p>
-<p>我们希望把高质量的数据存入到数据仓库，这样分析出来的结果才能更靠谱。</p>
-<p>如何把普通的数据源变成高质量的数据？这就需要数据预处理。</p>
-<h1 id="-preprocessing-">数据预处理（Preprocessing）</h1>
-<p>数据预处理就是预先对数据进行处理，为后续的存储、分析做准备。现在的问题是如何处理呢？</p>
-<p>数据预处理需要完成的五项主要任务：</p>
-<ol>
-<li>数据清理（Data cleaning）</li>
-<li>数据集成（Data integration）</li>
-<li>数据变换（Data transformation）</li>
-<li>数据归约（Data reducing）</li>
-<li>数据离散化（Data discretization）</li>
-</ol>
-<h2 id="-">数据清理</h2>
-<p>数据源中的数据可能会有这些问题：某些字段为空值，含有噪声数据（如输入不正确的值）。</p>
-<p>我们如何处理空值呢？</p>
-<ol>
-<li>忽略掉有空值的记录（这样做不太合适，如果很多记录都有空值呢）</li>
-<li>雇人去填写空值（耗费太多人力了）</li>
-<li>使用UNKNOWN等全局标识代替空值（一些算法不识别这样的符号）</li>
-<li>使用该属性的平均值填写空值（还凑合吧）</li>
-<li>使用当前记录所属类的平均值填写空值（更好些）</li>
-<li>使用贝叶斯、判定树来推断空值（计算有些复杂）</li>
-</ol>
-<p>我们如何处理噪声呢？</p>
-<ol>
-<li>使用分箱（Bining）方法，按照箱的平均值、中值、边界平滑数据</li>
-<li>使用聚类方法，删除聚类以后孤立的点</li>
-<li>计算机与人工检查相结合</li>
-<li>使用回归函数来平滑数据</li>
-</ol>
-<p>分箱示例如下图。</p>
-<p><img src="/drafts/categories/data-mining-tutorial/images/分箱.jpg" alt=""></p>
-<p>聚类示例如下，红色代表孤立点，即噪声数据。</p>
-<p><img src="/drafts/categories/data-mining-tutorial/images/聚类.jpg" alt=""></p>
-<p>回归方法示例如下，红色的表示噪声，可以用回归函数平滑。</p>
-<p><img src="/drafts/categories/data-mining-tutorial/images/回归.jpg" alt=""></p>
-<h2 id="-">数据集成</h2>
-<p>我们需要把各种数据源的数据整合到一起，可能会遇到这样的问题：多个数据源对同一事情的描述不一致（可能是单位不同，也可能是数值不同）、同一个字段在各个数据源中的名称不同（如studentnum和stuid）、有冗余的数据、元数据不同。</p>
-<p>其中，数据冗余可以使用相关分析来检测：</p>
-<p>$$r_{A,b} = \frac{\sum (A-\bar{A})(B-\bar{B})}{(n-1)\sigma_A \sigma_B}$$</p>
-<h2 id="-">数据变换</h2>
-<p>数据变换是指用另一种形式的数据来代替现在的形式。为什么要变换，肯定是变换后的形式比现在的要好，方便分析，要不然干嘛要变换呀。</p>
-<p>数据清理过程中去噪声的过程（分箱、聚类、回归）是一种数据平滑的过程。平滑就是一种数据变换。</p>
-<p>数据变换还包括：聚集（数据立方体构建）、数据概化（沿概念分层向上构建）、规范化（把数据按比例缩放到小的区间）、属性构造（用新的属性代替现有的属性）。都是用一种新的形式代替当前的形式，方便分析和理解。</p>
-<p>其中，数据规范化主要包括最小最大规范化、z-score规范化、小数定标规范化。</p>
-<p>最小最大规范化，把v映射到new_minA和new_maxA之间：</p>
-<p>$$v_{new} = \frac{v - min_A}{max_A - min_A}(new\_max_A+new\_min_A)+new\_min_A$$</p>
-<p>z-score规范化，其中$\mu_A$为均值，$\sigma_A$为方差：</p>
-<p>$$v_{new} = \frac{v-\mu_A}{\sigma_A}$$</p>
-<p>小数定标规范化：</p>
-<p>$v_{new} = \frac{v}{10^j}$，其中j是使得$max(|v_{new}|) &lt; 1$成立的最小整数。</p>
-<p>数据变换是将数据按照比例缩放，使之能够落入一个小的区间。</p>
-<h2 id="-">数据规约</h2>
-<p>规约的意思就是变少变小。为什么要变少？因为数据量太大了，少一点会好分析写。当然，我们必须要保证规约所花费的时间要小于分析的时间。</p>
-<p>如何规约？对什么规约？</p>
-<ol>
-<li>数据立方体聚集（在不同级别对数据立方体汇总，方体变小了）</li>
-<li>维规约（删除不相关的属性或维，维数变少了）</li>
-<li>数据压缩（数据变少了）</li>
-<li>数值规约（使用函数代替数据点或者使用直方图、聚类、选样等方式，数据变少了）</li>
-<li>数据离散化（把属性划分到区间里，用区间代替属性，属性变少）</li>
-<li>概念分层（使用高层概念代替低层概念，属性变少）</li>
-</ol>
-<p>所以，数据规约是一种化繁为简的方式。这样做可能会丢失信息的细节，但并不一定会有不好的结果。因为我们从抽象的概念中得到的启发要远远大于一堆数据，因为数据不够直观。而且，数据规约一般会带来分析速度的提高。</p>
-<p><code>-- EOF --</code></p>
+<h2 id="-">引子</h2>
+<p>根据@icaca的反馈，WID无法解密PNG、GIF图片，现已支持。</p>
+<p>上两篇文章有提到，解密的关键在于寻找magic码。通过magic码与加密的图片异或，即可实现解密。</p>
+<p>magic码并不固定，微信的朋友说了算。不过不要紧，只要做一个简单的假设，即可获得magic码。</p>
+<h2 id="-">原始思路</h2>
+<p>假设：所有的图片都是JPEG格式。</p>
+<p>则：magic码 异或 文件头的第一个字节 = JPEG文件头的第一个字节（0xFF）。</p>
+<p>这个思路正是WID的核心解密逻辑，可以解密绝大部分图片。问题也很显然，无法解密其他格式的图片。</p>
+<h2 id="-png-">支持PNG等格式</h2>
+<p>加密后的图片命名为<code>*.dat</code>，我们无法得知这是哪一种格式。最简单粗暴的思路是——猜。</p>
+<p>怎么猜？</p>
+<p>常见的图片格式都试一下，然后看是否能够打开？</p>
+<p>这里取图片的头两个字节，使用首字节计算magic码，然后基于得到的magic解密第二个字节看能否命中JPEG、PNG、GIF等图片文件头的第二个字节。</p>
+<p>如果命中，则猜测成功。</p>
+<pre><code class="lang-python">def do_magic(header_code, buf):
+    return header_code ^ list(buf)[0] if buf else 0x00
+
+def decode(magic, buf):
+    return bytearray([b ^ magic for b in list(buf)])
+
+def guess_encoding(buf):
+    headers = {
+        &#39;jpg&#39;: (0xff, 0xd8),
+        &#39;png&#39;: (0x89, 0x50),
+        &#39;gif&#39;: (0x47, 0x49),
+    }
+    for encoding in headers:
+        header_code, check_code = headers[encoding] 
+        magic = do_magic(header_code, buf)
+        _, code = decode(magic, buf[:2])
+        if check_code == code:
+            return (encoding, magic)
+    print(&#39;Decode failed&#39;)
+    sys.exit(1)
+</code></pre>
+<h2 id="-">参考</h2>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Magic_number_(programming)#Magic_numbers_in_files">https://en.wikipedia.org/wiki/Magic_number_(programming)#Magic_numbers_in_files</a></li>
+<li><a href="https://github.com/zhangxiaoyang/WechatImageDecoder">https://github.com/zhangxiaoyang/WechatImageDecoder</a></li>
+</ul>
 
         </div>
         <div id="disqus_thread"></div>

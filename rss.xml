@@ -4,8 +4,32 @@
     <title>zhangxiaoyang.me</title>
     <link>http://zhangxiaoyang.me</link>
     <description>Yang的后花园，爱美工的程序员，zhangxiaoyang</description>
-    <lastBuildDate>2018-04-21 17:37:00</lastBuildDate>
+    <lastBuildDate>2018-07-15 17:45:00</lastBuildDate>
     <generator>Fow (http://github.com/zhangxiaoyang/fow)</generator>
+    
+    <item>
+        <guid>http://zhangxiaoyang.me/categories/weixin/20180715.html</guid>
+        <pubDate>2018-07-15 17:45:00</pubDate>
+        <title>程序员的迷思——技术痛</title>
+        <link>http://zhangxiaoyang.me/categories/weixin/20180715.html</link>
+        <description>技术债 技术复杂度 </description>
+    </item>
+    
+    <item>
+        <guid>http://zhangxiaoyang.me/categories/weixin/20180618.html</guid>
+        <pubDate>2018-06-18 17:23:00</pubDate>
+        <title>程序员的迷思——技术债</title>
+        <link>http://zhangxiaoyang.me/categories/weixin/20180618.html</link>
+        <description>技术债 架构 </description>
+    </item>
+    
+    <item>
+        <guid>http://zhangxiaoyang.me/categories/weixin/20180518.html</guid>
+        <pubDate>2018-05-18 22:23:00</pubDate>
+        <title>找寻微信撤回的图片（再续）</title>
+        <link>http://zhangxiaoyang.me/categories/weixin/20180518.html</link>
+        <description>微信撤回 </description>
+    </item>
     
     <item>
         <guid>http://zhangxiaoyang.me/categories/weixin/20180421.html</guid>
@@ -24,19 +48,19 @@
     </item>
     
     <item>
-        <guid>http://zhangxiaoyang.me/categories/weixin/20170714.html</guid>
-        <pubDate>2017-07-14 20:43:00</pubDate>
-        <title>JavaScript之忧</title>
-        <link>http://zhangxiaoyang.me/categories/weixin/20170714.html</link>
-        <description>JavaScript prototype </description>
-    </item>
-    
-    <item>
         <guid>http://zhangxiaoyang.me/categories/weixin/20180217.html</guid>
         <pubDate>2018-02-17 20:35:00</pubDate>
         <title>程序员的迷思——上手就干</title>
         <link>http://zhangxiaoyang.me/categories/weixin/20180217.html</link>
         <description>思考 </description>
+    </item>
+    
+    <item>
+        <guid>http://zhangxiaoyang.me/categories/weixin/20170714.html</guid>
+        <pubDate>2017-07-14 20:43:00</pubDate>
+        <title>JavaScript之忧</title>
+        <link>http://zhangxiaoyang.me/categories/weixin/20170714.html</link>
+        <description>JavaScript prototype </description>
     </item>
     
     <item>
